@@ -1,0 +1,5 @@
+a = ᜉᜑᜒᜅᜒ("Gusto ka ba nya? ")
+ᜃᜓᜈᜅ᜔᜔᜔ a == "oo":
+	ᜁᜆᜎ(f"E di sana all")
+ᜃᜓᜅ᜔ ᜑᜒᜈ᜔ᜇᜒ ᜈᜋᜈ᜔:
+	ᜁᜆᜎ(f"Saklaugh")
