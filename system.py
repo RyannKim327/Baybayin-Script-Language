@@ -1,4 +1,4 @@
-from builtins import print as ilimbag, input as itala
+from builtins import print as __ilim__, input as __itala__
 
 reserved_keywords = [
 	"and", "except", "lambda", "with", "as", "finally", "nonlocal", "while", "assert", "false", "None", "yield", "break", "for", "not",
