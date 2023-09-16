@@ -24,3 +24,6 @@ def __taga_sala__(file: str):
 			return __magsalin__(f1.read())
 	else:
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
+
+def test():
+	print("test")
