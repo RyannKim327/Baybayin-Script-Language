@@ -1,5 +1,5 @@
 reserved_keywords = [
-	and
+"and"
 except
 lambda
 with
