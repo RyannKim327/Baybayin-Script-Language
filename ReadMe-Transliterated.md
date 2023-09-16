@@ -1,5 +1,5 @@
 ### Sawa [Python Based Script Language]
-#### MPOP Reverse II
+#### MPOP Reverse II (Ryann Kim Sesgundo)
 
 ---
 ### Pasimula
