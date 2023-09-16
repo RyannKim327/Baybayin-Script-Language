@@ -24,6 +24,8 @@ def __magsalin__(__code__: str):
 			if not __inq__:
 				__result__ += __d2__
 			else:
+				for i in range(len(reserved_keywords)):
+					if reserved_keywords == __d2__
 				__result__ += __d2__
 	return __result__
 
