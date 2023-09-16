@@ -2,7 +2,7 @@ from builtins import print as ilimbag, input as itala
 import os as _____
 
 
-def __magsalin__():
+def __magsalin__(__code__: str):
 	reserved_keywords = [
 		"and", "except", "lambda", "with", "as", "finally", "nonlocal", "while", "assert", "False", "None", "yield", "break", "for", "not",
 		"class", "from", "or", "continue", "global", "pass", "def", "if", "raise", "del", "import", "return", "elif", "in", "True", "else", "is", "try"
@@ -12,7 +12,9 @@ def __magsalin__():
 		"class", "mula", "o", "sa_pagpapatuloy", "pangkalahatan", "pass", "def", "kung", "itaas", "burahin", "ibilang", "ibalik", "o_kung_kaya", "sa", "tama", "kung_wala", "is", "subok"
 	]
 	__result__ = ""
-	
+	__data__ = __code__.split("\n")
+	for __d__ in __data__:
+		__data2__ = __d__.split()
 	return __result__
 
 def __taga_sala__(file: str):
