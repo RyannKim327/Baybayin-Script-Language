@@ -16,8 +16,8 @@ def __magsalin__(__code__: str):
 	for __d__ in __data__:
 		__data2__ = __d__.split(" ")
 		for __d2__ in __data2__:
-			# print(__d2__.replace(":", ""))
-			if __d2__.replace(":", "") in tagalog:
+			__key__ == 
+			if __key__ in tagalog:
 				for i in range(len(tagalog)):
 					if tagalog[i] == __d2__.replace(":", ""):
 						__result__ += reserved_keywords[i]
