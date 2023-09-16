@@ -1,1 +1,3 @@
-reseved
+reserved_keywords = [
+	"True", "False"
+]
