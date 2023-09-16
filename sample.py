@@ -5,12 +5,5 @@ reserved_keywords = [
 	"del",
 	"import",
 	"return",
-
-	"elif",
-	"in",
-	"True",
-
-	else
-	is
-	try
+ "elif", "in", "True", "else", "is", "try"
 ]
