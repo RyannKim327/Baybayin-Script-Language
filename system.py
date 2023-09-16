@@ -19,7 +19,7 @@ def __magsalin__(__code__: str):
 		for __d2__ in __data2__:
 			if __d2__.startswith("\"") and not __d2__.startswith("\\\""):
 				__inq__ = True
-			if __d2__.endswith("\"") and not __d2__.endswith("\\\""):
+			if __d2__.endswith("\"") and not __d2__.endswith("\\\")"):
 				__inq__ = False
 			if __inq__:
 				__result__ += __d2__
@@ -27,7 +27,6 @@ def __magsalin__(__code__: str):
 				for i in range(len(tagalog)):
 					if tagalog[i] == __d2__:
 						__result__ += reserved_keywords[i]
-						break
 			__result__ += " "
 		__result__ += "\n"
 	return __result__
