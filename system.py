@@ -4,6 +4,6 @@ reserved_keywords = [
 ]
 
 def test(text, dulo="\n", pagitan=" "):
-	return f"print({test}, end={dulo}, sep={})"
+	return f"print({test}, end='{dulo}', sep='{pagitan}', file='{}')"
 
 exec("test(hahaha)")
