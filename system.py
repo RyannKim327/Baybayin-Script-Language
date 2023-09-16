@@ -4,11 +4,11 @@ import os as _____
 
 def __magsalin__():
 	reserved_keywords = [
-		"and", "except", "lambda", "with", "as", "finally", "nonlocal", "while", "assert", "false", "None", "yield", "break", "for", "not",
+		"and", "except", "lambda", "with", "as", "finally", "nonlocal", "while", "assert", "False", "None", "yield", "break", "for", "not",
 		"class", "from", "or", "continue", "global", "pass", "def", "if", "raise", "del", "import", "return", "elif", "in", "True", "else", "is", "try"
 	]
 	tagalog = [
-		"at_saka", "maliban", "lambda", "kasama"
+		"at_saka", "maliban", "lambda", "kasama", "bilang", "sa_wakas", "nonlocal", "habang", "assert", ""
 	]
 	__result__ = ""
 	
