@@ -17,7 +17,8 @@ def __magsalin__(__code__: str):
 	for __d__ in __data__:
 		__data2__ = __d__.split(" ")
 		for __d2__ in __data2__:
-			if __inq__
+			if __d2__.startswith("\"") and not __d2__.startswith("\\\""):
+				__inq__ != 
 			if not __inq__:
 			
 	return __result__
