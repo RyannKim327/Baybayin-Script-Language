@@ -21,7 +21,7 @@ def __magsalin__(__code__: str):
 				__inq__ = True
 			if __d2__.endswith("\"") and not __d2__.endswith("\\\""):
 				__inq__ = False
-			if not __inq__:
+			if __inq__:
 				__result__ += __d2__
 			else:
 				for i in range(len(tagalog)):
