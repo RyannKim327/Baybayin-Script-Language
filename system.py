@@ -6,11 +6,14 @@ reserved_keywords = [
 	"class", "from", "or", "continue", "global", "pass", "def", "if", "raise", "del", "import", "return", "elif", "in", "True", "else", "is", "try"
 ]
 
+def __magsalin__():
+
 def scanner(file: str):
 	extension = ".mag_sawa_ka_na"
 	if not file.endswith(extension):
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
 	if _____.path.exists(file):
-		return ""
+		with file as open()
+		return __magsalin__()
 	else:
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
