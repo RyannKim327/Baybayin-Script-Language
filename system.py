@@ -7,4 +7,6 @@ reserved_keywords = [
 ]
 
 def scanner(file: str):
+	if not file.endswith("._b_"):
+		return f"Hindi ito "
 	if _____.path.exists(file):
