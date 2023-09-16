@@ -3,3 +3,4 @@ reserved_keywords = [
 	"class", "from", "or", "continue", "global", "pass", "def", "if", "raise", "del", "import", "return", "elif", "in", "True", "else", "is", "try"
 ]
 
+print(type(in))
