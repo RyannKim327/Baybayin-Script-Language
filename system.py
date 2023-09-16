@@ -43,4 +43,4 @@ a = __magsalin__("""
 kung tama:
 	ilimbag("tama")
 """)
-print(a)
+exec(a)
