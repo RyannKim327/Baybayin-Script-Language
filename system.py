@@ -18,9 +18,13 @@ def __magsalin__(__code__: str):
 		__data2__ = __d__.split(" ")
 		for __d2__ in __data2__:
 			if __d2__.startswith("\"") and not __d2__.startswith("\\\""):
-				__inq__ != 
+				__inq__ = True
+			if __d2__.endswith("\"") and not __d2__.endswith("\\\""):
+				__inq__ = False
 			if not __inq__:
-			
+				__result__ += __d2__
+			else:
+				__result__ += __d2__
 	return __result__
 
 def __taga_sala__(file: str):
