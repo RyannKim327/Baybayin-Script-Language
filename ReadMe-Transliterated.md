@@ -3,4 +3,4 @@
 
 ---
 ### Pasimula
-> Ang `Sawa` ay hindi isang uri ng wikang pang programatika, kundi isa lamang itong bersyon ng `Python Programming`
+> Ang `Sawa` ay hindi isang uri ng wikang pang programatika, kundi isa lamang itong bersyon ng `Python Programming`, kung saan ginamit ang `Baybayin` bilang mga 
