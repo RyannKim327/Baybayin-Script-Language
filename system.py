@@ -13,7 +13,7 @@ def scanner(file: str):
 	if not file.endswith(extension):
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
 	if _____.path.exists(file):
-		with file as open()
-		return __magsalin__()
+		with __file1__ in open(file, "r"):
+			return __magsalin__(__file1__.read())
 	else:
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
