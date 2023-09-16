@@ -43,7 +43,7 @@ def __taga_sala__(file: str):
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
 
 a = __magsalin__("""
-kung oo:
-	ilimbag("oo")
+kung tama:
+	ilimbag("tama")
 """)
 exec(a)
