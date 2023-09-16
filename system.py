@@ -4,4 +4,6 @@ reserved_keywords = [
 ]
 
 def test(text):
-	return f"print({test})"
+	return f"print(\"{test}\")"
+
+exec("test")
