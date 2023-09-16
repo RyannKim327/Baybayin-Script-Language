@@ -3,3 +3,4 @@
 
 ---
 ### Pasimula
+> Ang `Sawa` ay hindi isang uri ng wikang pang 
