@@ -3,4 +3,4 @@
 
 ---
 ### Pasimula
-> Ang `Sawa` ay hindi isang uri ng wikang pang 
+> Ang `Sawa` ay hindi isang uri ng wikang pang programatika, kundi isa lamang itong 
