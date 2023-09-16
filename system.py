@@ -3,7 +3,4 @@ reserved_keywords = [
 	"class", "from", "or", "continue", "global", "pass", "def", "if", "raise", "del", "import", "return", "elif", "in", "True", "else", "is", "try"
 ]
 
-def test(text, dulo="\n", pagitan=" "):
-	return f"print({test}, end='{dulo}', sep='{pagitan}', file='{}')"
-
-exec("test(hahaha)")
+def test(text, dulo="\n", pagitan=" ", file=None, flush=False
