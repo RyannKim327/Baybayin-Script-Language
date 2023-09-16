@@ -16,7 +16,10 @@ def __magsalin__(__code__: str):
 	__inq__ = False
 	for __d__ in __data__:
 		__data2__ = __d__.split(" ")
-		
+		for __d2__ in __data2__:
+			if __inq__
+			if not __inq__:
+			
 	return __result__
 
 def __taga_sala__(file: str):
