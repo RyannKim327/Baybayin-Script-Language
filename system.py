@@ -7,9 +7,11 @@ def __magsalin__():
 		"and", "except", "lambda", "with", "as", "finally", "nonlocal", "while", "assert", "false", "None", "yield", "break", "for", "not",
 		"class", "from", "or", "continue", "global", "pass", "def", "if", "raise", "del", "import", "return", "elif", "in", "True", "else", "is", "try"
 	]
-	pass
+	__result__ = ""
+	
+	return __result__
 
-def scanner(file: str):
+def __taga_sala__(file: str):
 	extension = ".mag_sawa_ka_na"
 	if not file.endswith(extension):
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
