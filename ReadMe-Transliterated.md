@@ -7,4 +7,4 @@
 
 ---
 ### Karagdanang Salaysay
-> 
+> Katulad ng isinalaysay, ang Sawa ay hindi upang babuyin ang baybayin, bagkus gamitin pa ito, nang sa gayon ay 
