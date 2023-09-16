@@ -3,7 +3,7 @@ reserved_keywords = [
 	"class", "from", "or", "continue", "global", "pass", "def", "if", "raise", "del", "import", "return", "elif", "in", "True", "else", "is", "try"
 ]
 
-def test(text):
-	return f"print(\"{test}\")"
+def test(text, **argd):
+	return f"print({test}, {**args})"
 
 exec("test(hahaha)")
