@@ -9,7 +9,7 @@ def __magsalin__():
 	]
 	tagalog = [
 		"at_saka", "maliban", "lambda", "kasama", "bilang", "sa_wakas", "nonlocal", "habang", "assert", "mali", "wala", "yield", "hinto", "para_sa", "hindi",
-		"class", "mula", "o", "sa_pagpapatuloy", "pangkalahatan"
+		"class", "mula", "o", "sa_pagpapatuloy", "pangkalahatan", "pass", "def", "kung", "itaas", ""
 	]
 	__result__ = ""
 	
