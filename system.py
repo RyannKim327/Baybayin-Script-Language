@@ -24,11 +24,12 @@ def __magsalin__(__code__: str):
 			if not __inq__:
 				__result__ += __d2__
 			else:
-				for i in range(len(reserved_keywords)):
-					if reserved_keywords == __d2__:
-						__result__ += tagalog[i]
+				for i in range(len(tagalog)):
+					if tagalog[i] == __d2__:
+						__result__ += reserved_keywords[i]
 						break
-			res
+			__result__ += " "
+		__result__ += "\n"
 	return __result__
 
 def __taga_sala__(file: str):
@@ -45,4 +46,4 @@ a = __magsalin__("""
 kung oo:
 	ilimbag("oo")
 """)
-print(a)
+exec(a)
