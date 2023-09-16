@@ -13,3 +13,4 @@ def scanner(file: str):
 	if _____.path.exists(file):
 		return ""
 	else:
+		return f"Hindi ito 'yong file na ginagamit para sa sawa"
