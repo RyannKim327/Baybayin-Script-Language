@@ -19,10 +19,12 @@ def __magsalin__(__code__: str):
 			# print(__d2__.replace(":", ""))
 			if __d2__.replace(":", "") in tagalog:
 				for i in range(len(tagalog)):
-					if tagalog[i] == __d2__:
+					if tagalog[i] == __d2__.replace(":", ""):
 						__result__ += reserved_keywords[i]
 			else:
 				__result__ += __d2__
+			if __d2__.endswith(":"):
+				__result__ += ":"
 			__result__ += " "
 		__result__ += "\n"
 	return __result__
