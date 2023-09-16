@@ -1,5 +1,5 @@
 from builtins import print as ilimbag, input as itala
-import os as _____
+import os as _____, re as __regex__
 
 
 def __magsalin__(__code__: str):
