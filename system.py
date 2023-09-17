@@ -16,16 +16,21 @@ def __magsalin__(__code__: str):
 	for __d__ in __data__:
 		__data2__ = __d__.split(" ")
 		for __d2__ in __data2__:
-			__key__ = __d2__.replace(":", "")
+			__key__ = __d2__.replace(":", "").replace("(", "").replace(")", "")
+			if __d2__.startswith("("):
+				__result__+= "("
 			if __key__ in tagalog:
 				for i in range(len(tagalog)):
 					if tagalog[i] == __key__.replace(":", ""):
 						__result__ += reserved_keywords[i]
 			else:
 				__result__ += __d2__
-			if __d2__.endswith("):"):
+			
+			if __d2__.endswith(")") and not __d2__.endswith("\")"):
+				__result__+= ")"
+			elif __d2__.endswith("):"):
 				__result__+= "):"
-			elif __d2__.endswith(":") and not __d2__.endswith("):"):
+			elif __d2__.endswith(":"):
 				__result__ += ":"
 			__result__ += " "
 		__result__ += "\n"
@@ -41,7 +46,7 @@ def __taga_sala__(file: str):
 	else:
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
 
-print(__magsalin__("""
+exec(__magsalin__("""
 kung (tama) at_saka (mali):
 	ilimbag("tama")
 """))
