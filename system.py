@@ -23,7 +23,9 @@ def __magsalin__(__code__: str):
 						__result__ += reserved_keywords[i]
 			else:
 				__result__ += __d2__
-			if __d2__.endswith(":"):
+			if __d2__.endswith("):"):
+				__result__+= "):"
+			elif __d2__.endswith(":") and not __d2__.endswith("):"):
 				__result__ += ":"
 			__result__ += " "
 		__result__ += "\n"
@@ -40,5 +42,6 @@ def __taga_sala__(file: str):
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
 
 print(__magsalin__("""
-kung (tama)
+kung (tama) at_saka (mali):
+	ilimbag("tama")
 """))
