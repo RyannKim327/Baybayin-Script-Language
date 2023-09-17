@@ -45,8 +45,3 @@ def __taga_sala__(file: str):
 			return __magsalin__(f1.read())
 	else:
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
-
-exec(__magsalin__("""
-kung (tama) at_saka (mali):
-	ilimbag("tama")
-"""))
