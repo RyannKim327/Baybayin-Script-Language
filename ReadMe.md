@@ -17,7 +17,7 @@
 > ᜂᜈ ᜀᜌ᜔ ᜃᜁᜎᜅᜈ᜔ ᜋᜓ ᜋᜓᜈᜅ᜔ ᜃᜓᜈᜒᜈ᜔ ᜀᜅ᜔᜔ file ᜈ ᜁᜆᜓ᜵  ᜈᜅ᜔ ᜐ ᜄᜌᜓᜈ᜔ ᜀᜌ᜔ ᜋᜃᜉᜄ᜔ᜐᜒᜋᜓᜎ ᜃ ᜈ᜶  ᜐ "**terminal**" ᜃᜁᜎᜅᜈ᜔ ᜋᜓ ᜎᜅ᜔ ᜄᜋᜒᜆᜒᜈ᜔ ᜀᜅ᜔᜔ `python setup.py [filename]` ᜵  ᜂᜉᜅ᜔ ᜄᜓᜋᜈ ᜀᜅ᜔ ᜁᜌᜓᜅ᜔ program᜶
 **ᜑᜎᜒᜋ᜔ᜊᜏ:**
 ```Bash
-python setup.py la.pyby
+python pyby.py la.pyby
 ```
 
 ---
