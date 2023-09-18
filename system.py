@@ -28,10 +28,10 @@ def __magsalin__(__code__: str):
 			else:
 				__result__ += __key__
 			
-			if __d2__.endswith(")") and not __d2__.endswith("\")"):
-				__result__+= ")"
-			if  __d2__.endswith("\")"):
-				__result__+= "\")"
+			# if not __d2__.endswith("\")") and __d2__.endswith(")"):
+			# 	__result__+= ")"
+			# if  __d2__.endswith("\")"):
+			# 	__result__+= "\")"
 			if __d2__.endswith("):"):
 				__result__+= ")"
 			if __d2__.endswith(":"):
