@@ -3,7 +3,7 @@
 
 ---
 ### Paalala
-> Kung ito ay hindi mo maintindihan, mayroon akong inihandang katulad nito na salin sa mga titik alpabeto na syang makakatulong upang mabasa mo
+> Kung ito ay hindi mo maintindihan, mayroon akong inihandang katulad nito na salin sa mga titik alpabeto na syang makakatulong upang mabasa mo nang maayos ang nakasaad: [Pakipuntahan dito](ReadMe-Transliterated.md)
 ---
 ### ᜉᜐᜒᜋᜓᜎ
 > ᜀᜅ᜔ `ᜐᜏ` ᜀᜌ᜔ ᜑᜒᜈ᜔ᜇᜒ ᜁᜐᜅ᜔ ᜂᜇᜒ ᜈᜅ᜔ ᜏᜒᜃᜅ᜔ ᜉᜅ᜔ ᜉ᜔ᜇᜓᜄ᜔ᜇᜋᜆᜒᜃ᜵ ᜃᜓᜈ᜔ᜇᜒ ᜁᜐ ᜎᜋᜅ᜔ ᜁᜆᜓᜅ᜔ ᜊᜒᜇ᜔ᜐ᜔ᜌᜓᜈ᜔ ᜈᜅ᜔ `ᜉ᜔ᜌ᜔ᜆ᜔ᜑᜓᜈ᜔ ᜉ᜔ᜇᜓᜄ᜔ᜇᜋ᜔ᜋᜒᜅ᜔`᜵ ᜃᜓᜅ᜔ ᜐᜀᜈ᜔ ᜄᜒᜈᜋᜒᜆ᜔ ᜀᜅ᜔ `ᜊᜌ᜔ᜊᜌᜒᜈ᜔` ᜊᜒᜎᜅ᜔ ᜋᜅ ᜃᜆᜄ᜵ ᜈ ᜋᜀᜇᜒᜅ᜔ ᜋᜄᜒᜅ᜔ ᜇᜑᜒᜎᜈ᜔ ᜂᜉᜅ᜔ ᜋᜆᜓᜆᜓᜈᜈ᜔ ᜈᜆᜒᜈ᜔ ᜀᜅ᜔ `ᜊᜌ᜔ᜊᜌᜒᜈ᜔`᜵ ᜑᜒᜈ᜔ᜇᜒ ᜊᜒᜎᜅ᜔ ᜏᜒᜃ᜵ ᜃᜓᜈ᜔ᜇᜒ ᜊᜒᜎᜅ᜔ ᜁᜐᜅ᜔ ᜋᜈᜓᜐ᜔ᜃ᜔ᜇᜒᜆᜓ ᜈ ᜐ᜔ᜌᜅ᜔ ᜄᜒᜈᜋᜒᜆ᜔ ᜈᜅ᜔ ᜀᜆᜒᜅ᜔ ᜋᜅ ᜈᜒᜈᜓᜈᜓ ᜎᜎᜓ ᜈ ᜐ ᜆᜒᜋᜓᜄ᜔ ᜃᜆᜄᜎᜓᜄᜈ᜔᜶ ᜈᜄᜒᜅ᜔ ᜉᜋᜈ᜔ᜆᜌᜈ᜔ ᜀᜅ᜔ `ᜀᜈ᜔ᜌᜊᜐᜒᜃ᜔` ᜀᜆ᜔ `ᜊᜆᜓ` ᜈ ᜐ᜔ᜌᜅ᜔ ᜋᜅ ᜈᜂᜈᜅ᜔ ᜏᜒᜃᜅ᜔ ᜉᜅ᜔ ᜉ᜔ᜇᜓᜄ᜔ᜇᜋᜆᜒᜃ᜵ ᜈ ᜄᜒᜈᜋᜒᜆᜈ᜔ ᜈᜅ᜔ ᜆᜄᜎᜓᜄ᜔᜶ ᜐᜓᜊᜎᜒᜆ᜔ ᜀᜅ᜔ `ᜐᜏ` ᜀᜌ᜔ ᜐᜒᜈᜇ᜔ᜌᜅ᜔ ᜄᜏᜒᜈ᜔ ᜐ ᜃᜎᜄᜌᜈ᜔ ᜈᜅ᜔ `ᜊᜌ᜔ᜊᜌᜒᜈ᜔`᜵ ᜑᜒᜈ᜔ᜇᜒ ᜉᜇ ᜊᜊᜓᜌᜒᜈ᜔᜵ ᜃᜓᜈ᜔ᜇᜒ ᜋᜐ᜔ ᜉᜄ᜔ᜌᜋᜈᜒᜈ᜔ ᜀᜅ᜔ ᜃᜓᜎ᜔ᜆᜓᜇ᜵ ᜀᜆ᜔ ᜃᜒᜈᜄᜏᜒᜀᜈ᜔ ᜈᜅ᜔ ᜋᜅ ᜐᜒᜈᜂᜈᜅ᜔ ᜉᜒᜎᜒᜉᜒᜈᜓ᜵ ᜈ ᜊᜄᜓ ᜉ ᜇᜓᜋᜆᜒᜅ᜔ ᜀᜅ᜔ ᜋᜅ ᜁᜐ᜔ᜉᜈ᜔ᜌᜓᜎ᜔ ᜀᜌ᜔ ᜐ᜔ᜌ ᜈᜅ᜔ ᜄᜒᜈᜄᜋᜒᜆ᜔᜶
