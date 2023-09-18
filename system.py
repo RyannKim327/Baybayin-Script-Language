@@ -17,7 +17,7 @@ def __magsalin__(__code__: str):
 		__data2__ = __d__.split(" ")
 		for __d2__ in __data2__:
 			__key__ = __d2__.replace(":", "").replace("(", "").replace(")", "")
-			if __d2__.startswith("("):
+			if __d2__.startswith("(") and not __d2__.startswith("(\""):
 				__result__+= "("
 			elif __d2__.startswith("(\""):
 				__result__+= "(\""
@@ -49,3 +49,9 @@ def __taga_sala__(file: str):
 			return __magsalin__(f1.read())
 	else:
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
+
+print(__magsalin__("""
+kung ("tama" == Tama) at ("mali" == Tama):
+		ilimbag("ok")
+
+"""))
