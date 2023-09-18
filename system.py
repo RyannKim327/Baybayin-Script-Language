@@ -50,9 +50,7 @@ def __taga_sala__(file: str):
 	else:
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
 
-print(__magsalin__("""
-kung ("tama" == "tama") at_saka ("tama" == "tama"):
-	ilimbag("ok")
-kung_wala:
-	ilimbag("subok")
-"""))
+def __process__(file: str):
+	exec(__taga_sala__(file))
+
+__process__("la.baybay")
