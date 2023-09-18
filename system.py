@@ -41,7 +41,7 @@ def __magsalin__(__code__: str):
 	return __result__
 
 def __taga_sala__(file: str):
-	extension = ".baybay"
+	extension = ".pyby"
 	if not file.endswith(extension):
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
 	if _____.path.exists(file):
