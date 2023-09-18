@@ -52,5 +52,3 @@ def __taga_sala__(file: str):
 
 def __process__(file: str):
 	exec(__taga_sala__(file))
-
-__process__("a.baybay")
