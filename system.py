@@ -21,9 +21,9 @@ def __magsalin__(__code__: str):
 			# 	__result__+= "(\""
 			# if __d2__.startswith("("):
 			# 	__result__+= "("
-			if __key__ in tagalog:
+			if __key__.replace(":", "").replace("(", "").replace(")", "") in tagalog:
 				for i in range(len(tagalog)):
-					if tagalog[i] == __key__.replace(":", ""):
+					if tagalog[i] == __key__.replace(":", "").replace("(", "").replace(")", ""):
 						__result__ += reserved_keywords[i]
 			else:
 				__result__ += __key__
@@ -51,7 +51,7 @@ def __taga_sala__(file: str):
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
 
 exec(__magsalin__("""
-kung ("tama" == Tama) at_saka ("mali" == Tama):
+kung ("tama" == tama) at_saka ("mali" == tama):
 		ilimbag("ok")
 
 """))
