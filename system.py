@@ -28,12 +28,12 @@ def __magsalin__(__code__: str):
 			else:
 				__result__ += __key__
 			
-			# if __d2__.endswith(")") and not __d2__.endswith("\")"):
-			# 	__result__+= ")"
-			# elif  __d2__.endswith("\")"):
-			# 	__result__+= "\")"
-			# if __d2__.endswith("):"):
-			# 	__result__+= ")"
+			if __d2__.endswith(")") and not __d2__.endswith("\")"):
+				__result__+= ")"
+			if  __d2__.endswith("\")"):
+				__result__+= "\")"
+			if __d2__.endswith("):"):
+				__result__+= ")"
 			if __d2__.endswith(":"):
 				__result__ += ":"
 			__result__ += " "
@@ -51,7 +51,8 @@ def __taga_sala__(file: str):
 		return f"Hindi ito 'yong file na ginagamit para sa sawa"
 
 exec(__magsalin__("""
-kung ("tama" == tama) at_saka ("mali" == tama):
-		ilimbag("ok")
-
+kung ("tama" == "tama") at_saka ("tama" == "tama"):
+	ilimbag("ok")
+kung_wala:
+	ilimbag("subok")
 """))
