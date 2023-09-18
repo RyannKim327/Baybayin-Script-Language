@@ -16,8 +16,8 @@ def __magsalin__(__code__: str):
 	for __d__ in __data__:
 		__data2__ = __d__.split(" ")
 		for __d2__ in __data2__:
-			__key__ = __d2__.replace(":", "").replace("(", "").replace(")", "")
-			if __d2__.startswith("(") and not __d2__.startswith("(\""):
+			__key__ = __d2__.replace(":", "").replace("(", "").replace(")", "").replace("(\"", "").replace(")\"", "")
+			if not __d2__.startswith("(\"") and __d2__.startswith("("):
 				__result__+= "("
 			elif __d2__.startswith("(\""):
 				__result__+= "(\""
