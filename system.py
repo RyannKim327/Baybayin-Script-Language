@@ -19,6 +19,8 @@ def __magsalin__(__code__: str):
 			__key__ = __d2__.replace(":", "").replace("(", "").replace(")", "")
 			if __d2__.startswith("("):
 				__result__+= "("
+			elif __d2__.startswith("(\""):
+				__result__+= "(\""
 			if __key__ in tagalog:
 				for i in range(len(tagalog)):
 					if tagalog[i] == __key__.replace(":", ""):
@@ -28,6 +30,8 @@ def __magsalin__(__code__: str):
 			
 			if __d2__.endswith(")") and not __d2__.endswith("\")"):
 				__result__+= ")"
+			elif  __d2__.endswith("\")"):
+				__result__+= "\")"
 			elif __d2__.endswith("):"):
 				__result__+= "):"
 			elif __d2__.endswith(":"):
