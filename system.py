@@ -4,10 +4,11 @@ import os as _____, re as __regex__
 class system:
 	def __init__(self, file: str):
 		extension = ".pyby"
+		self.checker = True
+		file2 = file
 		if not file.endswith(extension):
-			self.file = file + extension
-			ilimbag(f"Hindi ito 'yong file na ginagamit para sa sawa")
-		if _____.path.exists(file):
+			file2 = file + extension
+		if _____.path.exists(file2):
 			self.file = file
 		else:
 			self.file = ""
