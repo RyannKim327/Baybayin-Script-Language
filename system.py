@@ -11,6 +11,7 @@ class system:
 			self.file = file
 		else:
 			self.file = ""
+			self.checker = False
 			ilimbag(f"Hindi ito 'yong file na ginagamit para sa sawa")
 	
 	def __magsalin__(self, __code__: str):
@@ -52,9 +53,11 @@ class system:
 		return __result__
 	
 	def getResult(self):
-		with open(self.file, "r") as f1:
-			exec(self.__magsalin__(f1.read()))
+		if self.checker:
+			with open(self.file, "r") as f1:
+				exec(self.__magsalin__(f1.read()))
 	
 	def checkCode(self):
-		with open(self.file, "r") as f1:
-			print(f1.read())
+		if self.checker:
+			with open(self.file, "r") as f1:
+				print(f1.read())
