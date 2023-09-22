@@ -5,10 +5,12 @@ class system:
 	def __init__(self, file: str):
 		extension = ".pyby"
 		if not file.endswith(extension):
+			self.file = file + extension
 			ilimbag(f"Hindi ito 'yong file na ginagamit para sa sawa")
 		if _____.path.exists(file):
 			self.file = file
 		else:
+			self.file = ""
 			ilimbag(f"Hindi ito 'yong file na ginagamit para sa sawa")
 	
 	def __magsalin__(self, __code__: str):
