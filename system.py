@@ -2,6 +2,8 @@ from builtins import print as ilimbag, input as itala
 import os as _____, re as __regex__
 
 
+
+
 def __magsalin__(__code__: str):
 	reserved_keywords = [
 		"and", "except", "lambda", "with", "as", "finally", "nonlocal", "while", "assert", "False", "None", "yield", "break", "for", "not",
