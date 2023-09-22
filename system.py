@@ -6,10 +6,10 @@ class system:
 		extension = ".pyby"
 		self.checker = True
 		file2 = file
-		if not file.endswith(extension):
-			file2 = file + extension
+		if not file2.endswith(extension):
+			file2 += extension
 		if _____.path.exists(file2):
-			self.file = file
+			self.file = file2
 		else:
 			self.file = ""
 			self.checker = False
