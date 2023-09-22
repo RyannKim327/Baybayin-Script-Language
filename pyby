@@ -8,7 +8,9 @@ parser.add_argument("name", help="--usage")
 args = parser.parse_args().name
 
 sys = system(args)
-exec(sys.getResult())
+sys.checkCode()
+print("-----------------------------")
+sys.getResult()
 
 # def replTo(txt):
 # 	return txt.replace("ᜁᜆᜎ(", "print(").replace("ᜉᜑᜒᜅᜒ(", "input(").replace("ᜃᜓᜈᜅ᜔᜔᜔ ", "if ").replace("ᜆᜓᜆᜓᜂ", "True").replace("ᜂ ᜑᜒᜈ᜔ᜇᜒ ᜃᜌ ᜀᜌ᜔ ", "elif  ").replace("ᜃᜓᜅ᜔ ᜑᜒᜈ᜔ᜇᜒ ᜈᜋᜈ᜔", "else")

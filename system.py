@@ -51,4 +51,8 @@ class system:
 	
 	def getResult(self):
 		with open(self.file, "r") as f1:
-			return self.__magsalin__(f1.read())
+			exec(self.__magsalin__(f1.read()))
+	
+	def checkCode(self):
+		with open(self.file, "r") as f1:
+			print(f1.read())
