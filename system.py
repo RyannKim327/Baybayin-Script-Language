@@ -1,8 +1,17 @@
 from builtins import print as ilimbag, input as itala
 import os as _____, re as __regex__
 
-
-
+class system:
+	def __init__(self, file: str):
+		extension = ".pyby"
+		if not file.endswith(extension):
+			# return f"Hindi ito 'yong file na ginagamit para sa sawa"
+		if _____.path.exists(file):
+			self.file = file
+			with open(file, "r") as f1:
+				return __magsalin__(f1.read())
+		else:
+			return f"Hindi ito 'yong file na ginagamit para sa sawa"
 
 def __magsalin__(__code__: str):
 	reserved_keywords = [
@@ -41,16 +50,6 @@ def __magsalin__(__code__: str):
 			__result__ += " "
 		__result__ += "\n"
 	return __result__
-
-def __taga_sala__(file: str):
-	extension = ".pyby"
-	if not file.endswith(extension):
-		return f"Hindi ito 'yong file na ginagamit para sa sawa"
-	if _____.path.exists(file):
-		with open(file, "r") as f1:
-			return __magsalin__(f1.read())
-	else:
-		return f"Hindi ito 'yong file na ginagamit para sa sawa"
 
 def __process__(file: str):
 	exec(__taga_sala__(file))
