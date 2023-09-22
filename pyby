@@ -1,11 +1,13 @@
-import argparse, os, system
+import argparse, os
+from system import system
 
 parser = argparse.ArgumentParser(description="ᜀᜅ᜔ ᜐᜏ ᜀᜌ᜔ ᜁᜐᜅ᜔ ᜁᜐᜒᜈᜎᜒᜅ᜔ ᜏᜒᜃ ᜀᜆ᜔ ᜋᜈᜓᜐ᜔ᜃ᜔ᜇᜒᜆᜓ ᜈ ᜄᜎᜒᜅ᜔ ᜐ Python Programming Language᜶  ᜃᜌ ᜐᜏ ᜀᜌ᜔ ᜇᜑᜒᜎ᜔ ᜁᜆᜓ ᜈ ᜋᜒᜐ᜔ᜋᜓ ᜀᜅ᜔ ᜐᜒᜌᜅ᜔ ᜆᜄᜎᜓᜄ᜔ ᜈᜅ᜔ Python᜵  ᜀᜆ᜔ ᜂᜉᜅ᜔ ᜑᜒᜈ᜔ᜇᜒ ᜈ ᜇᜒᜈ᜔ ᜋᜑᜒᜇᜉᜈ᜔ ᜉ᜶")
 parser.add_argument("name", help="--usage")
 
 args = parser.parse_args().name
 
-system.__process__(args)
+sys = system(args)
+print(sys.getResult())
 
 # def replTo(txt):
 # 	return txt.replace("ᜁᜆᜎ(", "print(").replace("ᜉᜑᜒᜅᜒ(", "input(").replace("ᜃᜓᜈᜅ᜔᜔᜔ ", "if ").replace("ᜆᜓᜆᜓᜂ", "True").replace("ᜂ ᜑᜒᜈ᜔ᜇᜒ ᜃᜌ ᜀᜌ᜔ ", "elif  ").replace("ᜃᜓᜅ᜔ ᜑᜒᜈ᜔ᜇᜒ ᜈᜋᜈ᜔", "else")
