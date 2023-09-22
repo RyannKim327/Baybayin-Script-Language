@@ -2,10 +2,9 @@ import argparse
 from builtins import print as ilimbag, input as itala
 from system import system
 
-parser = argparse.ArgumentParser(description="Ang \"Sawa\" ay hindi isang wikang pang programatika, bagkus isa lamang itong pangmanuskritong wika, kung saan sinalin mula sa wikang Ingles, hanggang wikang Filipino, at sinalin ko mula sa alpabetong titik hanggang sa manuskrito ng Baybayin.", usage="pythos pyby [filename]")
+parser = argparse.ArgumentParser(description="Ang \"Sawa\" ay hindi isang wikang pang programatika, bagkus isa lamang itong pangmanuskritong wika, kung saan sinalin mula sa wikang Ingles, hanggang wikang Filipino, at sinalin ko mula sa alpabetong titik hanggang sa manuskrito ng Baybayin.", usage="pythos pyby [pangalan]")
 parser.add_argument("pangalan", help="--gamit")
 
-if
 args = parser.parse_args().pangalan
 
 sys = system(args)
