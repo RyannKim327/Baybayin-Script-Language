@@ -2,7 +2,7 @@ import argparse
 from builtins import print as ilimbag, input as itala
 from system import system
 
-parser = argparse.ArgumentParser(description="Ang \"Sawa\" ay hindi isang wikang pang programatika, bagkus isa lamang itong pangmanuskritong wika, kung saan sinalin mula sa wikang Ingles, hanggang wikang Filipino,")
+parser = argparse.ArgumentParser(description="Ang \"Sawa\" ay hindi isang wikang pang programatika, bagkus isa lamang itong pangmanuskritong wika, kung saan sinalin mula sa wikang Ingles, hanggang wikang Filipino, at sinalin ko mula sa alpabetong titik hanggang sa manuskrito ng Baybayin.")
 parser.add_argument("name", help="--help")
 
 args = parser.parse_args().name
