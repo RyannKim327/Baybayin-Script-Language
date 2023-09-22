@@ -11,7 +11,7 @@ class system:
 		else:
 			ilimbag(f"Hindi ito 'yong file na ginagamit para sa sawa")
 	
-	def __magsalin__(__code__: str):
+	def __magsalin__(self, __code__: str):
 		reserved_keywords = [
 			"and", "except", "lambda", "with", "as", "finally", "nonlocal", "while", "assert", "False", "None", "yield", "break", "for", "not",
 			"class", "from", "or", "continue", "global", "pass", "def", "if", "raise", "del", "import", "return", "elif", "in", "True", "else", "is", "try"
@@ -50,5 +50,5 @@ class system:
 		return __result__
 	
 	def getResult(self):
-			with open(self.file, "r") as f1:
-				return self.__magsalin__(f1.read())
+		with open(self.file, "r") as f1:
+			return self.__magsalin__(f1.read())
