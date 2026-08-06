@@ -1,0 +1,19 @@
+// Math and comparison operations sample
+ᜐᜒ a = 15 ᜵
+ᜐᜒ b = 25 ᜵
+ᜐᜒ suma = a + b ᜵
+
+ᜐᜒ ᜃᜒᜋ᜔ = "ay si kim"
+ᜐᜊᜒᜑᜒᜈ᜔ ᜃᜒᜋ᜔ ᜵
+
+ᜐᜊᜒᜑᜒᜈ᜔ ("Ang suma ay: " + suma) ᜵
+
+// Conditional statement using Baybayin script (ᜃᜓᜅ᜔ / ᜃᜓᜈ᜔ᜇᜒ)
+ᜃᜓᜅ᜔ (a < b)  ᜐᜊᜒᜑᜒᜈ᜔ "Si a ay mas maliit kaysa kay b" ᜵ ᜂᜃᜌ (b > a) ᜐᜊᜒᜑᜒᜈ᜔ "Si a ay mas malaki kaysa kay b" ᜵ᜃᜓᜈ᜔ᜇᜒ ᜐᜊᜒᜑᜒᜈ᜔ "Si a ay pantay kay b" ᜵
+
+// Conditional statement using Tagalog keywords (kung / kundi)
+kung (suma > 30) {
+    sabihin "Ang suma ay higit sa 30" ᜵
+} kundi {
+    sabihin "Ang suma ay 30 o mas mababa pa" ᜵
+}
