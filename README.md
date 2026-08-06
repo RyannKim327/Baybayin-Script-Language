@@ -87,6 +87,7 @@ Kalawang allows you to write code seamlessly using **Latin Tagalog**, **Baybayin
 | **Else Condition** | `kundi` | `ᜃᜓᜈ᜔ᜇᜒ` | `else` |
 | **While Loop** | `habang` | `ᜑᜊ᜔` | `while` |
 | **Return** | `ibalik` | `ᜁᜊᜎᜒᜃ᜔` | `return` |
+| **Equality Comparison** | `ay`, `aytalagang`, `==`, `===` | `ᜀᜌ᜔`, `ᜀᜌ᜔ᜆᜎᜄᜅ᜔` | `==` / `===` |
 | **Boolean True** | `tama` | `ᜆᜋ` | `true` |
 | **Boolean False** | `mali` | `ᜋᜎᜒ` | `false` |
 | **Statement Terminator** | `᜵` (Single Danda) | `᜵` (Single Danda) | `;` |
@@ -160,7 +161,7 @@ si suma = 40 ᜵
 
 kung (suma > 30) {
     sabihin "Ang suma ay higit sa 30" ᜵
-} okaya (suma == 30) {
+} okaya (suma ay 30) {
     sabihin "Ang suma ay eksaktong 30" ᜵
 } kundi {
     sabihin "Ang suma ay mas mababa sa 30" ᜵

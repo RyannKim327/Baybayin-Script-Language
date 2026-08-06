@@ -100,12 +100,8 @@ impl Interpreter {
                     (Value::Number(l), BinaryOp::Divide, Value::Number(r)) => {
                         Ok(Value::Number(l / r))
                     }
-                    (Value::Number(l), BinaryOp::Equal, Value::Number(r)) => {
-                        Ok(Value::Boolean(l == r))
-                    }
-                    (Value::Number(l), BinaryOp::NotEqual, Value::Number(r)) => {
-                        Ok(Value::Boolean(l != r))
-                    }
+                    (l, BinaryOp::Equal, r) => Ok(Value::Boolean(l == r)),
+                    (l, BinaryOp::NotEqual, r) => Ok(Value::Boolean(l != r)),
                     (Value::Number(l), BinaryOp::LessThan, Value::Number(r)) => {
                         Ok(Value::Boolean(l < r))
                     }
@@ -199,6 +195,37 @@ mod tests {
         assert_eq!(
             interpreter.env.get("res"),
             Some(crate::interpreter::value::Value::Number(50.0))
+        );
+    }
+
+    #[test]
+    fn test_ay_and_triple_equal_operators() {
+        let source = r#"
+            si x = 10 ᜵
+            si res1 = mali ᜵
+            si res2 = mali ᜵
+            si res3 = mali ᜵
+            kung (x ay 10) { res1 = tama ᜵ }
+            kung (x == 10) { res2 = tama ᜵ }
+            kung (x === 10) { res3 = tama ᜵ }
+        "#;
+        let mut lexer = Lexer::new(source);
+        let tokens = lexer.tokenize().unwrap();
+        let mut parser = Parser::new(tokens);
+        let statements = parser.parse().unwrap();
+        let mut interpreter = Interpreter::new();
+        interpreter.interpret(&statements).unwrap();
+        assert_eq!(
+            interpreter.env.get("res1"),
+            Some(crate::interpreter::value::Value::Boolean(true))
+        );
+        assert_eq!(
+            interpreter.env.get("res2"),
+            Some(crate::interpreter::value::Value::Boolean(true))
+        );
+        assert_eq!(
+            interpreter.env.get("res3"),
+            Some(crate::interpreter::value::Value::Boolean(true))
         );
     }
 }

@@ -22,6 +22,7 @@ pub enum TokenType {
     Slash,
     Equal,
     EqualEqual,
+    EqualEqualEqual,
     BangEqual,
     Less,
     LessEqual,
@@ -31,6 +32,7 @@ pub enum TokenType {
     // Delimiters & Punctuation
     SingleDanda, // ᜵
     DoubleDanda, // ᜶
+    EndStatement,
     LeftParen,
     RightParen,
     LeftBrace,

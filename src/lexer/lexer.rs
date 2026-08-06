@@ -90,6 +90,15 @@ impl<'a> Lexer<'a> {
                     self.advance();
                     tokens.push(Token::new(TokenType::Comma, ",", start_line, start_col));
                 }
+                ';' => {
+                    self.advance();
+                    tokens.push(Token::new(
+                        TokenType::EndStatement,
+                        ";",
+                        start_line,
+                        start_col,
+                    ));
+                }
                 '᜵' => {
                     self.advance();
                     tokens.push(Token::new(
@@ -111,12 +120,21 @@ impl<'a> Lexer<'a> {
                 '=' => {
                     self.advance();
                     if self.match_char('=') {
-                        tokens.push(Token::new(
-                            TokenType::EqualEqual,
-                            "==",
-                            start_line,
-                            start_col,
-                        ));
+                        if self.match_char('=') {
+                            tokens.push(Token::new(
+                                TokenType::EqualEqualEqual,
+                                "===",
+                                start_line,
+                                start_col,
+                            ));
+                        } else {
+                            tokens.push(Token::new(
+                                TokenType::EqualEqual,
+                                "==",
+                                start_line,
+                                start_col,
+                            ));
+                        }
                     } else {
                         tokens.push(Token::new(TokenType::Equal, "=", start_line, start_col));
                     }
@@ -293,6 +311,8 @@ impl<'a> Lexer<'a> {
             "kundi" | "ᜃᜓᜈ᜔ᜇᜒ" => TokenType::Else,
             "habang" | "ᜑᜊ᜔" => TokenType::While,
             "ibalik" | "ᜁᜊᜎᜒᜃ᜔" => TokenType::Return,
+            "ay" | "ᜀᜌ᜔" => TokenType::EqualEqual,
+            "aytalagang" | "ᜀᜌ᜔ᜆᜎᜄᜅ᜔" => TokenType::EqualEqualEqual,
             _ => TokenType::Identifier(ident.clone()),
         };
 
@@ -334,5 +354,16 @@ mod tests {
         assert_eq!(tokens[0].token_type, TokenType::ElseIf);
         assert_eq!(tokens[1].token_type, TokenType::ElseIf);
         assert_eq!(tokens[2].token_type, TokenType::ElseIf);
+    }
+
+    #[test]
+    fn test_equality_tokens() {
+        let mut lexer = Lexer::new("== === ay ᜀᜌ᜔ ᜀᜌ");
+        let tokens = lexer.tokenize().unwrap();
+        assert_eq!(tokens[0].token_type, TokenType::EqualEqual);
+        assert_eq!(tokens[1].token_type, TokenType::EqualEqualEqual);
+        assert_eq!(tokens[2].token_type, TokenType::EqualEqual);
+        assert_eq!(tokens[3].token_type, TokenType::EqualEqual);
+        assert_eq!(tokens[4].token_type, TokenType::EqualEqual);
     }
 }

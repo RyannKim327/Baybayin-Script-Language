@@ -116,7 +116,7 @@ impl Parser {
     }
 
     fn consume_optional_danda(&mut self) {
-        if self.check(&TokenType::SingleDanda) || self.check(&TokenType::DoubleDanda) {
+        if self.check(&TokenType::SingleDanda) || self.check(&TokenType::DoubleDanda) || self.check(&TokenType::EndStatement){
             self.advance();
         }
     }
@@ -152,11 +152,15 @@ impl Parser {
     fn equality(&mut self) -> Result<Expr, KalawangError> {
         let mut expr = self.comparison()?;
 
-        while self.match_types(&[TokenType::EqualEqual, TokenType::BangEqual]) {
+        while self.match_types(&[
+            TokenType::EqualEqual,
+            TokenType::EqualEqualEqual,
+            TokenType::BangEqual,
+        ]) {
             let operator_token = self.previous().clone();
             let right = self.comparison()?;
             let op = match operator_token.token_type {
-                TokenType::EqualEqual => BinaryOp::Equal,
+                TokenType::EqualEqual | TokenType::EqualEqualEqual => BinaryOp::Equal,
                 TokenType::BangEqual => BinaryOp::NotEqual,
                 _ => unreachable!(),
             };
