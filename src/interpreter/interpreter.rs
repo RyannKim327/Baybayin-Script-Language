@@ -95,44 +95,66 @@ impl Interpreter {
                     column: 0,
                 }),
             Expr::Binary { left, op, right } => {
-                let left_val = self.evaluate(left)?;
-                let right_val = self.evaluate(right)?;
-                match (left_val, op, right_val) {
-                    (Value::Number(l), BinaryOp::Add, Value::Number(r)) => Ok(Value::Number(l + r)),
-                    (Value::Number(l), BinaryOp::Subtract, Value::Number(r)) => {
-                        Ok(Value::Number(l - r))
+                match op {
+                    BinaryOp::LogicalOr => {
+                        let left_val = self.evaluate(left)?;
+                        if left_val.is_truthy() {
+                            Ok(left_val)
+                        } else {
+                            self.evaluate(right)
+                        }
                     }
-                    (Value::Number(l), BinaryOp::Multiply, Value::Number(r)) => {
-                        Ok(Value::Number(l * r))
+                    BinaryOp::LogicalAnd => {
+                        let left_val = self.evaluate(left)?;
+                        if !left_val.is_truthy() {
+                            Ok(left_val)
+                        } else {
+                            self.evaluate(right)
+                        }
                     }
-                    (Value::Number(l), BinaryOp::Divide, Value::Number(r)) => {
-                        Ok(Value::Number(l / r))
+                    _ => {
+                        let left_val = self.evaluate(left)?;
+                        let right_val = self.evaluate(right)?;
+                        match (left_val, op, right_val) {
+                            (Value::Number(l), BinaryOp::Add, Value::Number(r)) => {
+                                Ok(Value::Number(l + r))
+                            }
+                            (Value::Number(l), BinaryOp::Subtract, Value::Number(r)) => {
+                                Ok(Value::Number(l - r))
+                            }
+                            (Value::Number(l), BinaryOp::Multiply, Value::Number(r)) => {
+                                Ok(Value::Number(l * r))
+                            }
+                            (Value::Number(l), BinaryOp::Divide, Value::Number(r)) => {
+                                Ok(Value::Number(l / r))
+                            }
+                            (l, BinaryOp::Equal, r) => Ok(Value::Boolean(l == r)),
+                            (l, BinaryOp::NotEqual, r) => Ok(Value::Boolean(l != r)),
+                            (Value::Number(l), BinaryOp::LessThan, Value::Number(r)) => {
+                                Ok(Value::Boolean(l < r))
+                            }
+                            (Value::Number(l), BinaryOp::LessEqual, Value::Number(r)) => {
+                                Ok(Value::Boolean(l <= r))
+                            }
+                            (Value::Number(l), BinaryOp::GreaterThan, Value::Number(r)) => {
+                                Ok(Value::Boolean(l > r))
+                            }
+                            (Value::Number(l), BinaryOp::GreaterEqual, Value::Number(r)) => {
+                                Ok(Value::Boolean(l >= r))
+                            }
+                            (Value::String(l), BinaryOp::Add, right) => {
+                                Ok(Value::String(format!("{}{}", l, right)))
+                            }
+                            (left, BinaryOp::Add, Value::String(r)) => {
+                                Ok(Value::String(format!("{}{}", left, r)))
+                            }
+                            _ => Err(KalawangError::RuntimeError {
+                                message: "Invalid operand types for binary operation".to_string(),
+                                line: 0,
+                                column: 0,
+                            }),
+                        }
                     }
-                    (l, BinaryOp::Equal, r) => Ok(Value::Boolean(l == r)),
-                    (l, BinaryOp::NotEqual, r) => Ok(Value::Boolean(l != r)),
-                    (Value::Number(l), BinaryOp::LessThan, Value::Number(r)) => {
-                        Ok(Value::Boolean(l < r))
-                    }
-                    (Value::Number(l), BinaryOp::LessEqual, Value::Number(r)) => {
-                        Ok(Value::Boolean(l <= r))
-                    }
-                    (Value::Number(l), BinaryOp::GreaterThan, Value::Number(r)) => {
-                        Ok(Value::Boolean(l > r))
-                    }
-                    (Value::Number(l), BinaryOp::GreaterEqual, Value::Number(r)) => {
-                        Ok(Value::Boolean(l >= r))
-                    }
-                    (Value::String(l), BinaryOp::Add, right) => {
-                        Ok(Value::String(format!("{}{}", l, right)))
-                    }
-                    (left, BinaryOp::Add, Value::String(r)) => {
-                        Ok(Value::String(format!("{}{}", left, r)))
-                    }
-                    _ => Err(KalawangError::RuntimeError {
-                        message: "Invalid operand types for binary operation".to_string(),
-                        line: 0,
-                        column: 0,
-                    }),
                 }
             }
             Expr::Assign { name, value } => {
@@ -396,6 +418,49 @@ mod tests {
         assert_eq!(
             interpreter.env.get("bool2"),
             Some(crate::interpreter::value::Value::Boolean(false))
+        );
+    }
+
+    #[test]
+    fn test_logical_operators_execution() {
+        let source = r#"
+            si res1 = tama o mali ᜵
+            si res2 = mali at tama ᜵
+            si res3 = (10 > 5) at (20 == 20) ᜵
+            si res4 = (5 > 10) ᜂ (3 < 8) ᜵
+            si res5 = (10 > 2) and (100 == 100) ᜵
+            si res6 = (1 == 2) or (2 == 2) ᜵
+        "#;
+        let mut lexer = Lexer::new(source);
+        let tokens = lexer.tokenize().unwrap();
+        let mut parser = Parser::new(tokens);
+        let statements = parser.parse().unwrap();
+        let mut interpreter = Interpreter::new();
+        interpreter.interpret(&statements).unwrap();
+
+        assert_eq!(
+            interpreter.env.get("res1"),
+            Some(crate::interpreter::value::Value::Boolean(true))
+        );
+        assert_eq!(
+            interpreter.env.get("res2"),
+            Some(crate::interpreter::value::Value::Boolean(false))
+        );
+        assert_eq!(
+            interpreter.env.get("res3"),
+            Some(crate::interpreter::value::Value::Boolean(true))
+        );
+        assert_eq!(
+            interpreter.env.get("res4"),
+            Some(crate::interpreter::value::Value::Boolean(true))
+        );
+        assert_eq!(
+            interpreter.env.get("res5"),
+            Some(crate::interpreter::value::Value::Boolean(true))
+        );
+        assert_eq!(
+            interpreter.env.get("res6"),
+            Some(crate::interpreter::value::Value::Boolean(true))
         );
     }
 }

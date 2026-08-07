@@ -129,7 +129,7 @@ impl Parser {
     }
 
     fn assignment(&mut self) -> Result<Expr, KalawangError> {
-        let expr = self.equality()?;
+        let expr = self.logical_or()?;
 
         if self.match_types(&[TokenType::Equal]) {
             let equals = self.previous().clone();
@@ -147,6 +147,36 @@ impl Parser {
                 line: equals.line,
                 column: equals.column,
             });
+        }
+
+        Ok(expr)
+    }
+
+    fn logical_or(&mut self) -> Result<Expr, KalawangError> {
+        let mut expr = self.logical_and()?;
+
+        while self.match_types(&[TokenType::Or]) {
+            let right = self.logical_and()?;
+            expr = Expr::Binary {
+                left: Box::new(expr),
+                op: BinaryOp::LogicalOr,
+                right: Box::new(right),
+            };
+        }
+
+        Ok(expr)
+    }
+
+    fn logical_and(&mut self) -> Result<Expr, KalawangError> {
+        let mut expr = self.equality()?;
+
+        while self.match_types(&[TokenType::And]) {
+            let right = self.equality()?;
+            expr = Expr::Binary {
+                left: Box::new(expr),
+                op: BinaryOp::LogicalAnd,
+                right: Box::new(right),
+            };
         }
 
         Ok(expr)

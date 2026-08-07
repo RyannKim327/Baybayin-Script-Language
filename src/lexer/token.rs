@@ -30,6 +30,8 @@ pub enum TokenType {
     LessEqual,
     Greater,
     GreaterEqual,
+    Or,
+    And,
 
     // Delimiters & Punctuation
     SingleDanda, // ᜵

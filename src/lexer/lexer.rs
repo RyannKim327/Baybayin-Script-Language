@@ -182,6 +182,22 @@ impl<'a> Lexer<'a> {
                         tokens.push(Token::new(TokenType::Greater, ">", start_line, start_col));
                     }
                 }
+                '|' => {
+                    self.advance();
+                    if self.match_char('|') {
+                        tokens.push(Token::new(TokenType::Or, "||", start_line, start_col));
+                    } else {
+                        tokens.push(Token::new(TokenType::Or, "|", start_line, start_col));
+                    }
+                }
+                '&' => {
+                    self.advance();
+                    if self.match_char('&') {
+                        tokens.push(Token::new(TokenType::And, "&&", start_line, start_col));
+                    } else {
+                        tokens.push(Token::new(TokenType::And, "&", start_line, start_col));
+                    }
+                }
                 '"' => {
                     let string_token = self.read_string(start_line, start_col)?;
                     tokens.push(string_token);
@@ -354,6 +370,8 @@ impl<'a> Lexer<'a> {
             "isalin" | "ᜁᜐᜎᜒᜈ᜔" | "convert" => TokenType::Convert,
             "ay" | "ᜀᜌ᜔" | "is" => TokenType::Equal,
             "aytalagang" | "ᜀᜌ᜔ᜆᜎᜄᜅ᜔" | "isliterally" => TokenType::EqualEqual,
+            "o" | "ᜂ" | "or" => TokenType::Or,
+            "at" | "ᜀᜆ᜔" | "and" => TokenType::And,
             _ => TokenType::Identifier(ident.clone()),
         };
 
@@ -457,5 +475,21 @@ mod tests {
         assert_eq!(tokens[0].token_type, TokenType::Convert);
         assert_eq!(tokens[1].token_type, TokenType::Convert);
         assert_eq!(tokens[2].token_type, TokenType::Convert);
+    }
+
+    #[test]
+    fn test_logical_operators() {
+        let mut lexer = Lexer::new("o ᜂ or || | at ᜀᜆ᜔ and && &");
+        let tokens = lexer.tokenize().unwrap();
+        assert_eq!(tokens[0].token_type, TokenType::Or);
+        assert_eq!(tokens[1].token_type, TokenType::Or);
+        assert_eq!(tokens[2].token_type, TokenType::Or);
+        assert_eq!(tokens[3].token_type, TokenType::Or);
+        assert_eq!(tokens[4].token_type, TokenType::Or);
+        assert_eq!(tokens[5].token_type, TokenType::And);
+        assert_eq!(tokens[6].token_type, TokenType::And);
+        assert_eq!(tokens[7].token_type, TokenType::And);
+        assert_eq!(tokens[8].token_type, TokenType::And);
+        assert_eq!(tokens[9].token_type, TokenType::And);
     }
 }
