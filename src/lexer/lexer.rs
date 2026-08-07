@@ -309,7 +309,7 @@ impl<'a> Lexer<'a> {
             "kung" | "ᜃᜓᜅ᜔" => TokenType::If,
             "okaya" | "ukaya" | "ᜂᜃᜌ" => TokenType::ElseIf,
             "kundi" | "ᜃᜓᜈ᜔ᜇᜒ" => TokenType::Else,
-            "habang" | "ᜑᜊ᜔" => TokenType::While,
+            "habang" | "ᜑᜊᜅ᜔" => TokenType::While,
             "ibalik" | "ᜁᜊᜎᜒᜃ᜔" => TokenType::Return,
             "ay" | "ᜀᜌ᜔" => TokenType::Equal,
             "aytalagang" | "ᜀᜌ᜔ᜆᜎᜄᜅ᜔" => TokenType::EqualEqual,
