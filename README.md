@@ -208,3 +208,13 @@ cargo run -- examples/hello.bay
 cargo run -- examples/variables.bay
 cargo run -- examples/math.bay
 ```
+
+---
+### Behind the project
+
+**Human**
+* Ryann Kim Sesgundo -> Project initiator
+
+**AI Models [From era or Kalawang]**
+* ChatGPT -> Generating `AGENT.md`
+* Anti Gravity -> Code initiator
