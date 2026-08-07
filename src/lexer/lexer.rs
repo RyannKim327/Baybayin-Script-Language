@@ -150,7 +150,7 @@ impl<'a> Lexer<'a> {
                         ));
                     } else {
                         return Err(KalawangError::LexerError {
-                            message: format!("Unexpected character '!'"),
+                            message: "Unexpected character '!'".to_string(),
                             line: start_line,
                             column: start_col,
                         });
@@ -340,7 +340,9 @@ impl<'a> Lexer<'a> {
         let token_type = match ident.as_str() {
             "tama" | "ᜆᜋ" | "true" => TokenType::Boolean(true),
             "mali" | "ᜋᜎᜒ" | "false" => TokenType::Boolean(false),
-            "sabihin" | "ᜐᜊᜒᜑᜒᜈ᜔" | "ipaliwanag" | "ᜁᜉᜎᜒᜏᜈᜄ᜔" | "tell" | "say" | "print" => TokenType::Print,
+            "sabihin" | "ᜐᜊᜒᜑᜒᜈ᜔" | "ipaliwanag" | "ᜁᜉᜎᜒᜏᜈᜄ᜔" | "tell" | "say" | "print" => {
+                TokenType::Print
+            }
             "si" | "ᜐᜒ" | "ipangalan" | "ᜁᜉᜅᜎᜈ᜔" | "that" => TokenType::Var,
             "kung" | "ᜃᜓᜅ᜔" | "if" => TokenType::If,
             "okaya" | "ukaya" | "ᜂᜃᜌ" | "elseif" => TokenType::ElseIf,
@@ -348,6 +350,8 @@ impl<'a> Lexer<'a> {
             "hindi" | "ᜑᜒᜈ᜔ᜇᜒ" | "not" => TokenType::BangEqual,
             "habang" | "ᜑᜊᜅ᜔" | "while" => TokenType::While,
             "ibalik" | "ᜁᜊᜎᜒᜃ᜔" | "return" => TokenType::Return,
+            "pahingi" | "ᜉᜑᜒᜅᜒ" | "ask" => TokenType::Input,
+            "isalin" | "ᜁᜐᜎᜒᜈ᜔" | "convert" => TokenType::Convert,
             "ay" | "ᜀᜌ᜔" | "is" => TokenType::Equal,
             "aytalagang" | "ᜀᜌ᜔ᜆᜎᜄᜅ᜔" | "isliterally" => TokenType::EqualEqual,
             _ => TokenType::Identifier(ident.clone()),
@@ -417,7 +421,9 @@ mod tests {
 
     #[test]
     fn test_english_keywords() {
-        let mut lexer = Lexer::new("tell say print that if elseif else not while return is isliterally true false");
+        let mut lexer = Lexer::new(
+            "tell say print that if elseif else not while return is isliterally true false",
+        );
         let tokens = lexer.tokenize().unwrap();
         assert_eq!(tokens[0].token_type, TokenType::Print);
         assert_eq!(tokens[1].token_type, TokenType::Print);
@@ -433,5 +439,23 @@ mod tests {
         assert_eq!(tokens[11].token_type, TokenType::EqualEqual);
         assert_eq!(tokens[12].token_type, TokenType::Boolean(true));
         assert_eq!(tokens[13].token_type, TokenType::Boolean(false));
+    }
+
+    #[test]
+    fn test_input_keywords() {
+        let mut lexer = Lexer::new("pahingi ᜉᜑᜒᜅᜒ ask");
+        let tokens = lexer.tokenize().unwrap();
+        assert_eq!(tokens[0].token_type, TokenType::Input);
+        assert_eq!(tokens[1].token_type, TokenType::Input);
+        assert_eq!(tokens[2].token_type, TokenType::Input);
+    }
+
+    #[test]
+    fn test_convert_keywords() {
+        let mut lexer = Lexer::new("isalin ᜁᜐᜎᜒᜈ᜔ convert");
+        let tokens = lexer.tokenize().unwrap();
+        assert_eq!(tokens[0].token_type, TokenType::Convert);
+        assert_eq!(tokens[1].token_type, TokenType::Convert);
+        assert_eq!(tokens[2].token_type, TokenType::Convert);
     }
 }

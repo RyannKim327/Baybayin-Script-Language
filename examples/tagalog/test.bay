@@ -1,0 +1,6 @@
+// Halimbawa ng conditional sa Tagalog
+kung (tama) {
+  sabihin "hello";
+} kundi {
+  sabihin "world";
+}

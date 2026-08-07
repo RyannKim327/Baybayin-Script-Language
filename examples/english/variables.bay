@@ -1,0 +1,10 @@
+// Variable declaration and usage sample
+
+that user = "is kim";
+print ("who is user? user is " + user);
+
+that name = "Maynila";
+that age = 2026;
+
+print name;
+print age;

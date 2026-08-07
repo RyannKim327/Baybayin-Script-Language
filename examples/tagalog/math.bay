@@ -1,0 +1,20 @@
+// Halimbawa ng operasyong matematika at paghahambing
+si a = 15;
+si b = 25;
+si suma = a + b;
+
+si kim = "ay si kim";
+sabihin kim;
+
+sabihin ("Ang suma ay: " + suma);
+
+// Conditional statement gamit ang Tagalog keywords
+kung (a < b) sabihin "Si a ay mas maliit kaysa kay b"; okaya (b > a) sabihin "Si a ay mas malaki kaysa kay b"; kundi sabihin "Si a ay pantay kay b";
+
+kung (suma aytalagang 40) {
+    sabihin "Ang suma ay 40!";
+} okaya (suma === 30) {
+    sabihin "Ang suma ay 30!";
+} kundi {
+    sabihin "Ang suma ay hindi 40 at hindi 30";
+}

@@ -1,0 +1,8 @@
+// Example of using print and say
+
+// Say
+say "Hello my love";
+
+// Print
+print "Hello, World!";
+print "Welcome to Kalawang Programming Language!";

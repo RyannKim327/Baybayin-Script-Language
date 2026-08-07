@@ -1,0 +1,18 @@
+// Pattern printing using while loop
+that x = 0;
+that y = 0;
+that h = 5;
+that w = 5;
+that output is "";
+
+while (y < h) {
+  while (x < y) {
+    output = (output + "* ");
+    x = (x + 1);
+  }
+  output = output + "\n";
+  x = 0;
+  y = (y + 1);
+}
+
+print output;

@@ -1,0 +1,4 @@
+// Example of taking user input using 'ask'
+
+that name = ask("What is your name? ");
+print ("Hello, " + name + "!");

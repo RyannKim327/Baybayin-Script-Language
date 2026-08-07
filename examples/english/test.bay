@@ -1,0 +1,6 @@
+// Conditional example in English
+if (true) {
+  print "hello";
+} else {
+  print "world";
+}

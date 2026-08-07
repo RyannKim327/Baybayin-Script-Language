@@ -47,6 +47,11 @@ pub enum Expr {
         name: String,
         value: Box<Expr>,
     },
+    Input(Box<Expr>),
+    Convert {
+        value: Box<Expr>,
+        target_type: Box<Expr>,
+    },
 }
 
 #[derive(Debug, Clone, PartialEq)]

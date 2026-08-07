@@ -1,0 +1,12 @@
+// Halimbawa ng pagdeklara at paggamit ng baryabol
+
+// Si
+si user = "si kim";
+sabihin ("sino si user? si user ay " + user);
+
+// Ipangalan
+ipangalan pangalan = "Maynila";
+ipangalan edad = 2026;
+
+ipaliwanag pangalan;
+ipaliwanag edad;

@@ -1,0 +1,4 @@
+// Example of using Conditional Statements
+
+that kim is "human";
+if (kim isliterally "human") print "kim is human"; else print "hope she misses me too";

@@ -8,6 +8,8 @@ pub enum TokenType {
     Else,
     While,
     Return,
+    Input,
+    Convert,
 
     // Literals
     Identifier(String),

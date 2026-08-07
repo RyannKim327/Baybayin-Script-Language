@@ -1,0 +1,20 @@
+// Sample math and comparison operations
+that a = 15;
+that b = 25;
+that sum = a + b;
+
+that kim = "is kim";
+print kim;
+
+print ("The sum is: " + sum);
+
+// Conditional statement using English keywords
+if (a < b) print "a is smaller than b"; elseif (b > a) print "a is greater than b"; else print "a is equal to b";
+
+if (sum isliterally 40) {
+    print "The sum is 40!";
+} elseif (sum === 30) {
+    print "The sum is 30!";
+} else {
+    print "The sum is neither 40 nor 30";
+}

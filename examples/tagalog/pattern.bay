@@ -1,0 +1,19 @@
+// Paggawa ng Pattern gamit ang habang (while loop)
+si x ay 0;
+si y ay 0;
+si h ay isalin(pahingi("Gaano ito kataas: "), numero);
+si w ay 5;
+si sagot ay "";
+
+habang (y < h) { 
+  habang (x < y) {
+    sagot = (sagot + "* ");
+    x = (x + 1);
+  }
+
+  sagot = sagot + "\n";
+  x = 0;
+  y = (y + 1);
+}
+
+sabihin sagot;

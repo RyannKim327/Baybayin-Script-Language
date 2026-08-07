@@ -1,0 +1,4 @@
+// Halimbawa ng paggamit ng Conditional Statements
+
+si kim ay "tao";
+kung (kim aytalagang "tao") sabihin "tao si kim"; kundi sabihin "sana miss na din nya ako";

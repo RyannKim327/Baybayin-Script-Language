@@ -1,0 +1,4 @@
+// Halimbawa ng pagkuha ng input mula sa gagamit gamit ang 'pahingi'
+
+si pangalan = pahingi("Ibigay ang iyong pangalan: ");
+sabihin ("Kamusta, " + pangalan + "!");

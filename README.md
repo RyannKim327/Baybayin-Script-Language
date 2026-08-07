@@ -64,12 +64,12 @@ Kalawang source code files typically use `.bay` or `.kl` extensions.
 
 Run any source file using `cargo run`:
 ```bash
-cargo run -- examples/hello.bay
+cargo run -- examples/tagalog/hello.bay
 ```
 
 Or execute the built binary directly:
 ```bash
-./target/release/kalawang examples/hello.bay
+./target/release/kalawang examples/tagalog/hello.bay
 ```
 
 ---
@@ -81,6 +81,7 @@ Kalawang allows you to write code seamlessly using **Latin Tagalog**, **Baybayin
 | Feature / Concept | Tagalog (Latin) | Baybayin Script | English Equivalent |
 | :--- | :--- | :--- | :--- |
 | **Output / Print** | `sabihin`, `ipaliwanag` | `ᜐᜊᜒᜑᜒᜈ᜔`, `ᜁᜉᜎᜒᜏᜈᜄ᜔` | `tell`, `say`, `print` |
+| **User Input** | `pahingi` | `ᜉᜑᜒᜅᜒ` | `ask` |
 | **Variable Declaration** | `si`, `ipangalan` | `ᜐᜒ`, `ᜁᜉᜅᜎᜈ᜔` | `that` |
 | **If Condition** | `kung` | `ᜃᜓᜅ᜔` | `if` |
 | **Else If Condition** | `okaya`, `ukaya` | `ᜂᜃᜌ` | `elseif` |
@@ -139,7 +140,27 @@ sabihin edad ᜵
 
 ---
 
-### 3. Basic Operations & Expressions (Aritmetika at Pagsasama)
+### 3. User Input (Pagkuha ng Input)
+
+Prompt the user for input using `pahingi` (Tagalog), `ask` (English), or `ᜉᜑᜒᜅᜒ` (Baybayin). Passes a string parameter prompt and returns the entered string:
+
+```kalawang
+// Latin Tagalog
+si pangalan = pahingi("Anong pangalan mo? ") ᜵
+sabihin ("Kamusta, " + pangalan) ᜵
+
+// English
+that name = ask("What is your name? ") ᜵
+print ("Hello, " + name) ᜵
+
+// Baybayin Script
+ᜐᜒ ᜉᜅᜎᜈ᜔ = ᜉᜑᜒᜅᜒ("ᜀᜈᜓᜅ᜔ ᜉᜅᜎᜈ᜔ ᜋᜓ? ") ᜵
+ᜐᜊᜒᜑᜒᜈ᜔ ("ᜃᜋᜓᜐ᜔ᜆ᜵ " + ᜉᜅᜎᜈ᜔) ᜵
+```
+
+---
+
+### 4. Basic Operations & Expressions (Aritmetika at Pagsasama)
 
 Kalawang supports addition (`+`), subtraction (`-`), multiplication (`*`), division (`/`), and string concatenation (`+`):
 
@@ -153,7 +174,7 @@ sabihin ("Ang kabuuan ay: " + kabuuan) ᜵
 
 ---
 
-### 4. Conditionals (Mga Desisyon: `kung` / `okaya` / `kundi`)
+### 5. Conditionals (Mga Desisyon: `kung` / `okaya` / `kundi`)
 
 Check conditions using `kung` (if), `okaya` (else if), and `kundi` (else). You can use curly braces `{}` or inline statements:
 
@@ -180,7 +201,7 @@ kung (suma > 30) {
 
 ---
 
-### 5. Loops (Mga Paulit-ulit: `habang`)
+### 6. Loops (Mga Paulit-ulit: `habang`)
 
 Repeat actions while a condition evaluates to `tama` (`true`):
 
@@ -197,17 +218,17 @@ habang (bilang <= 5) {
 
 ## 📂 Example Files
 
-Check out the included examples in the [`examples/`](examples/) directory:
+Check out the included examples in the [`examples/`](examples/) directory, separated into Tagalog, English, and Baybayin script folders:
 
-- [`examples/hello.bay`](examples/hello.bay) – Hello World program in Tagalog and Baybayin.
-- [`examples/variables.bay`](examples/variables.bay) – Declaring and printing variables.
-- [`examples/math.bay`](examples/math.bay) – Arithmetic, comparisons, and conditional branches.
+- **Tagalog (Latin)**: [`examples/tagalog/`](examples/tagalog/) (`hello.bay`, `conditional.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
+- **English**: [`examples/english/`](examples/english/) (`hello.bay`, `conditional.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
+- **Baybayin Script**: [`examples/baybayin/`](examples/baybayin/) (`hello.bay`, `conditional.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
 
 Run them directly:
 ```bash
-cargo run -- examples/hello.bay
-cargo run -- examples/variables.bay
-cargo run -- examples/math.bay
+cargo run -- examples/tagalog/hello.bay
+cargo run -- examples/english/hello.bay
+cargo run -- examples/baybayin/hello.bay
 ```
 
 ---

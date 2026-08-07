@@ -1,0 +1,8 @@
+// Halimbawa ng paggamit ng ipaliwanag at sabihin
+
+// Sabihin
+sabihin "Kamusta ka aking mahal";
+
+// Ipaliwanag
+ipaliwanag "Kamusta, Mundo!";
+ipaliwanag "Maligayang pagdating sa Kalawang Programming Language!";

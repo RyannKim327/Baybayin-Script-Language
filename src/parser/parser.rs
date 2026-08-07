@@ -116,7 +116,10 @@ impl Parser {
     }
 
     fn consume_optional_danda(&mut self) {
-        if self.check(&TokenType::SingleDanda) || self.check(&TokenType::DoubleDanda) || self.check(&TokenType::EndStatement){
+        if self.check(&TokenType::SingleDanda)
+            || self.check(&TokenType::DoubleDanda)
+            || self.check(&TokenType::EndStatement)
+        {
             self.advance();
         }
     }
@@ -270,6 +273,47 @@ impl Parser {
                 self.consume(TokenType::RightParen, "Expect ')' after expression.")?;
                 Ok(expr)
             }
+            TokenType::Input => {
+                self.advance();
+                let prompt = if self.match_types(&[TokenType::LeftParen]) {
+                    let expr = self.expression()?;
+                    self.consume(
+                        TokenType::RightParen,
+                        "Expect ')' after prompt parameter in 'pahingi' / 'ask'.",
+                    )?;
+                    expr
+                } else {
+                    self.primary()?
+                };
+                Ok(Expr::Input(Box::new(prompt)))
+            }
+            TokenType::Convert => {
+                self.advance();
+                if self.match_types(&[TokenType::LeftParen]) {
+                    let value = self.expression()?;
+                    self.consume(
+                        TokenType::Comma,
+                        "Expect ',' between parameters in 'isalin' / 'convert'.",
+                    )?;
+                    let target_type = self.expression()?;
+                    self.consume(
+                        TokenType::RightParen,
+                        "Expect ')' after parameters in 'isalin' / 'convert'.",
+                    )?;
+                    Ok(Expr::Convert {
+                        value: Box::new(value),
+                        target_type: Box::new(target_type),
+                    })
+                } else {
+                    let value = self.expression()?;
+                    self.match_types(&[TokenType::Comma]);
+                    let target_type = self.expression()?;
+                    Ok(Expr::Convert {
+                        value: Box::new(value),
+                        target_type: Box::new(target_type),
+                    })
+                }
+            }
             _ => Err(KalawangError::ParseError {
                 message: format!("Unexpected token '{}'", token.lexeme),
                 line: token.line,
@@ -325,5 +369,53 @@ impl Parser {
                 column: token.column,
             })
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::lexer::Lexer;
+    use crate::parser::ast::{Expr, LiteralValue, Stmt};
+
+    #[test]
+    fn test_parse_input_expression() {
+        let source = r#"
+            si name = pahingi("Pangalan: ");
+            that age = ask("Age: ");
+            ᜐᜒ ᜂᜐᜒᜇ᜔ = ᜉᜑᜒᜅᜒ("ᜂᜐᜒᜇ᜔: ");
+        "#;
+        let mut lexer = Lexer::new(source);
+        let tokens = lexer.tokenize().unwrap();
+        let mut parser = Parser::new(tokens);
+        let stmts = parser.parse().unwrap();
+
+        assert_eq!(
+            stmts[0],
+            Stmt::VarDeclaration {
+                name: "name".to_string(),
+                initializer: Some(Expr::Input(Box::new(Expr::Literal(LiteralValue::String(
+                    "Pangalan: ".to_string()
+                ))))),
+            }
+        );
+        assert_eq!(
+            stmts[1],
+            Stmt::VarDeclaration {
+                name: "age".to_string(),
+                initializer: Some(Expr::Input(Box::new(Expr::Literal(LiteralValue::String(
+                    "Age: ".to_string()
+                ))))),
+            }
+        );
+        assert_eq!(
+            stmts[2],
+            Stmt::VarDeclaration {
+                name: "ᜂᜐᜒᜇ᜔".to_string(),
+                initializer: Some(Expr::Input(Box::new(Expr::Literal(LiteralValue::String(
+                    "ᜂᜐᜒᜇ᜔: ".to_string()
+                ))))),
+            }
+        );
     }
 }
