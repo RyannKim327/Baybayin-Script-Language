@@ -93,7 +93,7 @@ Kalawang allows you to write code seamlessly using **Latin Tagalog**, **Baybayin
 | **Equality Comparison** | `aytalagang`, `==`, `===` | `ᜀᜌ᜔ᜆᜎᜄᜅ᜔` | `isliterally`, `==`, `===` |
 | **Boolean True** | `tama` | `ᜆᜋ` | `true` |
 | **Boolean False** | `mali` | `ᜋᜎᜒ` | `false` |
-| **Logical OR Operator** | `o`, `||` | `ᜂ` | `or`, `||` |
+| **Logical OR Operator** | `o`, `\|\|` | `ᜂ` | `or`, `\|\|` |
 | **Logical AND Operator** | `at`, `&&` | `ᜀᜆ᜔` | `and`, `&&` |
 | **Statement Terminator** | `;` (Semi-Colon) | `᜵` (Single Danda) | `;` |
 | **Section Terminator** | `᜶` (Semi-Colon) | `᜶` (Double Danda) | `;` / EOF |
