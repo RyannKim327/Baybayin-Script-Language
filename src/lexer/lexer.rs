@@ -244,11 +244,47 @@ impl<'a> Lexer<'a> {
         let mut value = String::new();
 
         while !self.is_at_end() && self.peek() != '"' {
-            if self.peek() == '\n' {
-                self.line += 1;
-                self.column = 1;
+            if self.peek() == '\\' {
+                self.advance(); // consume '\\'
+                if self.is_at_end() {
+                    return Err(KalawangError::LexerError {
+                        message: "Unterminated string literal".to_string(),
+                        line: start_line,
+                        column: start_col,
+                    });
+                }
+                match self.peek() {
+                    'n' => {
+                        self.advance();
+                        value.push('\n');
+                    }
+                    't' => {
+                        self.advance();
+                        value.push('\t');
+                    }
+                    'r' => {
+                        self.advance();
+                        value.push('\r');
+                    }
+                    '\\' => {
+                        self.advance();
+                        value.push('\\');
+                    }
+                    '"' => {
+                        self.advance();
+                        value.push('"');
+                    }
+                    _ => {
+                        value.push(self.advance());
+                    }
+                }
+            } else {
+                if self.peek() == '\n' {
+                    self.line += 1;
+                    self.column = 1;
+                }
+                value.push(self.advance());
             }
-            value.push(self.advance());
         }
 
         if self.is_at_end() {
@@ -366,5 +402,15 @@ mod tests {
         assert_eq!(tokens[3].token_type, TokenType::EqualEqual);
         assert_eq!(tokens[4].token_type, TokenType::Equal);
         assert_eq!(tokens[5].token_type, TokenType::Equal);
+    }
+
+    #[test]
+    fn test_string_newline_escape() {
+        let mut lexer = Lexer::new("\"Unang linya\\nPangalawang linya\"");
+        let tokens = lexer.tokenize().unwrap();
+        assert_eq!(
+            tokens[0].token_type,
+            TokenType::String("Unang linya\nPangalawang linya".to_string())
+        );
     }
 }
