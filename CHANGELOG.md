@@ -31,6 +31,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `examples/english/`
   - `examples/baybayin/`
 
+## [0.1.1] - 2026-08-07
+
 ### Fixed
 - **Baybayin Script Typos**: Fixed typos in Baybayin script tokens (`ᜁᜉᜎᜒᜏᜈᜄ᜔`, `ᜁᜉᜅᜎᜈ᜔`, `ᜑᜊᜅ᜔`) across lexer, tests, and documentation.
 - **Type Conversion Datatype Matching**: Added Baybayin script representations (`ᜈᜓᜋᜒᜇᜓ` / `ᜈᜓᜋ᜔ᜁᜇᜓ`) to runtime type conversion target parsing.
