@@ -338,17 +338,18 @@ impl<'a> Lexer<'a> {
         }
 
         let token_type = match ident.as_str() {
-            "tama" | "ᜆᜋ" => TokenType::Boolean(true),
-            "mali" | "ᜋᜎᜒ" => TokenType::Boolean(false),
-            "sabihin" | "ᜐᜊᜒᜑᜒᜈ᜔" | "ipaliwanag" | "ᜁᜉᜎᜒᜏᜈᜄ᜔" | "print" => TokenType::Print,
-            "si" | "ᜐᜒ" | "ipangalan" | "ᜁᜉᜅᜎᜈ᜔" | "var" => TokenType::Var,
-            "kung" | "ᜃᜓᜅ᜔" => TokenType::If,
-            "okaya" | "ukaya" | "ᜂᜃᜌ" => TokenType::ElseIf,
-            "kundi" | "ᜃᜓᜈ᜔ᜇᜒ" => TokenType::Else,
-            "habang" | "ᜑᜊᜅ᜔" => TokenType::While,
-            "ibalik" | "ᜁᜊᜎᜒᜃ᜔" => TokenType::Return,
-            "ay" | "ᜀᜌ᜔" => TokenType::Equal,
-            "aytalagang" | "ᜀᜌ᜔ᜆᜎᜄᜅ᜔" => TokenType::EqualEqual,
+            "tama" | "ᜆᜋ" | "true" => TokenType::Boolean(true),
+            "mali" | "ᜋᜎᜒ" | "false" => TokenType::Boolean(false),
+            "sabihin" | "ᜐᜊᜒᜑᜒᜈ᜔" | "ipaliwanag" | "ᜁᜉᜎᜒᜏᜈᜄ᜔" | "tell" | "say" | "print" => TokenType::Print,
+            "si" | "ᜐᜒ" | "ipangalan" | "ᜁᜉᜅᜎᜈ᜔" | "that" => TokenType::Var,
+            "kung" | "ᜃᜓᜅ᜔" | "if" => TokenType::If,
+            "okaya" | "ukaya" | "ᜂᜃᜌ" | "elseif" => TokenType::ElseIf,
+            "kundi" | "ᜃᜓᜈ᜔ᜇᜒ" | "else" => TokenType::Else,
+            "hindi" | "ᜑᜒᜈ᜔ᜇᜒ" | "not" => TokenType::BangEqual,
+            "habang" | "ᜑᜊᜅ᜔" | "while" => TokenType::While,
+            "ibalik" | "ᜁᜊᜎᜒᜃ᜔" | "return" => TokenType::Return,
+            "ay" | "ᜀᜌ᜔" | "is" => TokenType::Equal,
+            "aytalagang" | "ᜀᜌ᜔ᜆᜎᜄᜅ᜔" | "isliterally" => TokenType::EqualEqual,
             _ => TokenType::Identifier(ident.clone()),
         };
 
@@ -412,5 +413,25 @@ mod tests {
             tokens[0].token_type,
             TokenType::String("Unang linya\nPangalawang linya".to_string())
         );
+    }
+
+    #[test]
+    fn test_english_keywords() {
+        let mut lexer = Lexer::new("tell say print that if elseif else not while return is isliterally true false");
+        let tokens = lexer.tokenize().unwrap();
+        assert_eq!(tokens[0].token_type, TokenType::Print);
+        assert_eq!(tokens[1].token_type, TokenType::Print);
+        assert_eq!(tokens[2].token_type, TokenType::Print);
+        assert_eq!(tokens[3].token_type, TokenType::Var);
+        assert_eq!(tokens[4].token_type, TokenType::If);
+        assert_eq!(tokens[5].token_type, TokenType::ElseIf);
+        assert_eq!(tokens[6].token_type, TokenType::Else);
+        assert_eq!(tokens[7].token_type, TokenType::BangEqual);
+        assert_eq!(tokens[8].token_type, TokenType::While);
+        assert_eq!(tokens[9].token_type, TokenType::Return);
+        assert_eq!(tokens[10].token_type, TokenType::Equal);
+        assert_eq!(tokens[11].token_type, TokenType::EqualEqual);
+        assert_eq!(tokens[12].token_type, TokenType::Boolean(true));
+        assert_eq!(tokens[13].token_type, TokenType::Boolean(false));
     }
 }

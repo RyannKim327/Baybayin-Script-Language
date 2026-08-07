@@ -80,19 +80,20 @@ Kalawang allows you to write code seamlessly using **Latin Tagalog**, **Baybayin
 
 | Feature / Concept | Tagalog (Latin) | Baybayin Script | English Equivalent |
 | :--- | :--- | :--- | :--- |
-| **Output / Print** | `sabihin`, `ipaliwanag` | `ᜐᜊᜒᜑᜒᜈ᜔`, `ᜁᜉᜎᜒᜏᜈᜄ᜔` | `print` |
-| **Variable Declaration** | `si`, `ipangalan` | `ᜐᜒ`, `ᜁᜉᜅᜎᜈ᜔` | `var` / `let` |
+| **Output / Print** | `sabihin`, `ipaliwanag` | `ᜐᜊᜒᜑᜒᜈ᜔`, `ᜁᜉᜎᜒᜏᜈᜄ᜔` | `tell`, `say`, `print` |
+| **Variable Declaration** | `si`, `ipangalan` | `ᜐᜒ`, `ᜁᜉᜅᜎᜈ᜔` | `that` |
 | **If Condition** | `kung` | `ᜃᜓᜅ᜔` | `if` |
-| **Else If Condition** | `okaya`, `ukaya` | `ᜂᜃᜌ` | `else if` |
+| **Else If Condition** | `okaya`, `ukaya` | `ᜂᜃᜌ` | `elseif` |
 | **Else Condition** | `kundi` | `ᜃᜓᜈ᜔ᜇᜒ` | `else` |
+| **Not Equal / Inequality** | `hindi` | `ᜑᜒᜈ᜔ᜇᜒ` | `not`, `!=` |
 | **While Loop** | `habang` | `ᜑᜊᜅ᜔` | `while` |
 | **Return** | `ibalik` | `ᜁᜊᜎᜒᜃ᜔` | `return` |
-| **Assignment Operator** | `ay`, `=` | `ᜀᜌ᜔` | `=` |
-| **Equality Comparison** | `aytalagang`, `==`, `===` | `ᜀᜌ᜔ᜆᜎᜄᜅ᜔` | `==` / `===` |
+| **Assignment Operator** | `ay`, `=` | `ᜀᜌ᜔` | `is`, `=` |
+| **Equality Comparison** | `aytalagang`, `==`, `===` | `ᜀᜌ᜔ᜆᜎᜄᜅ᜔` | `isliterally`, `==`, `===` |
 | **Boolean True** | `tama` | `ᜆᜋ` | `true` |
 | **Boolean False** | `mali` | `ᜋᜎᜒ` | `false` |
-| **Statement Terminator** | `᜵` (Single Danda) | `᜵` (Single Danda) | `;` |
-| **Section Terminator** | `᜶` (Double Danda) | `᜶` (Double Danda) | `;` / EOF |
+| **Statement Terminator** | `;` (Semi-Colon) | `᜵` (Single Danda) | `;` |
+| **Section Terminator** | `᜶` (Semi-Colon) | `᜶` (Double Danda) | `;` / EOF |
 
 ---
 

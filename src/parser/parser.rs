@@ -37,7 +37,7 @@ impl Parser {
             n.clone()
         } else {
             return Err(KalawangError::ParseError {
-                message: "Expect variable name after 'si' / 'var'".to_string(),
+                message: "Expect variable name after 'si' / 'that'".to_string(),
                 line: name_token.line,
                 column: name_token.column,
             });
