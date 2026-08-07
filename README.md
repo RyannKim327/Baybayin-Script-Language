@@ -87,7 +87,7 @@ Kalawang allows you to write code seamlessly using **Latin Tagalog**, **Baybayin
 | **Else Condition** | `kundi` | `ᜃᜓᜈ᜔ᜇᜒ` | `else` |
 | **While Loop** | `habang` | `ᜑᜊᜅ᜔` | `while` |
 | **Return** | `ibalik` | `ᜁᜊᜎᜒᜃ᜔` | `return` |
-| **Variable Declaration** | `ay`, `=` | `ᜀᜌ᜔` | `=` |
+| **Assignment Operator** | `ay`, `=` | `ᜀᜌ᜔` | `=` |
 | **Equality Comparison** | `aytalagang`, `==`, `===` | `ᜀᜌ᜔ᜆᜎᜄᜅ᜔` | `==` / `===` |
 | **Boolean True** | `tama` | `ᜆᜋ` | `true` |
 | **Boolean False** | `mali` | `ᜋᜎᜒ` | `false` |
