@@ -205,7 +205,7 @@ impl Interpreter {
 
                 let target_lower = target_str.trim().to_lowercase();
                 match target_lower.as_str() {
-                    "int" | "numero" | "integer" | "bilang" | "ᜊᜒᜎᜅ᜔" => {
+                    "int" | "numero" | "integer" | "bilang" | "ᜊᜒᜎᜅ᜔" | "ᜈᜓᜋᜒᜇᜓ"  => {
                         match val_res {
                             Value::String(s) => {
                                 let trimmed = s.trim();

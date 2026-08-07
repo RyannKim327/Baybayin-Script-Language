@@ -5,6 +5,36 @@ All notable changes to the Kalawang programming language project will be documen
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2026-08-07
+
+### Added
+- **Multi-Lingual Keyword Support (English, Tagalog & Baybayin)**: Extended keyword recognition across lexer and parser to support English keywords alongside Latin Tagalog and authentic Baybayin script:
+  - **Output / Print**: `tell`, `say`, `print` (Tagalog: `sabihin`, `ipaliwanag` | Baybayin: `ᜐᜊᜒᜑᜒᜈ᜔`, `ᜁᜉᜎᜒᜏᜈᜄ᜔`)
+  - **Variables**: `that` (Tagalog: `si`, `ipangalan` | Baybayin: `ᜐᜒ`, `ᜁᜉᜅᜎᜈ᜔`)
+  - **Conditionals**: `if`, `elseif`, `else` (Tagalog: `kung`, `okaya`/`ukaya`, `kundi` | Baybayin: `ᜃᜓᜅ᜔`, `ᜂᜃᜌ`, `ᜃᜓᜈ᜔ᜇᜒ`)
+  - **Loops & Flow**: `while`, `return` (Tagalog: `habang`, `ibalik` | Baybayin: `ᜑᜊᜅ᜔`, `ᜁᜊᜎᜒᜃ᜔`)
+  - **Comparisons & Assignment**: `is` (`=`), `isliterally` (`==`/`===`), `not` (`!=`)
+- **Interactive User Input**: Built-in input function `pahingi` / `ask` / `ᜉᜑᜒᜅᜒ` for reading standard user input at runtime.
+- **Type Conversion System**: Conversion built-in `isalin` / `convert` / `ᜁᜐᜎᜒᜈ᜔` supporting target datatypes:
+  - Integer (`int`, `numero`, `bilang`, `ᜊᜒᜎᜅ᜔`, `ᜈᜓᜋᜒᜇᜓ`)
+  - Float (`float`, `decimal`, `hatian`, `ᜑᜆᜒᜀᜈ᜔`)
+  - String (`string`, `salita`, `ᜐᜎᜒᜆ`)
+  - Boolean (`bool`, `boolean`, `booleano`, `tamao-mali`, `tamaomali`)
+- **Logical Operators**: Support for logical operations in expressions:
+  - Logical OR: `o`, `||`, `ᜂ`, `or`
+  - Logical AND: `at`, `&&`, `ᜀᜆ᜔`, `and`
+  - Logical NOT / Inequality: `hindi`, `!=`, `ᜑᜒᜈ᜔ᜇᜒ`, `not`
+- **String Escape Characters**: Parsing and evaluation of escape sequences in string literals (`\n`, `\t`, `\r`, `\"`, `\\`).
+- **Statement Terminator Extension**: Added standard semicolon `;` as a statement terminator alongside Single Danda (`᜵`) and Double Danda (`᜶`).
+- **Categorized Multi-Lingual Examples**: Reorganized example scripts into language-specific folders:
+  - `examples/tagalog/`
+  - `examples/english/`
+  - `examples/baybayin/`
+
+### Fixed
+- **Baybayin Script Typos**: Fixed typos in Baybayin script tokens (`ᜁᜉᜎᜒᜏᜈᜄ᜔`, `ᜁᜉᜅᜎᜈ᜔`, `ᜑᜊᜅ᜔`) across lexer, tests, and documentation.
+- **Type Conversion Datatype Matching**: Added Baybayin script representations (`ᜈᜓᜋᜒᜇᜓ` / `ᜈᜓᜋ᜔ᜁᜇᜓ`) to runtime type conversion target parsing.
+
 ---
 
 ## [0.1.0] - 2026-08-06
