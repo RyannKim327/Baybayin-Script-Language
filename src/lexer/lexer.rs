@@ -304,8 +304,8 @@ impl<'a> Lexer<'a> {
         let token_type = match ident.as_str() {
             "tama" | "ᜆᜋ" => TokenType::Boolean(true),
             "mali" | "ᜋᜎᜒ" => TokenType::Boolean(false),
-            "sabihin" | "ᜐᜊᜒᜑᜒᜈ᜔" | "ipaliwanag" | "ᜁᜉ᜔ᜎᜒᜄ᜔" | "print" => TokenType::Print,
-            "si" | "ᜐᜒ" | "ipangalan" | "ᜁᜉᜅ᜔ᜎᜈ᜔" | "var" => TokenType::Var,
+            "sabihin" | "ᜐᜊᜒᜑᜒᜈ᜔" | "ipaliwanag" | "ᜁᜉᜎᜒᜏᜈᜄ᜔" | "print" => TokenType::Print,
+            "si" | "ᜐᜒ" | "ipangalan" | "ᜁᜉᜅᜎᜈ᜔" | "var" => TokenType::Var,
             "kung" | "ᜃᜓᜅ᜔" => TokenType::If,
             "okaya" | "ukaya" | "ᜂᜃᜌ" => TokenType::ElseIf,
             "kundi" | "ᜃᜓᜈ᜔ᜇᜒ" => TokenType::Else,
