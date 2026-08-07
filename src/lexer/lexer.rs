@@ -311,8 +311,8 @@ impl<'a> Lexer<'a> {
             "kundi" | "ᜃᜓᜈ᜔ᜇᜒ" => TokenType::Else,
             "habang" | "ᜑᜊ᜔" => TokenType::While,
             "ibalik" | "ᜁᜊᜎᜒᜃ᜔" => TokenType::Return,
-            "ay" | "ᜀᜌ᜔" => TokenType::EqualEqual,
-            "aytalagang" | "ᜀᜌ᜔ᜆᜎᜄᜅ᜔" => TokenType::EqualEqualEqual,
+            "ay" | "ᜀᜌ᜔" => TokenType::Equal,
+            "aytalagang" | "ᜀᜌ᜔ᜆᜎᜄᜅ᜔" => TokenType::EqualEqual,
             _ => TokenType::Identifier(ident.clone()),
         };
 
