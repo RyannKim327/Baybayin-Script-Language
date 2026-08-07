@@ -27,7 +27,7 @@ ilan sa resulta, subalit ito ay pawang saling wika at saling titig lamang, Ibigs
 Nagtanong ako ng medyo kakaiba sa isang `AI` o `Artificial Intelligence`. Ang dating `Sawa` na hango sa tagalog ng `Python` ay aking pinalitan na sa
 `Kalawang`, tagalog ito ng `Rust`. Mas maayos para sa akin ang naging resulta nito, dahil mas madali na syang gamitin, para na syang `Visual Basic`,
 hindi kailangan ng maraming **spaces** o gawing **space-sensitive** para mapagana. Ginawa ko lang itong wika na ito, hindi para magpasikat,
-kundi gusto ko lang subukin ang aking kakayanan, kung kaya ko pa bang ibahagi ang `BAYBAYIN` sa marami, hindi lamang sa lieteratura, kung hindi maging
+kundi gusto ko lang subukin ang aking kakayanan, kung kaya ko pa bang ibahagi ang `BAYBAYIN` sa marami, hindi lamang sa literatura, kung hindi maging
 sa mundo ng teknolohiya.
 
 ---
@@ -100,7 +100,7 @@ Kalawang allows you to write code seamlessly using **Latin Tagalog**, **Baybayin
 
 ### 1. Hello World (Paglimbag)
 
-Print strings or values using `sabihin` or `ipaliwanag` (or `ᜐᜊᜒᜑᜒᜈ᜔` / `ᜁᜉ᜔ᜎᜒᜄ᜔`). End statements with a Single Danda (`᜵`).
+Print strings or values using `sabihin` or `ipaliwanag` (or `ᜐᜊᜒᜑᜒᜈ᜔` / `ᜁᜉᜎᜒᜏᜈᜄ᜔`). End statements with a Single Danda (`᜵`).
 
 **Latin Tagalog:**
 ```kalawang
@@ -111,14 +111,14 @@ ipaliwanag "Maligayang pagdating sa Kalawang!" ᜵
 **Baybayin Script:**
 ```kalawang
 ᜐᜊᜒᜑᜒᜈ᜔ "Kamusta, Mundo!" ᜵
-ᜁᜉ᜔ᜎᜒᜄ᜔ "Maligayang pagdating sa Kalawang!" ᜵
+ᜁᜉᜎᜒᜏᜈᜄ᜔ "Maligayang pagdating sa Kalawang!" ᜵
 ```
 
 ---
 
 ### 2. Variables (Mga Baryabol)
 
-Declare variables using `si` or `ipangalan` (or Baybayin `ᜐᜒ` / `ᜁᜉᜅ᜔ᜎᜈ᜔`):
+Declare variables using `si` or `ipangalan` (or Baybayin `ᜐᜒ` / `ᜁᜉᜅᜎᜈ᜔`):
 
 ```kalawang
 // Using Latin Tagalog
@@ -143,9 +143,9 @@ sabihin edad ᜵
 Kalawang supports addition (`+`), subtraction (`-`), multiplication (`*`), division (`/`), and string concatenation (`+`):
 
 ```kalawang
-si x = 10 ᜵
-si y = 20 ᜵
-si kabuuan = x + y ᜵
+si x ay 10 ᜵
+si y ay 20 ᜵
+si kabuuan ay x + y ᜵
 
 sabihin ("Ang kabuuan ay: " + kabuuan) ᜵
 ```
@@ -162,7 +162,7 @@ si suma = 40 ᜵
 
 kung (suma > 30) {
     sabihin "Ang suma ay higit sa 30" ᜵
-} okaya (suma ay 30) {
+} okaya (suma === 30) {
     sabihin "Ang suma ay eksaktong 30" ᜵
 } kundi {
     sabihin "Ang suma ay mas mababa sa 30" ᜵
@@ -196,11 +196,11 @@ habang (bilang <= 5) {
 
 ## 📂 Example Files
 
-Check out the included examples in the [`examples/`](file:///home/mpop/Programming/rust-projects/kalawang/examples) directory:
+Check out the included examples in the [`examples/`](examples/) directory:
 
-- [`examples/hello.bay`](file:///home/mpop/Programming/rust-projects/kalawang/examples/hello.bay) – Hello World program in Tagalog and Baybayin.
-- [`examples/variables.bay`](file:///home/mpop/Programming/rust-projects/kalawang/examples/variables.bay) – Declaring and printing variables.
-- [`examples/math.bay`](file:///home/mpop/Programming/rust-projects/kalawang/examples/math.bay) – Arithmetic, comparisons, and conditional branches.
+- [`examples/hello.bay`](examples/hello.bay) – Hello World program in Tagalog and Baybayin.
+- [`examples/variables.bay`](examples/variables.bay) – Declaring and printing variables.
+- [`examples/math.bay`](examples/math.bay) – Arithmetic, comparisons, and conditional branches.
 
 Run them directly:
 ```bash
@@ -217,4 +217,4 @@ cargo run -- examples/math.bay
 
 **AI Models [From era or Kalawang]**
 * ChatGPT -> Generating `AGENT.md`
-* Anti Gravity -> Code initiator
+* Anti Gravity -> Code initiator and documentation

@@ -13,10 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Rust Engine Core**: Fully replaced the legacy Python prototype (`Sawa`) with a performance-focused interpreter written in Rust (`Kalawang`).
 - **Unicode Lexer**: Tokenizer with full support for UTF-8 and the Baybayin Unicode block (`U+1700` .. `U+171F`).
 - **Dual Syntax & Keywords**: Native recognition for both Tagalog Latin keywords and authentic Baybayin script symbols:
-  - **Output / Printing**: `sabihin`, `ipaliwanag`, `print`, `ᜐᜊᜒᜑᜒᜈ᜔`, `ᜁᜉ᜔ᜎᜒᜄ᜔`
-  - **Variable Declarations**: `si`, `ipangalan`, `var`, `ᜐᜒ`, `ᜁᜉᜅ᜔ᜎᜈ᜔`
+  - **Output / Printing**: `sabihin`, `ipaliwanag`, `print`, `ᜐᜊᜒᜑᜒᜈ᜔`, `ᜁᜉᜎᜒᜏᜈᜄ᜔`
+  - **Variable Declarations**: `si`, `ipangalan`, `var`, `ᜐᜒ`, `ᜁᜉᜅᜎᜈ᜔`
   - **Conditionals**: `kung` / `ᜃᜓᜅ᜔` (if), `okaya` / `ukaya` / `ᜂᜃᜌ` (else if), `kundi` / `ᜃᜓᜈ᜔ᜇᜒ` (else)
-  - **Loops**: `habang` / `ᜑᜊ᜔` (while loop)
+  - **Loops**: `habang` / `ᜑᜊᜅ᜔` (while loop)
   - **Booleans**: `tama` / `ᜆᜋ` (`true`), `mali` / `ᜋᜎᜒ` (`false`)
   - **Return**: `ibalik` / `ᜁᜊᜎᜒᜃ᜔`
 - **Baybayin Punctuation**:

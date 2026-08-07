@@ -11,8 +11,8 @@
 // Conditional statement using Baybayin script (ᜃᜓᜅ᜔ / ᜃᜓᜈ᜔ᜇᜒ)
 ᜃᜓᜅ᜔ (a < b)  ᜐᜊᜒᜑᜒᜈ᜔ "Si a ay mas maliit kaysa kay b" ᜵ ᜂᜃᜌ (b > a) ᜐᜊᜒᜑᜒᜈ᜔ "Si a ay mas malaki kaysa kay b" ᜵ᜃᜓᜈ᜔ᜇᜒ ᜐᜊᜒᜑᜒᜈ᜔ "Si a ay pantay kay b" ᜵
 
-// Conditional statement using Tagalog keywords (kung / okaya / kundi) with 'ay' equality operator
-kung (suma ay 40) {
+// Conditional statement using Tagalog keywords (kung / okaya / kundi) with 'aytalagang' equality operator
+kung (suma aytalagang 40) {
     sabihin "Ang suma ay 40!" ᜵
 } okaya (suma === 30) {
     sabihin "Ang suma ay 30!" ᜵

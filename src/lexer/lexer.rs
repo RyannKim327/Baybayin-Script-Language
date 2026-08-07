@@ -358,12 +358,13 @@ mod tests {
 
     #[test]
     fn test_equality_tokens() {
-        let mut lexer = Lexer::new("== === ay ᜀᜌ᜔ ᜀᜌ");
+        let mut lexer = Lexer::new("== === aytalagang ᜀᜌ᜔ᜆᜎᜄᜅ᜔ ay ᜀᜌ᜔");
         let tokens = lexer.tokenize().unwrap();
         assert_eq!(tokens[0].token_type, TokenType::EqualEqual);
         assert_eq!(tokens[1].token_type, TokenType::EqualEqualEqual);
         assert_eq!(tokens[2].token_type, TokenType::EqualEqual);
         assert_eq!(tokens[3].token_type, TokenType::EqualEqual);
-        assert_eq!(tokens[4].token_type, TokenType::EqualEqual);
+        assert_eq!(tokens[4].token_type, TokenType::Equal);
+        assert_eq!(tokens[5].token_type, TokenType::Equal);
     }
 }
