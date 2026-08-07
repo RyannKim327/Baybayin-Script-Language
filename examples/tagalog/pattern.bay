@@ -2,10 +2,16 @@
 si x ay 0;
 si y ay 0;
 si h ay isalin(pahingi("Gaano ito kataas: "), numero);
-si w ay 5;
+si w ay h;
 si sagot ay "";
 
-habang (y < h) { 
+habang (y < h) {
+  si z ay 0;
+  habang (z < (h - y)) {
+    sagot = (sagot + " ");
+    z = (z + 1);
+  }
+
   habang (x < y) {
     sagot = (sagot + "* ");
     x = (x + 1);
