@@ -14,14 +14,15 @@ fn main() {
     utils::print_welcome();
 
     let args = Cli::parse();
-    if let Some(path) = args.file_path {
-        println!("Reading source file: {}", path);
+    if let Some(path) = args.file_path && path.ends_with(".bay") {
         match std::fs::read_to_string(&path) {
             Ok(code) => run(&code),
             Err(err) => eprintln!("Error reading file '{}': {}", path, err),
         }
     } else {
-        println!("No input file provided. Run with a .kl / .bay file path.");
+        println!("ᜏᜎᜅ᜔ ᜈᜃᜎᜀᜅ᜔ ᜆᜎᜃ᜔ᜐᜈ᜔᜶ ᜄᜋᜒᜆᜒᜈ᜔ ᜁᜆᜓ ᜈ ᜄᜋᜒᜆ᜔ ᜀᜅ᜔ .bay ᜈ ᜉᜈᜓᜃᜓᜌ᜔ ᜈᜅ᜔ ᜆᜎᜃ᜔ᜐᜈ᜔᜶");
+        println!("Walang nakalaang talaksan. Gamitin ito na gamit ang .bay na panukoy ng talaksan.");
+        println!("No input file provided. Run with a .bay file extension.");
     }
 }
 
