@@ -19,9 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Equality comparison (`==` and `!=`).
   - **Built-in Array Functions**:
     - `haba` / `sukat` / `length` / `len` / `count` / `ᜑᜊ` / `ᜐᜓᜃᜆ᜔` (length of array or string)
-    - `dagdag` / `idagdag` / `push` / `append` / `ᜇᜄ᜔ᜇᜄ᜔` / `ᜁᜇᜄ᜔ᜇᜄ᜔` (append item to array)
-    - `alis` / `tanggalin` / `pop` / `remove` / `ᜀᜎᜒᜐ᜔` / `ᜆᜅ᜔ᜄᜎᜒᜈ᜔` (remove item from array)
-    - `nandyan` / `mayroon` / `meron` / `contains` / `includes` / `ᜈᜈ᜔ᜇ᜔ᜌᜈ᜔` (check element presence)
+    - `dagdagan` / `idagdag` / `push` / `append` / `ᜇᜄ᜔ᜇᜄᜈ᜔` / `ᜁᜇᜄ᜔ᜇᜄ᜔` (append item to array)
+    - `alisin` / `tanggalin` / `pop` / `remove` / `ᜀᜎᜒᜐᜒᜈ᜔` / `ᜆᜅ᜔ᜄᜎᜒᜈ᜔` (remove item from array)
+    - `nandyan` / `mayroon` / `meron` / `contains` / `includes` / `ᜈᜈ᜔ᜇᜒᜌᜈ᜔` / `ᜋᜌ᜔ᜇᜓᜂᜈ᜔` (check element presence)
     - `pagsamahin` / `join` / `ᜉᜄ᜔ᜐᜋᜑᜒᜈ᜔` (join elements into string with delimiter)
     - `baligtad` / `reverse` / `ᜊᜎᜒᜄ᜔ᜆᜇ᜔` (reverse array elements)
   - **Type Conversion**: Conversion support for `"array"` / `"list"` / `"mga"` in `isalin` / `convert`.

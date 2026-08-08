@@ -366,7 +366,7 @@ impl Interpreter {
                             } else {
                                 Ok(Value::Array(evaluated_args))
                             }
-                        }
+                        } 
                         "haba" | "ᜑᜊ" | "sukat" | "ᜐᜓᜃᜆ᜔" | "length" | "len" | "count" | "size" => {
                             if let Some(first) = evaluated_args.first() {
                                 match first {
