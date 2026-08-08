@@ -83,6 +83,7 @@ Kalawang allows you to write code seamlessly using **Latin Tagalog**, **Baybayin
 | **Output / Print** | `sabihin`, `ipaliwanag` | `ᜐᜊᜒᜑᜒᜈ᜔`, `ᜁᜉᜎᜒᜏᜈᜄ᜔` | `tell`, `say`, `print` |
 | **User Input** | `pahingi` | `ᜉᜑᜒᜅᜒ` | `ask` |
 | **Variable Declaration** | `si`, `ipangalan` | `ᜐᜒ`, `ᜁᜉᜅᜎᜈ᜔` | `that` |
+| **Array / List** | `mga`, `bilang`, `[]` | `ᜋᜅ`, `ᜊᜒᜎᜅ᜔`, `[]` | `list`, `array`, `[]` |
 | **If Condition** | `kung` | `ᜃᜓᜅ᜔` | `if` |
 | **Else If Condition** | `okaya`, `ukaya` | `ᜂᜃᜌ` | `elseif` |
 | **Else Condition** | `kundi` | `ᜃᜓᜈ᜔ᜇᜒ` | `else` |
@@ -142,7 +143,34 @@ sabihin edad ᜵
 
 ---
 
-### 3. User Input (Pagkuha ng Input)
+### 3. Arrays & Lists (Mga Listahan: `[]`, `mga`, `bilang`)
+
+Create and manipulate arrays using brackets `[]` or the terms `mga`, `bilang`, `list`, `array` (Baybayin: `ᜋᜅ`, `ᜊᜒᜎᜅ᜔`). Supports 0-based and negative indexing (`a[-1]`), updating elements, appending (`dagdagan`), removing (`alisin`), measuring length (`haba`/`sukat`), checking items (`nandyan`), and joining (`pagsamahin`):
+
+```kalawang
+// Declaration with brackets or keywords
+si a ay [1, 2, 3] ᜵
+si b ay mga("mangga", "saging", "pinya") ᜵
+si c ay bilang(10, 20, 30) ᜵
+
+// Indexing and modification
+si una = a[0] ᜵
+si huli = a[-1] ᜵
+a[0] = 99 ᜵
+
+// Array operations
+dagdag(b, "bayabas") ᜵
+si inalis = alis(b) ᜵
+si laki = haba(a) ᜵
+si pinagsama = a + [4, 5] ᜵
+
+sabihin a ᜵
+sabihin ("Pinagsamang teksto: " + pagsamahin(b, ", ")) ᜵
+```
+
+---
+
+### 4. User Input (Pagkuha ng Input)
 
 Prompt the user for input using `pahingi` (Tagalog), `ask` (English), or `ᜉᜑᜒᜅᜒ` (Baybayin). Passes a string parameter prompt and returns the entered string:
 
@@ -162,7 +190,7 @@ print ("Hello, " + name) ᜵
 
 ---
 
-### 4. Basic Operations & Expressions (Aritmetika at Pagsasama)
+### 5. Basic Operations & Expressions (Aritmetika at Pagsasama)
 
 Kalawang supports addition (`+`), subtraction (`-`), multiplication (`*`), division (`/`), and string concatenation (`+`):
 
@@ -176,7 +204,7 @@ sabihin ("Ang kabuuan ay: " + kabuuan) ᜵
 
 ---
 
-### 5. Conditionals (Mga Desisyon: `kung` / `okaya` / `kundi`)
+### 6. Conditionals (Mga Desisyon: `kung` / `okaya` / `kundi`)
 
 Check conditions using `kung` (if), `okaya` (else if), and `kundi` (else). You can use curly braces `{}` or inline statements:
 
@@ -203,7 +231,7 @@ kung (suma > 30) {
 
 ---
 
-### 6. Loops (Mga Paulit-ulit: `habang`)
+### 7. Loops (Mga Paulit-ulit: `habang`)
 
 Repeat actions while a condition evaluates to `tama` (`true`):
 
@@ -222,15 +250,15 @@ habang (bilang <= 5) {
 
 Check out the included examples in the [`examples/`](examples/) directory, separated into Tagalog, English, and Baybayin script folders:
 
-- **Tagalog (Latin)**: [`examples/tagalog/`](examples/tagalog/) (`hello.bay`, `conditional.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
-- **English**: [`examples/english/`](examples/english/) (`hello.bay`, `conditional.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
-- **Baybayin Script**: [`examples/baybayin/`](examples/baybayin/) (`hello.bay`, `conditional.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
+- **Tagalog (Latin)**: [`examples/tagalog/`](examples/tagalog/) (`hello.bay`, `array.bay`, `conditional.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
+- **English**: [`examples/english/`](examples/english/) (`hello.bay`, `array.bay`, `conditional.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
+- **Baybayin Script**: [`examples/baybayin/`](examples/baybayin/) (`hello.bay`, `array.bay`, `conditional.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
 
 Run them directly:
 ```bash
-cargo run -- examples/tagalog/hello.bay
-cargo run -- examples/english/hello.bay
-cargo run -- examples/baybayin/hello.bay
+cargo run -- examples/tagalog/array.bay
+cargo run -- examples/english/array.bay
+cargo run -- examples/baybayin/array.bay
 ```
 
 ---

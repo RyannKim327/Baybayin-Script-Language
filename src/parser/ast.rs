@@ -54,6 +54,16 @@ pub enum Expr {
         value: Box<Expr>,
         target_type: Box<Expr>,
     },
+    Array(Vec<Expr>),
+    Index {
+        target: Box<Expr>,
+        index: Box<Expr>,
+    },
+    IndexAssign {
+        target: Box<Expr>,
+        index: Box<Expr>,
+        value: Box<Expr>,
+    },
 }
 
 #[derive(Debug, Clone, PartialEq)]

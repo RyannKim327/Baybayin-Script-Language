@@ -1,6 +1,6 @@
 use crate::diagnostics::KalawangError;
 use crate::lexer::{Token, TokenType};
-use crate::parser::ast::{BinaryOp, Expr, LiteralValue, Stmt};
+use crate::parser::ast::{BinaryOp, Expr, LiteralValue, Stmt, UnaryOp};
 
 pub struct Parser {
     tokens: Vec<Token>,
@@ -142,6 +142,14 @@ impl Parser {
                 });
             }
 
+            if let Expr::Index { target, index } = expr {
+                return Ok(Expr::IndexAssign {
+                    target,
+                    index,
+                    value: Box::new(value),
+                });
+            }
+
             return Err(KalawangError::ParseError {
                 message: "Invalid assignment target.".to_string(),
                 line: equals.line,
@@ -257,11 +265,11 @@ impl Parser {
     }
 
     fn factor(&mut self) -> Result<Expr, KalawangError> {
-        let mut expr = self.primary()?;
+        let mut expr = self.unary()?;
 
         while self.match_types(&[TokenType::Star, TokenType::Slash]) {
             let operator_token = self.previous().clone();
-            let right = self.primary()?;
+            let right = self.unary()?;
             let op = match operator_token.token_type {
                 TokenType::Star => BinaryOp::Multiply,
                 TokenType::Slash => BinaryOp::Divide,
@@ -272,6 +280,55 @@ impl Parser {
                 op,
                 right: Box::new(right),
             };
+        }
+
+        Ok(expr)
+    }
+
+    fn unary(&mut self) -> Result<Expr, KalawangError> {
+        if self.match_types(&[TokenType::Minus]) {
+            let right = self.unary()?;
+            Ok(Expr::Unary {
+                op: UnaryOp::Negate,
+                right: Box::new(right),
+            })
+        } else {
+            self.call_or_index()
+        }
+    }
+
+    fn call_or_index(&mut self) -> Result<Expr, KalawangError> {
+        let mut expr = self.primary()?;
+
+        loop {
+            if self.match_types(&[TokenType::LeftBracket]) {
+                let index = self.expression()?;
+                self.consume(TokenType::RightBracket, "Expect ']' after index.")?;
+                expr = Expr::Index {
+                    target: Box::new(expr),
+                    index: Box::new(index),
+                };
+            } else if self.match_types(&[TokenType::LeftParen]) {
+                let mut arguments = Vec::new();
+                if !self.check(&TokenType::RightParen) {
+                    loop {
+                        arguments.push(self.expression()?);
+                        if !self.match_types(&[TokenType::Comma]) {
+                            break;
+                        }
+                        if self.check(&TokenType::RightParen) {
+                            break;
+                        }
+                    }
+                }
+                self.consume(TokenType::RightParen, "Expect ')' after arguments.")?;
+                expr = Expr::Call {
+                    callee: Box::new(expr),
+                    arguments,
+                };
+            } else {
+                break;
+            }
         }
 
         Ok(expr)
@@ -302,6 +359,49 @@ impl Parser {
                 let expr = self.expression()?;
                 self.consume(TokenType::RightParen, "Expect ')' after expression.")?;
                 Ok(expr)
+            }
+            TokenType::LeftBracket => {
+                self.advance();
+                let mut elements = Vec::new();
+                if !self.check(&TokenType::RightBracket) {
+                    loop {
+                        elements.push(self.expression()?);
+                        if !self.match_types(&[TokenType::Comma]) {
+                            break;
+                        }
+                        if self.check(&TokenType::RightBracket) {
+                            break;
+                        }
+                    }
+                }
+                self.consume(TokenType::RightBracket, "Expect ']' after array elements.")?;
+                Ok(Expr::Array(elements))
+            }
+            TokenType::Mga => {
+                self.advance();
+                if self.match_types(&[TokenType::LeftParen]) {
+                    let mut elements = Vec::new();
+                    if !self.check(&TokenType::RightParen) {
+                        loop {
+                            elements.push(self.expression()?);
+                            if !self.match_types(&[TokenType::Comma]) {
+                                break;
+                            }
+                            if self.check(&TokenType::RightParen) {
+                                break;
+                            }
+                        }
+                    }
+                    self.consume(
+                        TokenType::RightParen,
+                        "Expect ')' after arguments in 'mga(...)'.",
+                    )?;
+                    Ok(Expr::Array(elements))
+                } else if self.check(&TokenType::LeftBracket) {
+                    self.primary()
+                } else {
+                    Ok(Expr::Variable("mga".to_string()))
+                }
             }
             TokenType::Input => {
                 self.advance();
@@ -446,6 +546,65 @@ mod tests {
                     "ᜂᜐᜒᜇ᜔: ".to_string()
                 ))))),
             }
+        );
+    }
+
+    #[test]
+    fn test_parse_array_expressions() {
+        let source = r#"
+            si a = [1, 2, 3];
+            si b = mga(4, 5, 6);
+            si c = bilang(7, 8, 9);
+            si x = a[0];
+            a[1] = 99;
+        "#;
+        let mut lexer = Lexer::new(source);
+        let tokens = lexer.tokenize().unwrap();
+        let mut parser = Parser::new(tokens);
+        let stmts = parser.parse().unwrap();
+
+        assert_eq!(
+            stmts[0],
+            Stmt::VarDeclaration {
+                name: "a".to_string(),
+                initializer: Some(Expr::Array(vec![
+                    Expr::Literal(LiteralValue::Number(1.0)),
+                    Expr::Literal(LiteralValue::Number(2.0)),
+                    Expr::Literal(LiteralValue::Number(3.0)),
+                ])),
+            }
+        );
+
+        assert_eq!(
+            stmts[1],
+            Stmt::VarDeclaration {
+                name: "b".to_string(),
+                initializer: Some(Expr::Array(vec![
+                    Expr::Literal(LiteralValue::Number(4.0)),
+                    Expr::Literal(LiteralValue::Number(5.0)),
+                    Expr::Literal(LiteralValue::Number(6.0)),
+                ])),
+            }
+        );
+
+        assert_eq!(
+            stmts[3],
+            Stmt::VarDeclaration {
+                name: "x".to_string(),
+                initializer: Some(Expr::Index {
+                    target: Box::new(Expr::Variable("a".to_string())),
+                    index: Box::new(Expr::Literal(LiteralValue::Number(0.0))),
+                }),
+            }
+        );
+
+        assert_eq!(
+            stmts[4],
+            Stmt::Expression(Expr::IndexAssign {
+                target: Box::new(Expr::Variable("a".to_string())),
+                index: Box::new(Expr::Literal(LiteralValue::Number(1.0))),
+                value: Box::new(Expr::Literal(LiteralValue::Number(99.0))),
+            })
         );
     }
 }

@@ -1,0 +1,42 @@
+// Halimbawa ng Array at Listahan sa Kalawang (Tagalog)
+
+// 1. Paggamit ng Bracket Syntax []
+si mga_numero = [10, 20, 30, 40, 50];
+sabihin "Mga numero: " + mga_numero;
+
+// 2. Paggamit ng 'mga' at 'bilang'
+si mga_prutas = mga("mangga", "saging", "pinya");
+si mga_bilang = bilang(1, 2, 3);
+sabihin "Mga prutas: " + mga_prutas;
+sabihin "Mga bilang: " + mga_bilang;
+
+// 3. Pagkuha ng Elemento (Indexing)
+si unang_numero = mga_numero[0];
+si huling_numero = mga_numero[-1];
+sabihin ("Unang numero: " + unang_numero);
+sabihin ("Huling numero: " + huling_numero);
+
+// 4. Pagbabago ng Elemento
+mga_numero[0] = 99;
+sabihin "Binagong mga numero: " + mga_numero;
+
+// 5. Haba / Sukat ng Array
+si kabuuang_haba = haba(mga_numero);
+sabihin ("Haba ng listahan: " + kabuuang_haba);
+
+// 6. Pagdaragdag ng Elemento (dagdagan / push)
+dagdagan(mga_prutas, "bayabas");
+sabihin "Matapos magdagdag ng bayabas: " + mga_prutas;
+
+// 7. Pag-alis ng Elemento (alisin / pop)
+si inalis = alisin(mga_prutas);
+sabihin ("Inalis: " + inalis);
+sabihin "Natitirang mga prutas: " + mga_prutas;
+
+// 8. Pagsasama ng dalawang Array (+)
+si pinagsama = mga_bilang + [4, 5, 6];
+sabihin "Pinagsamang array: " + pinagsama;
+
+// 9. Pagsasama sa String (pagsamahin / join)
+si pangungusap = pagsamahin(mga_prutas, ", ");
+sabihin ("Pinagsamang salita: " + pangungusap);

@@ -1,0 +1,42 @@
+// Example of Arrays and Lists in Kalawang (English)
+
+// 1. Bracket Syntax []
+that numbers = [10, 20, 30, 40, 50];
+print ("Numbers: " + numbers);
+
+// 2. Using 'list' or 'array' constructor
+that fruits = list("apple", "banana", "mango");
+that digits = array(1, 2, 3);
+print ("Fruits: " + fruits);
+print ("Digits: " + digits);
+
+// 3. Indexing & Negative Indexing
+that first = numbers[0];
+that last = numbers[-1];
+print ("First number: " + first);
+print ("Last number: " + last);
+
+// 4. Updating elements
+numbers[0] = 99;
+print ("Updated numbers: " + numbers);
+
+// 5. Length & Size
+that total_len = length(numbers);
+print ("Length of numbers: " + total_len);
+
+// 6. Appending elements (push / append)
+append(fruits, "orange");
+print ("After append: " + fruits);
+
+// 7. Removing elements (pop / remove)
+that removed = pop(fruits);
+print ("Removed item: " + removed);
+print ("Remaining fruits: " + fruits);
+
+// 8. Array Concatenation (+)
+that combined = digits + [4, 5, 6];
+print ("Combined list: " + combined);
+
+// 9. Join to string (join)
+that fruit_text = join(fruits, ", ");
+print ("Joined text: " + fruit_text);

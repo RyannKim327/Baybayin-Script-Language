@@ -86,6 +86,24 @@ impl<'a> Lexer<'a> {
                         start_col,
                     ));
                 }
+                '[' => {
+                    self.advance();
+                    tokens.push(Token::new(
+                        TokenType::LeftBracket,
+                        "[",
+                        start_line,
+                        start_col,
+                    ));
+                }
+                ']' => {
+                    self.advance();
+                    tokens.push(Token::new(
+                        TokenType::RightBracket,
+                        "]",
+                        start_line,
+                        start_col,
+                    ));
+                }
                 ',' => {
                     self.advance();
                     tokens.push(Token::new(TokenType::Comma, ",", start_line, start_col));
@@ -368,6 +386,7 @@ impl<'a> Lexer<'a> {
             "ibalik" | "ᜁᜊᜎᜒᜃ᜔" | "return" => TokenType::Return,
             "pahingi" | "ᜉᜑᜒᜅᜒ" | "ask" => TokenType::Input,
             "isalin" | "ᜁᜐᜎᜒᜈ᜔" | "convert" => TokenType::Convert,
+            "mga" | "ᜋᜅ" | "array" | "list" => TokenType::Mga,
             "ay" | "ᜀᜌ᜔" | "is" => TokenType::Equal,
             "aytalagang" | "ᜀᜌ᜔ᜆᜎᜄᜅ᜔" | "isliterally" => TokenType::EqualEqual,
             "o" | "ᜂ" | "or" => TokenType::Or,
@@ -491,5 +510,22 @@ mod tests {
         assert_eq!(tokens[7].token_type, TokenType::And);
         assert_eq!(tokens[8].token_type, TokenType::And);
         assert_eq!(tokens[9].token_type, TokenType::And);
+    }
+
+    #[test]
+    fn test_array_tokens() {
+        let mut lexer = Lexer::new("[1, 2, 3] mga ᜋᜅ array list");
+        let tokens = lexer.tokenize().unwrap();
+        assert_eq!(tokens[0].token_type, TokenType::LeftBracket);
+        assert_eq!(tokens[1].token_type, TokenType::Number(1.0));
+        assert_eq!(tokens[2].token_type, TokenType::Comma);
+        assert_eq!(tokens[3].token_type, TokenType::Number(2.0));
+        assert_eq!(tokens[4].token_type, TokenType::Comma);
+        assert_eq!(tokens[5].token_type, TokenType::Number(3.0));
+        assert_eq!(tokens[6].token_type, TokenType::RightBracket);
+        assert_eq!(tokens[7].token_type, TokenType::Mga);
+        assert_eq!(tokens[8].token_type, TokenType::Mga);
+        assert_eq!(tokens[9].token_type, TokenType::Mga);
+        assert_eq!(tokens[10].token_type, TokenType::Mga);
     }
 }

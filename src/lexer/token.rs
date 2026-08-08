@@ -10,6 +10,7 @@ pub enum TokenType {
     Return,
     Input,
     Convert,
+    Mga,
 
     // Literals
     Identifier(String),
@@ -41,6 +42,8 @@ pub enum TokenType {
     RightParen,
     LeftBrace,
     RightBrace,
+    LeftBracket,  // [
+    RightBracket, // ]
     Comma,
 
     // Special

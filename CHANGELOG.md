@@ -5,6 +5,28 @@ All notable changes to the Kalawang programming language project will be documen
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2026-08-08
+
+### Added
+- **Arrays & Lists Support (`mga`, `bilang`, `list`, `array`, `[]`)**:
+  - **Bracket Literals**: Support for bracket syntax `[elem1, elem2, ...]` including empty lists `[]` and trailing commas.
+  - **List Constructors**: Support for `mga(...)`, `bilang(...)`, `list(...)`, `array(...)`, and Baybayin `ᜋ᜔ᜄ(...)` / `ᜊᜒᜎᜅ᜔(...)`.
+  - **Indexing & Negative Indexing**: Support for element access `arr[index]` with positive and negative indexing (`arr[-1]` for last element).
+  - **Index Assignment**: In-place element modification via `arr[index] = new_value`.
+  - **Array Operations**:
+    - Concatenation (`+`) between arrays, elements, and formatted string conversion.
+    - Repetition (`*`) for repeating array elements.
+    - Equality comparison (`==` and `!=`).
+  - **Built-in Array Functions**:
+    - `haba` / `sukat` / `length` / `len` / `count` / `ᜑᜊ` / `ᜐᜓᜃᜆ᜔` (length of array or string)
+    - `dagdag` / `idagdag` / `push` / `append` / `ᜇᜄ᜔ᜇᜄ᜔` / `ᜁᜇᜄ᜔ᜇᜄ᜔` (append item to array)
+    - `alis` / `tanggalin` / `pop` / `remove` / `ᜀᜎᜒᜐ᜔` / `ᜆᜅ᜔ᜄᜎᜒᜈ᜔` (remove item from array)
+    - `nandyan` / `mayroon` / `meron` / `contains` / `includes` / `ᜈᜈ᜔ᜇ᜔ᜌᜈ᜔` (check element presence)
+    - `pagsamahin` / `join` / `ᜉᜄ᜔ᜐᜋᜑᜒᜈ᜔` (join elements into string with delimiter)
+    - `baligtad` / `reverse` / `ᜊᜎᜒᜄ᜔ᜆᜇ᜔` (reverse array elements)
+  - **Type Conversion**: Conversion support for `"array"` / `"list"` / `"mga"` in `isalin` / `convert`.
+  - **Example Scripts**: Added `examples/tagalog/array.bay`, `examples/english/array.bay`, and `examples/baybayin/array.bay`.
+
 ## [0.2.0] - 2026-08-07
 
 ### Added
