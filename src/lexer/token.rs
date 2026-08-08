@@ -1,6 +1,8 @@
+
+// TODO: Naming for General Call
 #[derive(Debug, Clone, PartialEq)]
 pub enum TokenType {
-    // Keywords
+    // INFO: Keywords
     Print,
     Var,
     If,
@@ -12,13 +14,13 @@ pub enum TokenType {
     Convert,
     Mga,
 
-    // Literals
+    // INFO: Literals
     Identifier(String),
     Number(f64),
     String(String),
     Boolean(bool),
 
-    // Operators
+    // INFO: Operators
     Plus,
     Minus,
     Star,
@@ -34,7 +36,7 @@ pub enum TokenType {
     Or,
     And,
 
-    // Delimiters & Punctuation
+    // INFO: Delimiters & Punctuation
     SingleDanda, // ᜵
     DoubleDanda, // ᜶
     EndStatement,
@@ -46,7 +48,7 @@ pub enum TokenType {
     RightBracket, // ]
     Comma,
 
-    // Special
+    // INFO: Special
     Eof,
 }
 

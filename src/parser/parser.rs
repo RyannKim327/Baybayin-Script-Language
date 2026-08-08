@@ -7,6 +7,7 @@ pub struct Parser {
     current: usize,
 }
 
+// TODO: Most function to control is here
 impl Parser {
     pub fn new(tokens: Vec<Token>) -> Self {
         Self { tokens, current: 0 }
@@ -22,6 +23,7 @@ impl Parser {
         Ok(statements)
     }
 
+    // TODO: Si
     fn declaration(&mut self) -> Result<Stmt, KalawangError> {
         if self.match_types(&[TokenType::Var]) {
             self.var_declaration()
@@ -53,6 +55,7 @@ impl Parser {
         Ok(Stmt::VarDeclaration { name, initializer })
     }
 
+    // TODO: Kung okaya kundi
     fn statement(&mut self) -> Result<Stmt, KalawangError> {
         if self.match_types(&[TokenType::Print]) {
             self.print_statement()
@@ -67,6 +70,7 @@ impl Parser {
         }
     }
 
+    // TODO: Kung Statement
     fn if_statement(&mut self) -> Result<Stmt, KalawangError> {
         let condition = self.expression()?;
         let then_branch = Box::new(self.statement()?);
@@ -88,12 +92,14 @@ impl Parser {
         })
     }
 
+    // TODO: Habang
     fn while_statement(&mut self) -> Result<Stmt, KalawangError> {
         let condition = self.expression()?;
         let body = Box::new(self.statement()?);
         Ok(Stmt::While { condition, body })
     }
 
+    // TODO: Bracket or Close Bracket
     fn block(&mut self) -> Result<Vec<Stmt>, KalawangError> {
         let mut statements = Vec::new();
         while !self.check(&TokenType::RightBrace) && !self.is_at_end() {
@@ -103,6 +109,7 @@ impl Parser {
         Ok(statements)
     }
 
+    // TODO: Sabihin
     fn print_statement(&mut self) -> Result<Stmt, KalawangError> {
         let value = self.expression()?;
         self.consume_optional_danda();
@@ -128,6 +135,7 @@ impl Parser {
         self.assignment()
     }
 
+    // TODO: Ay / =
     fn assignment(&mut self) -> Result<Expr, KalawangError> {
         let expr = self.logical_or()?;
 
@@ -160,6 +168,7 @@ impl Parser {
         Ok(expr)
     }
 
+    // TODO: O
     fn logical_or(&mut self) -> Result<Expr, KalawangError> {
         let mut expr = self.logical_and()?;
 
@@ -175,6 +184,8 @@ impl Parser {
         Ok(expr)
     }
 
+
+    // TODO: At
     fn logical_and(&mut self) -> Result<Expr, KalawangError> {
         let mut expr = self.equality()?;
 
@@ -190,6 +201,7 @@ impl Parser {
         Ok(expr)
     }
 
+    // TODO: Ay Talagang
     fn equality(&mut self) -> Result<Expr, KalawangError> {
         let mut expr = self.comparison()?;
 
@@ -215,6 +227,7 @@ impl Parser {
         Ok(expr)
     }
 
+    // TODO: Nasa pangalan naman, more on math to
     fn comparison(&mut self) -> Result<Expr, KalawangError> {
         let mut expr = self.term()?;
 
@@ -243,6 +256,7 @@ impl Parser {
         Ok(expr)
     }
 
+    // TODO: Arithmetic operators
     fn term(&mut self) -> Result<Expr, KalawangError> {
         let mut expr = self.factor()?;
 
@@ -285,6 +299,7 @@ impl Parser {
         Ok(expr)
     }
 
+    // TODO: Minus
     fn unary(&mut self) -> Result<Expr, KalawangError> {
         if self.match_types(&[TokenType::Minus]) {
             let right = self.unary()?;
@@ -297,6 +312,7 @@ impl Parser {
         }
     }
 
+    // TODO: Array indexing
     fn call_or_index(&mut self) -> Result<Expr, KalawangError> {
         let mut expr = self.primary()?;
 
@@ -334,6 +350,7 @@ impl Parser {
         Ok(expr)
     }
 
+    // TODO: Parenthesis
     fn primary(&mut self) -> Result<Expr, KalawangError> {
         let token = self.peek().clone();
 
@@ -377,6 +394,8 @@ impl Parser {
                 self.consume(TokenType::RightBracket, "Expect ']' after array elements.")?;
                 Ok(Expr::Array(elements))
             }
+
+            // TODO: Array
             TokenType::Mga => {
                 self.advance();
                 if self.match_types(&[TokenType::LeftParen]) {
@@ -403,6 +422,8 @@ impl Parser {
                     Ok(Expr::Variable("mga".to_string()))
                 }
             }
+
+            // TODO: Pahingi
             TokenType::Input => {
                 self.advance();
                 let prompt = if self.match_types(&[TokenType::LeftParen]) {
@@ -417,6 +438,8 @@ impl Parser {
                 };
                 Ok(Expr::Input(Box::new(prompt)))
             }
+
+            // TODO: Conversion
             TokenType::Convert => {
                 self.advance();
                 if self.match_types(&[TokenType::LeftParen]) {

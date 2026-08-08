@@ -21,6 +21,7 @@ impl Default for Interpreter {
     }
 }
 
+// TODO: Other part of interpreter for other functions
 impl Interpreter {
     pub fn interpret(&mut self, statements: &[Stmt]) -> Result<(), KalawangError> {
         for stmt in statements {
