@@ -12,7 +12,7 @@ without needing many **spaces** or being **space-sensitive** to run. I created t
 test my capabilities and see if I could share `BAYBAYIN` with more people, not just in literature, but also in the world of technology.
 
 
-### ᜉᜐᜒᜋᜓᜎᜅ᜔ ᜆᜎᜄ
+### ᜉᜐᜒᜋᜓᜎᜅ᜔ ᜆᜎᜆ
 > ᜐᜒᜈᜒᜋᜓᜎᜈ᜔ ᜃᜓᜅ᜔ ᜄᜓᜋᜏ ᜈᜅ᜔ ᜁᜐᜅ᜔ ᜏᜒᜃᜅ᜔ ᜉᜅ᜔ ᜉ᜔ᜇᜓᜄ᜔ᜇᜋᜆᜒᜃ ᜐ ᜆᜓᜎᜓᜅ᜔ ᜈᜅ᜔ `Python Programming`᜶ ᜐ ᜃᜆᜓᜈᜌᜈ᜔᜵ ᜋᜄᜈ᜔ᜇ ᜀᜆ᜔ ᜋᜒᜇ᜔ᜌᜓ ᜈᜄᜓᜐ᜔ᜆᜓᜑᜈ᜔ ᜃᜓ ᜀᜅ᜔ ᜁᜎᜈ᜔ ᜐ ᜇᜒᜐᜓᜎ᜔ᜆ᜵
 ᜐᜓᜊᜎᜒᜆ᜔ ᜁᜆᜓ ᜀᜌ᜔ ᜉᜏᜅ᜔ ᜐᜎᜒᜅ᜔ ᜏᜒᜃ ᜀᜆ᜔ ᜐᜎᜒᜅ᜔ ᜆᜒᜆᜒᜄ᜔ ᜎᜋᜅ᜔᜵ ᜁᜊᜒᜄ᜔ᜐᜊᜒᜑᜒᜈ᜔᜵ ᜁᜆᜓ ᜀᜌ᜔ ᜈᜃᜊᜐᜒ ᜉ ᜇᜒᜈ᜔ ᜐ `Python` ᜈ ᜈᜃ `space-sensitive`᜶ ᜈᜄ᜔ᜆᜈᜓᜅ᜔ ᜀᜃᜓ ᜈᜅ᜔ ᜋᜒᜇ᜔ᜌᜓ
 ᜃᜃᜁᜊ ᜐ ᜁᜐᜅ᜔ `AI` ᜂ `Artificial Intelligence`᜶ ᜀᜅ᜔ ᜇᜆᜒᜅ᜔ `Sawa` ᜈ ᜑᜅᜓ ᜐ ᜆᜄᜎᜓᜄ᜔ ᜈᜅ᜔ `Python` ᜀᜌ᜔ ᜀᜃᜒᜅ᜔ ᜉᜒᜈᜎᜒᜆᜈ᜔ ᜈ ᜐ `Kalawang`᜵ ᜆᜄᜎᜓᜄ᜔ ᜁᜆᜓ ᜈᜅ᜔ `Rust`᜶
@@ -21,7 +21,7 @@ test my capabilities and see if I could share `BAYBAYIN` with more people, not j
 ᜑᜒᜈ᜔ᜇᜒ ᜎᜋᜅ᜔ ᜐ ᜎᜒᜁᜆᜒᜇᜆᜓᜇ᜵ ᜃᜓᜅ᜔ ᜑᜒᜈ᜔ᜇᜒ ᜋᜄᜒᜅ᜔ ᜐ ᜋᜓᜈ᜔ᜇᜓ ᜈᜅ᜔ ᜆᜒᜃ᜔ᜈᜓᜎᜓᜑᜒᜌ᜶
 
 
-### Pasimulang talaga
+### Pasimulang talata
 > Sinimulan kong gumawa ng isang wikang pang programatika sa tulong ng `Python Programming`. Sa katunayan, maganda at medyo nagustuhan ko ang
 ilan sa resulta, subalit ito ay pawang saling wika at saling titig lamang, Ibigsabihin, ito ay nakabase pa rin sa `Python` na naka `space-sensitive`.
 Nagtanong ako ng medyo kakaiba sa isang `AI` o `Artificial Intelligence`. Ang dating `Sawa` na hango sa tagalog ng `Python` ay aking pinalitan na sa
@@ -103,30 +103,25 @@ Kalawang allows you to write code seamlessly using **Latin Tagalog**, **Baybayin
 
 ## 🎓 Basic Tutorials
 
-### 1. Hello World (Paglimbag)
+1. `Sabihin`
+> Ang kagamitan ng `sabihin` o `ᜐᜊᜒᜑᜒᜈ᜔` sa baybayin ay para ipakita, o ilathala ang kung ano ang nilalaman.
 
-Print strings or values using `sabihin` or `ipaliwanag` (or `ᜐᜊᜒᜑᜒᜈ᜔` / `ᜁᜉᜎᜒᜏᜈᜄ᜔`). End statements with a Single Danda (`᜵`).
-
-**Latin Tagalog:**
+**Halimbawa**
 ```kalawang
-sabihin "Kamusta, Mundo!" ᜵
-ipaliwanag "Maligayang pagdating sa Kalawang!" ᜵
+// Tagalog
+sabihin("Kamusta mundo");
+
+// Baybayin
+ᜐᜊᜒᜑᜒᜈ᜔("Kamusta Mundo")᜶
 ```
 
-**Baybayin Script:**
+2. `Si`
+> Ang `si` o `ᜐᜒ` sa baybayin ay ginagamit upang malaman kung sino ang isang bagay. Sa `Kalawang`, ginagamit naman ito upang paglagyan ng isang
+bagay na gagamitin, ilan dito ay mga bilang, boolean, at mga salita o string sa wikang ingles.
+
+**Halimbawa**
 ```kalawang
-ᜐᜊᜒᜑᜒᜈ᜔ "Kamusta, Mundo!" ᜵
-ᜁᜉᜎᜒᜏᜈᜄ᜔ "Maligayang pagdating sa Kalawang!" ᜵
-```
-
----
-
-### 2. Variables (Mga Baryabol)
-
-Declare variables using `si` or `ipangalan` (or Baybayin `ᜐᜒ` / `ᜁᜉᜅᜎᜈ᜔`):
-
-```kalawang
-// Using Latin Tagalog
+// Tagalog
 si pangalan = "Maynila" ᜵
 ipangalan edad = 2026 ᜵
 
@@ -141,41 +136,34 @@ sabihin edad ᜵
 ᜐᜊᜒᜑᜒᜈ᜔ suma ᜵
 ```
 
----
+3. `Ay`
+> Ang `ay` o `ᜀᜌ᜔` sa baybayin ay ginagamit upang maglagay ng isang bagay sa isang lalagyanan (variable/container). Kung sa programming, ito ay `assign operators`.
+Ito ay pwedeng gamitin kapalit ng `=`.
 
-### 3. Arrays & Lists (Mga Listahan: `[]`, `mga`, `bilang`)
-
-Create and manipulate arrays using brackets `[]` or the terms `mga`, `bilang`, `list`, `array` (Baybayin: `ᜋᜅ`, `ᜊᜒᜎᜅ᜔`). Supports 0-based and negative indexing (`a[-1]`), updating elements, appending (`dagdagan`), removing (`alisin`), measuring length (`haba`/`sukat`), checking items (`nandyan`), and joining (`pagsamahin`):
-
+**Halimbawa**
 ```kalawang
-// Declaration with brackets or keywords
-si a ay [1, 2, 3] ᜵
-si b ay mga("mangga", "saging", "pinya") ᜵
-si c ay bilang(10, 20, 30) ᜵
+// Using Latin Tagalog
+si pangalan ay "Maynila" ᜵
+ipangalan edad ay 2026 ᜵
 
-// Indexing and modification
-si una = a[0] ᜵
-si huli = a[-1] ᜵
-a[0] = 99 ᜵
+sabihin pangalan ᜵
+sabihin edad ᜵
 
-// Array operations
-dagdag(b, "bayabas") ᜵
-si inalis = alis(b) ᜵
-si laki = haba(a) ᜵
-si pinagsama = a + [4, 5] ᜵
+// Using Baybayin Script
+ᜐᜒ a ᜀᜌ᜔ 15 ᜵
+ᜐᜒ b ᜀᜌ᜔ 25 ᜵
+ᜐᜒ suma = a + b ᜵
 
-sabihin a ᜵
-sabihin ("Pinagsamang teksto: " + pagsamahin(b, ", ")) ᜵
+ᜐᜊᜒᜑᜒᜈ᜔ suma ᜵
 ```
 
----
+4. `Pahingi`
+> Ang `pahingi` o `ᜉᜑᜒᜅᜒ` sa baybayin ay ginagamit naman bilang paghingi ng `data` o isang bagay mula sa nagamit. Ginagamit ito karaniwan kasama ang lagayan (variable/container)
+para paglagyan ng bagay na binigay ng nagamit.
 
-### 4. User Input (Pagkuha ng Input)
-
-Prompt the user for input using `pahingi` (Tagalog), `ask` (English), or `ᜉᜑᜒᜅᜒ` (Baybayin). Passes a string parameter prompt and returns the entered string:
-
-```kalawang
-// Latin Tagalog
+**Halimbawa**
+```
+// Tagalog
 si pangalan = pahingi("Anong pangalan mo? ") ᜵
 sabihin ("Kamusta, " + pangalan) ᜵
 
@@ -188,61 +176,8 @@ print ("Hello, " + name) ᜵
 ᜐᜊᜒᜑᜒᜈ᜔ ("ᜃᜋᜓᜐ᜔ᜆ᜵ " + ᜉᜅᜎᜈ᜔) ᜵
 ```
 
----
-
-### 5. Basic Operations & Expressions (Aritmetika at Pagsasama)
-
-Kalawang supports addition (`+`), subtraction (`-`), multiplication (`*`), division (`/`), and string concatenation (`+`):
-
-```kalawang
-si x ay 10 ᜵
-si y ay 20 ᜵
-si kabuuan ay x + y ᜵
-
-sabihin ("Ang kabuuan ay: " + kabuuan) ᜵
-```
-
----
-
-### 6. Conditionals (Mga Desisyon: `kung` / `okaya` / `kundi`)
-
-Check conditions using `kung` (if), `okaya` (else if), and `kundi` (else). You can use curly braces `{}` or inline statements:
-
-**Using Block Syntax `{}`:**
-```kalawang
-si suma = 40 ᜵
-
-kung (suma > 30) {
-    sabihin "Ang suma ay higit sa 30" ᜵
-} okaya (suma === 30) {
-    sabihin "Ang suma ay eksaktong 30" ᜵
-} kundi {
-    sabihin "Ang suma ay mas mababa sa 30" ᜵
-}
-```
-
-**Using Baybayin Script:**
-```kalawang
-ᜐᜒ a = 15 ᜵
-ᜐᜒ b = 25 ᜵
-
-ᜃᜓᜅ᜔ (a < b) ᜐᜊᜒᜑᜒᜈ᜔ "Si a ay mas maliit kaysa kay b" ᜵ ᜂᜃᜌ (b > a) ᜐᜊᜒᜑᜒᜈ᜔ "Si a ay mas malaki kaysa kay b" ᜵ ᜃᜓᜈ᜔ᜇᜒ ᜐᜊᜒᜑᜒᜈ᜔ "Si a ay pantay kay b" ᜵
-```
-
----
-
-### 7. Loops (Mga Paulit-ulit: `habang`)
-
-Repeat actions while a condition evaluates to `tama` (`true`):
-
-```kalawang
-si bilang = 1 ᜵
-
-habang (bilang <= 5) {
-    sabihin ("Bilang: " + bilang) ᜵
-    bilang = bilang + 1 ᜵
-}
-```
+> Ilan lamang ito sa mga pangkaraniwang magagamit ninyo, para sa karagdagang halimbawa, maaari nyong bisitahin ang [mga halimbawang ito](#📂-example-files) at sa susunod pa
+gagawan ko na rin ng mas maayos pang paraan ng paggamit.
 
 ---
 
