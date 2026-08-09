@@ -1,2 +1,2 @@
 // One sentence method
-that kim = "human"; if (kim isliterally "human") print "kim is human"; else print "she is not human";
+that kim is "human"; if (kim isliterally "human") tell "kim is human"; else tell "she is not human";
