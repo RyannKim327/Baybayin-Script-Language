@@ -1,4 +1,4 @@
-### Kalawang Programming
+### Kalawang Programming (Formerly Sawa)
 #### Master Piece of Paper (Ryann Kim Sesgundo)
 
 ---
