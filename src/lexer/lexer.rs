@@ -377,7 +377,7 @@ impl<'a> Lexer<'a> {
             "sabihin" | "ᜐᜊᜒᜑᜒᜈ᜔" | "ipaliwanag" | "ᜁᜉᜎᜒᜏᜈᜄ᜔" | "tell" | "say" | "print" => {
                 TokenType::Print
             }
-            "si" | "ᜐᜒ" | "ipangalan" | "ᜁᜉᜅᜎᜈ᜔" | "that" => TokenType::Var,
+            "si" | "ᜐᜒ" | "ipangalan" | "ᜁᜉᜅᜎᜈ᜔" | "ang" | "ᜀᜅ᜔" | "that" => TokenType::Var,
             "kung" | "ᜃᜓᜅ᜔" | "if" => TokenType::If,
             "o_kaya" | "u_kaya" | "malibankung" | "ᜋᜎᜒᜊᜈ᜔ᜃᜓᜅ᜔" | "ᜂᜃᜌ" | "elseif" => TokenType::ElseIf,
             "kundi" | "kunghindi" | "ᜃᜓᜈ᜔ᜇᜒ" | "ᜃᜓᜅ᜔ᜑᜒᜈ᜔ᜇᜒ" | "else" => TokenType::Else,

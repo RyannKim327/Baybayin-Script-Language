@@ -5,7 +5,7 @@ si mga_numero = [10, 20, 30, 40, 50];
 sabihin "Mga numero: " + mga_numero;
 
 // 2. Paggamit ng 'mga' at 'bilang'
-si mga_prutas = mga("mangga", "saging", "pinya");
+ang mga_prutas = mga("mangga", "saging", "pinya");
 si mga_bilang = bilang(1, 2, 3);
 sabihin "Mga prutas: " + mga_prutas;
 sabihin "Mga bilang: " + mga_bilang;

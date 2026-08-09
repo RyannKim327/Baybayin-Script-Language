@@ -81,7 +81,7 @@ Kalawang allows you to write code seamlessly using **Latin Tagalog**, **Baybayin
 | Feature / Concept | Tagalog (Latin) | Baybayin Script | English Equivalent |
 | :--- | :--- | :--- | :--- |
 | [**Output / Print**](#1-print-functions--pagpapahayag-output) | `sabihin`, `ipaliwanag` | `ᜐᜊᜒᜑᜒᜈ᜔`, `ᜁᜉᜎᜒᜏᜈᜄ᜔` | `tell`, `say`, `print` |
-| [**Variable Declaration**](#2-variables--mga-lalagyanan-ng-datos) | `si`, `ipangalan` | `ᜐᜒ`, `ᜁᜉᜅᜎᜈ᜔` | `that` |
+| [**Variable Declaration**](#2-variables--mga-lalagyanan-ng-datos) | `si`, `ipangalan`, `ang` | `ᜐᜒ`, `ᜁᜉᜅᜎᜈ᜔` `ᜀᜅ᜔` | `that` |
 | [**Assignment Operator**](#3-assignment-operators--pagpapasa-ng-nilalaman) | `ay`, `=` | `ᜀᜌ᜔` | `is`, `=` |
 | [**User Input**](#4-user-input--pagkuha-ng-input) | `pahingi` | `ᜉᜑᜒᜅᜒ` | `ask` |
 | [**Type Conversion**](#5-type-conversion--pagpapalit-ng-uri-ng-datos) | `isalin` | `ᜁᜐᜎᜒᜈ᜔` | `convert` |
@@ -149,8 +149,8 @@ say "Message from Kalawang";
 ---
 
 #### 2. Variables / Mga Lalagyanan ng Datos
-> **Tagalog**: Ang `si`, o `ipangalan` ay ginagamit upang magdeklara ng lalagyanan (variable) para sa iba't ibang uri ng datos tulad ng bilang, salita, boolean, at array.
-> **ᜊᜌ᜔ᜊᜌᜒᜈ᜔**: ᜀᜅ᜔ `ᜐᜒ`᜵ ᜂ `ᜁᜉᜅᜎᜈ᜔`᜵  ᜀᜌ᜔ ᜄᜒᜈᜄᜋᜒᜆ᜔ ᜂᜉᜅ᜔ ᜋᜄ᜔ᜇᜒᜃ᜔ᜎᜇ ᜈᜅ᜔ ᜎᜎᜄ᜔ᜌᜈᜈ᜔ ᜉᜇ ᜐ ᜁᜊ'ᜆ᜔ ᜁᜊᜅ᜔ ᜂᜇᜒ ᜈᜅ᜔ ᜇᜆᜓᜐ᜔ ᜆᜓᜎᜇ᜔ ᜈᜅ᜔ ᜊᜒᜎᜅ᜔᜵ ᜐᜎᜒᜆ᜵ ᜊᜓᜂᜎᜒᜀᜈ᜔᜶
+> **Tagalog**: Ang `si`, `ang`, o `ipangalan` ay ginagamit upang magdeklara ng lalagyanan (variable) para sa iba't ibang uri ng datos tulad ng bilang, salita, boolean, at array.
+> **ᜊᜌ᜔ᜊᜌᜒᜈ᜔**: ᜀᜅ᜔ `ᜐᜒ`᜵ `ᜀᜅ᜔`᜵ ᜂ `ᜁᜉᜅᜎᜈ᜔`᜵  ᜀᜌ᜔ ᜄᜒᜈᜄᜋᜒᜆ᜔ ᜂᜉᜅ᜔ ᜋᜄ᜔ᜇᜒᜃ᜔ᜎᜇ ᜈᜅ᜔ ᜎᜎᜄ᜔ᜌᜈᜈ᜔ ᜉᜇ ᜐ ᜁᜊ'ᜆ᜔ ᜁᜊᜅ᜔ ᜂᜇᜒ ᜈᜅ᜔ ᜇᜆᜓᜐ᜔ ᜆᜓᜎᜇ᜔ ᜈᜅ᜔ ᜊᜒᜎᜅ᜔᜵ ᜐᜎᜒᜆ᜵ ᜊᜓᜂᜎᜒᜀᜈ᜔᜶
 > **English**: The `that` keywords are used to declare variables that store values such as numbers, strings, booleans, and arrays.
 
 **Halimbawa / Example**
