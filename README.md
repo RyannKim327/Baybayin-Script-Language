@@ -105,26 +105,26 @@ Kalawang allows you to write code seamlessly using **Latin Tagalog**, **Baybayin
 
 ### ⚙️ Built-in Functions Reference Table / Talaan ng Karaniwang Tungkulin
 
-| Built-in Function | Tagalog (Latin) | English Equivalent | Description / Paliwanag |
-| :--- | :--- | :--- | :--- |
-| **Length / Sukat** | `haba(x)`, `sukat(x)`, `bilang(x)` | `length(x)`, `len(x)`, `count(x)`, `size(x)` | Returns array length or string character count / Sukat o haba ng array o salita |
-| **Append / Idagdag** | `dagdagan(arr, item)`, `idagdag(...)`, `isuksok(...)` | `push(arr, item)`, `append(...)`, `add(...)` | Appends an item to the array / Nagdaragdag ng elemento sa dulo ng array |
-| **Remove / Alisin** | `alisin(arr, [idx])`, `tanggalin(...)` | `pop(arr, [idx])`, `remove(...)`, `delete(...)` | Removes the last item or item at index / Nag-aalis ng elemento mula sa array |
-| **Contains / Nandyan** | `nandyan(x, item)`, `mayroon(...)`, `meron(...)` | `contains(x, item)`, `includes(...)` | Checks if element or substring exists / Sinusuri kung naglalaman ng elemento o salita |
-| **Join / Pagsamahin** | `pagsamahin(arr, delim)` | `join(arr, delim)` | Joins array elements into a string / Pinagsasama ang mga elemento bilang string |
-| **Reverse / Baligtad** | `baligtad(x)` | `reverse(x)` | Reverses array elements or string / Binabaligtad ang ayos ng array o salita |
-| **User Input / Pahingi** | `pahingi(prompt)` | `ask(prompt)` | Reads line of input from user / Tumatanggap ng input mula sa gumagamit |
-| **Type Conversion / Isalin** | `isalin(val, type)` | `convert(val, type)` | Converts value to target datatype / Isinasalin ang halaga sa tinukoy na uri ng datos |
+| Built-in Function | Tagalog (Latin) | English Equivalent | Baybayin | Description / Paliwanag |
+| :--- | :--- | :--- | :--- | :--- |
+| **Length / Sukat** | `haba(x)`, `sukat(x)`, `bilang(x)` | `length(x)`, `len(x)`, `count(x)`, `size(x)` | `ᜑᜊ(x)`, `ᜐᜓᜃᜆ᜔(x)`, `ᜊᜒᜎᜅ᜔(x)` | Returns array length or string character count / Sukat o haba ng array o salita |
+| **Append / Idagdag** | `dagdagan(arr, item)`, `idagdag(...)`, `isuksok(...)` | `push(arr, item)`, `append(...)`, `add(...)` | `ᜇᜄ᜔ᜇᜄᜈ᜔(arr, item)`, `ᜁᜇᜄ᜔ᜇᜄ᜔(...)`, `ᜁᜐᜓᜃ᜔ᜐᜓᜃ᜔(...)` | Appends an item to the array / Nagdaragdag ng elemento sa dulo ng array |
+| **Remove / Alisin** | `alisin(arr, [idx])`, `tanggalin(...)` | `pop(arr, [idx])`, `remove(...)`, `delete(...)` | `ᜀᜎᜒᜐᜒᜈ᜔(arr, [idx])`, `ᜆᜅ᜔ᜄᜎᜒᜈ᜔(...)` | Removes the last item or item at index / Nag-aalis ng elemento mula sa array |
+| **Contains / Nandyan** | `nandyan(x, item)`, `mayroon(...)`, `meron(...)` | `contains(x, item)`, `includes(...)` | `ᜈᜈ᜔ᜇ᜔ᜌᜈ᜔(x, item)`, `ᜋᜌ᜔ᜇᜓᜂᜈ᜔(...)` | Checks if element or substring exists / Sinusuri kung naglalaman ng elemento o salita |
+| **Join / Pagsamahin** | `pagsamahin(arr, delim)` | `join(arr, delim)` | `ᜉᜄ᜔ᜐᜋᜑᜒᜈ᜔(arr, delim)` | Joins array elements into a string / Pinagsasama ang mga elemento bilang string |
+| **Reverse / Baligtad** | `baligtad(x)` | `reverse(x)` | `ᜊᜎᜒᜄ᜔ᜆᜇ᜔(x)` | Reverses array elements or string / Binabaligtad ang ayos ng array o salita |
+| **User Input / Pahingi** | `pahingi(prompt)` | `ask(prompt)` | `ᜉᜑᜒᜅᜒ(prompt)` | Reads line of input from user / Tumatanggap ng input mula sa gumagamit |
+| **Type Conversion / Isalin** | `isalin(val, type)` | `convert(val, type)` | `ᜁᜐᜎᜒᜈ᜔(val, type)` | Converts value to target datatype / Isinasalin ang halaga sa tinukoy na uri ng datos |
 
 #### 🏷️ Type Conversion Targets / Mga Uri ng Datos sa Pagsasalin
 
-| Datatype Category | Tagalog (Latin) | English Equivalent | Description / Paliwanag |
-| :--- | :--- | :--- | :--- |
-| **Integer / Bilang** | `numero`, `bilang`, `int`, `integer` | `int`, `integer` | Whole integer numbers / Buong bilang |
-| **Float / Desimal** | `hatian`, `decimal`, `float` | `float`, `decimal` | Floating point numbers / Bilang na may hating decimal |
-| **String / Salita** | `salita`, `string`, `str` | `string`, `str` | Textual string / Salita o teksto |
-| **Boolean / Tama o Mali** | `booleano`, `bool`, `boolean`, `tamao-mali`, `tamaomali` | `bool`, `boolean` | Boolean values (`tama` / `true` o `mali` / `false`) |
-| **Array / Listahan** | `mga`, `list`, `array` | `array`, `list` | Array or list collection / Listahan o koleksyon |
+| Datatype Category | Tagalog (Latin) | English Equivalent | Baybayin | Description / Paliwanag |
+| :--- | :--- | :--- | :--- | :--- |
+| **Integer / Bilang** | `numero`, `bilang` | `int`, `integer` | `ᜊᜒᜎᜅ᜔` | Whole integer numbers / Buong bilang |
+| **Float / Desimal** | `hatian` | `float`, `decimal` | `ᜑᜆᜒᜀᜈ᜔` | Floating point numbers / Bilang na may hating decimal |
+| **String / Salita** | `salita` | `string`, `str` | `ᜐᜎᜒᜆ` | Textual string / Salita o teksto |
+| **Boolean / Tama o Mali** | `booleano`, `tamaomali` | `bool`, `boolean` | `ᜆᜋᜂᜋᜎᜒ` | Boolean values (`tama` / `true` o `mali` / `false`) |
+| **Array / Listahan** | `mga` | `array`, `list` | `ᜋᜅ` | Array or list collection / Listahan o koleksyon |
 
 ---
 
