@@ -735,7 +735,8 @@ impl Interpreter {
                         Value::Array(arr) => Ok(Value::Number(arr.len() as f64)),
                         Value::Nil => Ok(Value::Number(0.0)),
                     },
-                    "boolean" | "bool" | "booleano" | "tamaomali" | "ᜆᜋᜂᜋᜎᜒ" => match val_res {
+
+                    "boolean" | "bool" | "baligtaran" | "kabilaan" | "ᜊᜎᜒᜄ᜔ᜆᜇᜈ᜔" | "ᜃᜊᜒᜎᜀᜈ᜔" => match val_res {
                         Value::String(s) => {
                             let s_lower = s.trim().to_lowercase();
                             match s_lower.as_str() {
