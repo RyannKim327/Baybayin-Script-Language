@@ -1,0 +1,40 @@
+// Example of Boolean values and operations in Kalawang (English)
+
+// 1. Boolean Values (true and false)
+that is_true = true;
+that is_false = false;
+
+print ("True value: " + is_true);
+print ("False value: " + is_false);
+
+// 2. Comparisons resulting in booleans
+that is_greater = 10 > 5;
+that is_equal = (100 == 100);
+that is_not_equal = 5 != 10;
+
+print ("10 > 5: " + is_greater);
+print ("100 == 100: " + is_equal);
+print ("5 != 10: " + is_not_equal);
+
+// 3. Logical Operations (and, or)
+that logical_and = true and false;
+that logical_or = true or false;
+
+print ("true and false: " + logical_and);
+print ("true or false: " + logical_or);
+
+// 4. Casting / Type Conversion to Boolean (convert to bool / boolean)
+that from_text = convert("true", bool);
+that from_number = convert(1, boolean);
+that from_zero = convert(0, bool);
+
+print ("Converted from text 'true': " + from_text);
+print ("Converted from number 1: " + from_number);
+print ("Converted from number 0: " + from_zero);
+
+// 5. Usage in Conditionals (if / else)
+if (is_true) {
+    print ("The condition is true!");
+} else {
+    print ("The condition is false!");
+}

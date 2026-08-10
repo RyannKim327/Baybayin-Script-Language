@@ -1,0 +1,40 @@
+// Halimbawa ng Boolean (Kabilaan / Baligtaran) sa Kalawang (Tagalog)
+
+// 1. Mga Halaga ng Boolean (tama at mali)
+si totoo = tama;
+ang hindi_totoo = mali;
+
+sabihin "Totoong halaga: " + totoo;
+sabihin "Maling halaga: " + hindi_totoo;
+
+// 2. Paghahambing (Comparisons na nagbabalik ng boolean)
+si mas_malaki = 10 > 5;
+si pareho = (100 == 100);
+si hindi_pantay = 5 != 10;
+
+sabihin "10 > 5: " + mas_malaki;
+sabihin "100 == 100: " + pareho;
+sabihin "5 != 10: " + hindi_pantay;
+
+// 3. Lohikal na Operasyon (at, o)
+si lohikal_at = tama at mali;
+si lohikal_o = tama o mali;
+
+sabihin "tama at mali: " + lohikal_at;
+sabihin "tama o mali: " + lohikal_o;
+
+// 4. Pagsasalin ng Datos patungong Boolean (isalin sa kabilaan / baligtaran)
+si galing_sa_teksto = isalin("tama", kabilaan);
+si galing_sa_numero = isalin(1, baligtaran);
+si galing_sa_zero = isalin(0, kabilaan);
+
+sabihin "Isinalin mula sa teksto 'tama': " + galing_sa_teksto;
+sabihin "Isinalin mula sa numero 1: " + galing_sa_numero;
+sabihin "Isinalin mula sa numero 0: " + galing_sa_zero;
+
+// 5. Paggamit sa Kondisyonal (kung / kundi)
+kung (totoo) {
+    sabihin "Ang kondisyon ay tama!";
+} kundi {
+    sabihin "Ang kondisyon ay mali!";
+}
