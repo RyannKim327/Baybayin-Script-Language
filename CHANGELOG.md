@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the Kalawang programming language project will be documented in this file.
+All notable changes to the KLWNG' [Kalawang] programming language project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -13,12 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Boolean Example Scripts**: Added `examples/tagalog/boolean.bay`, `examples/english/boolean.bay`, and `examples/baybayin/boolean.bay` demonstrating boolean literals, comparisons, logical operations, and casting.
 
 ### Changed
-- **Boolean Data Type Terminology**: Updated boolean data type references in documentation and type conversion from `booleano` / `tamaomali` to `baligtaran` and `kabilaan`.
-- **Documentation & Tutorials**: Substantially updated `README.md` with enhanced tutorials, restructured usage guides, updated code examples, and refined keyword reference tables.
+- **Project Branding & Markdown Syntax**: Updated language header branding to **KLWNG' [Kalawang]** and standardized markdown code block highlight tags to `klwng` across documentation.
+- **Boolean Data Type Terminology**: Updated boolean data type references in documentation and runtime type conversion from `booleano` / `tamaomali` to `baligtaran` and `kabilaan`.
+- **Documentation & Tutorials**: Substantially overhauled `README.md` with enhanced tutorials, restructured usage guides, updated multi-lingual code snippets, and refined keyword reference tables.
 - **Conditional Keyword Handling**: Refined keyword recognition for `malibankung` ("unless").
+- **CLI Version Banner**: Updated CLI welcome message banner in `src/utils/mod.rs` to display `v0.3.1`.
 
 ### Fixed
 - **Lexer & Interpreter Typo Fixes**: Corrected typos and Baybayin mappings in lexer token recognition and pattern matching in type conversion.
+
+---
 
 ## [0.3.0] - 2026-08-08
 

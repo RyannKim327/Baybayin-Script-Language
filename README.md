@@ -1,4 +1,4 @@
-### Kalawang Programming (Formerly Sawa)
+### KLWNG' [Kalawang] Programming (Formerly Sawa)
 #### Master Piece of Paper (Ryann Kim Sesgundo)
 
 ---
@@ -38,12 +38,24 @@ sa mundo ng teknolohiya. Dagdag pa rito, maaari mong pag haluhaluin ang tatlong 
 
 ### 📦 Prerequisites & Installation
 
-To build and run Kalawang, you need [Rust](https://www.rust-lang.org/) installed (Rust 2024 edition or standard stable rustc/cargo).
+#### Option 1: Quick Start with Pre-built Release Binary (No Rust required)
+A pre-compiled standalone binary is available in the [`release/`](release/) folder (`release/klwng`). You can run Kalawang directly without compiling:
+
+```bash
+# Ensure execution permissions (Linux/macOS)
+chmod +x ./release/klwng
+
+# Run Kalawang directly
+./release/klwng examples/tagalog/hello.bay
+```
+
+#### Option 2: Building from Source (Requires Rust)
+To build and run Kalawang from source, you need [Rust](https://www.rust-lang.org/) installed (Rust 2024 edition or standard stable rustc/cargo).
 
 1. Clone the repository and navigate into the project directory:
    ```bash
-   git clone https://github.com/RyannKim327/Baybayin-Script-Language.git
-   cd kalawang
+   git clone https://github.com/RyannKim327/Baybayin-Script-Language.git klwng
+   cd klwng
    ```
 
 2. Build the project using Cargo:
@@ -62,12 +74,17 @@ To build and run Kalawang, you need [Rust](https://www.rust-lang.org/) installed
 
 Kalawang source code files typically use `.bay` extensions.
 
-Run any source file using `cargo run`:
+**Using the pre-built release binary:**
+```bash
+./release/klwng examples/tagalog/hello.bay
+```
+
+**Using Cargo (`cargo run`):**
 ```bash
 cargo run -- examples/tagalog/hello.bay
 ```
 
-Or execute the built binary directly:
+**Using the compiled binary after `cargo build`:**
 ```bash
 ./target/release/kalawang examples/tagalog/hello.bay
 ```
@@ -136,7 +153,7 @@ Kalawang allows you to write code seamlessly using **Latin Tagalog**, **Baybayin
 > **English**: The `print`, `say`, or `tell` keywords are used to display messages and data output to the terminal or screen.
 
 **Halimbawa / Example**
-```kalawang
+```klwng
 // Tagalog
 sabihin("Kamusta, Mundo!");
 ipaliwanag "Mensahe mula sa Kalawang";
@@ -154,7 +171,7 @@ say "Message from Kalawang";
 > **English**: The `that` keywords are used to declare variables that store values such as numbers, strings, booleans, and arrays.
 
 **Halimbawa / Example**
-```kalawang
+```klwng
 // Tagalog
 si pangalan = "Maynila";
 ipangalan edad = 2026;
@@ -182,7 +199,7 @@ print sum;
 > **English**: The `is`, or `=` operators are used to assign or update values stored within variables.
 
 **Halimbawa / Example**
-```kalawang
+```klwng
 // Tagalog
 si lungsod ay "Maynila";
 si taon = 2026;
@@ -206,7 +223,7 @@ print city;
 > **English**: The `ask` function is used to prompt the user and receive input from the terminal.
 
 **Halimbawa / Example**
-```kalawang
+```klwng
 // Tagalog
 si pangalan = pahingi("Anong pangalan mo? ");
 sabihin ("Kamusta, " + pangalan + "!");
@@ -224,7 +241,7 @@ print ("Hello, " + name + "!");
 > **English**: The `convert` built-in function is used to cast or convert a value into a specified target datatype (`int`, `float`/`decimal`, `string`, `bool`/`boolean`, `array`/`list`).
 
 **Halimbawa / Example**
-```kalawang
+```klwng
 // Tagalog
 si teksto = "100";
 si bilang_na_numero = isalin(teksto, numero);
@@ -252,7 +269,7 @@ that is_valid = convert("true", kabilaan);
 > **English**: Conditional branching uses `if`, `elseif`, and `else` to control program flow based on boolean expressions.
 
 **Halimbawa / Example**
-```kalawang
+```klwng
 // Tagalog
 si marka = 85;
 
@@ -284,7 +301,7 @@ if (grade >= 90) {
 > **English**: The `while` loop repeatedly executes a block of code as long as the specified condition remains true.
 
 **Halimbawa / Example**
-```kalawang
+```klwng
 // Tagalog
 si bilang = 1;
 
@@ -310,7 +327,7 @@ while (count <= 5) {
 > **English**: Arrays and lists can be created using bracket syntax `[]` or constructors `list(...)` / `array(...)`. Kalawang supports 0-based indexing (`arr[0]`), negative indexing from the end (`arr[-1]`), and in-place element modification (`arr[0] = new_value`).
 
 **Halimbawa / Example**
-```kalawang
+```klwng
 // Tagalog
 si mga_prutas = ["mangga", "saging", "pinya"];
 si unang_prutas = mga_prutas[0];
@@ -336,7 +353,7 @@ print fruits;
 > **English**: Kalawang provides built-in utilities for manipulating arrays and strings: `length`/`len`/`count`/`size`, `push`/`append`/`add`, `pop`/`remove`/`delete`, `contains`/`includes`, `join`, and `reverse`.
 
 **Halimbawa / Example**
-```kalawang
+```klwng
 // Tagalog
 si listahan = [10, 20, 30];
 
@@ -400,7 +417,7 @@ print ("Reversed: " + reversed_items);
 > **English**: Supports arithmetic operations (`+`, `-`, `*`, `/`), comparison operations (`isliterally` / `==` / `===`, `not` / `!=`, `<`, `<=`, `>`, `>=`), and logical operators (`and` / `&&`, `or` / `||`).
 
 **Halimbawa / Example**
-```kalawang
+```klwng
 // Tagalog
 si x = 10;
 si y = 20;
@@ -440,6 +457,10 @@ Check out the included examples in the [`examples/`](examples/) directory, separ
 
 Run them directly:
 ```bash
+# Using pre-built release executable:
+./release/klwng examples/tagalog/array.bay
+
+# Or using Cargo:
 cargo run -- examples/tagalog/array.bay
 cargo run -- examples/english/array.bay
 cargo run -- examples/baybayin/array.bay
