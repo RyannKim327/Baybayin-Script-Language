@@ -87,6 +87,7 @@ impl Interpreter {
                 LiteralValue::Boolean(b) => Ok(Value::Boolean(*b)),
                 LiteralValue::Nil => Ok(Value::Nil),
             },
+            
             Expr::Variable(name) => self
                 .env
                 .get(name)
@@ -95,6 +96,7 @@ impl Interpreter {
                     line: 0,
                     column: 0,
                 }),
+            
             Expr::Unary { op, right } => {
                 let right_val = self.evaluate(right)?;
                 match (op, right_val) {
@@ -111,6 +113,7 @@ impl Interpreter {
                     }),
                 }
             }
+            
             Expr::Binary { left, op, right } => {
                 match op {
                     BinaryOp::LogicalOr => {
@@ -121,6 +124,7 @@ impl Interpreter {
                             self.evaluate(right)
                         }
                     }
+                    
                     BinaryOp::LogicalAnd => {
                         let left_val = self.evaluate(left)?;
                         if !left_val.is_truthy() {
@@ -129,6 +133,7 @@ impl Interpreter {
                             self.evaluate(right)
                         }
                     }
+                    
                     _ => {
                         let left_val = self.evaluate(left)?;
                         let right_val = self.evaluate(right)?;
@@ -194,6 +199,7 @@ impl Interpreter {
                     }
                 }
             }
+            
             Expr::Assign { name, value } => {
                 let val = self.evaluate(value)?;
                 if self.env.assign(name, val.clone()) {
@@ -206,6 +212,7 @@ impl Interpreter {
                     })
                 }
             }
+            
             Expr::Array(elements) => {
                 let mut values = Vec::with_capacity(elements.len());
                 for elem in elements {
@@ -213,6 +220,7 @@ impl Interpreter {
                 }
                 Ok(Value::Array(values))
             }
+
             Expr::Index { target, index } => {
                 let target_val = self.evaluate(target)?;
                 let index_val = self.evaluate(index)?;
@@ -250,6 +258,7 @@ impl Interpreter {
 
                         Ok(arr[actual_idx as usize].clone())
                     }
+                    
                     Value::String(s) => {
                         let chars: Vec<char> = s.chars().collect();
                         let len = chars.len() as i64;
@@ -272,6 +281,7 @@ impl Interpreter {
 
                         Ok(Value::String(chars[actual_idx as usize].to_string()))
                     }
+                    
                     _ => Err(KalawangError::RuntimeError {
                         message: format!("Cannot index into non-array/string value '{}'", target_val),
                         line: 0,
@@ -279,6 +289,7 @@ impl Interpreter {
                     }),
                 }
             }
+            
             Expr::IndexAssign {
                 target,
                 index,
@@ -343,6 +354,7 @@ impl Interpreter {
                     })
                 }
             }
+            
             Expr::Call { callee, arguments } => {
                 let mut evaluated_args = Vec::with_capacity(arguments.len());
                 for arg in arguments {
@@ -352,9 +364,10 @@ impl Interpreter {
                 if let Expr::Variable(name) = callee.as_ref() {
                     let name_lower = name.to_lowercase();
                     match name_lower.as_str() {
-                        "mga" | "ᜋ᜔ᜄ" | "ᜋᜄ" | "ᜋᜅ" | "array" | "list" => {
+                        "mga" | "ᜋᜅ" | "array" | "list" => {
                             Ok(Value::Array(evaluated_args))
                         }
+                        
                         "bilang" | "ᜊᜒᜎᜅ᜔" => {
                             if evaluated_args.len() == 1 {
                                 match &evaluated_args[0] {
@@ -368,6 +381,7 @@ impl Interpreter {
                                 Ok(Value::Array(evaluated_args))
                             }
                         } 
+
                         "haba" | "ᜑᜊ" | "sukat" | "ᜐᜓᜃᜆ᜔" | "length" | "len" | "count" | "size" => {
                             if let Some(first) = evaluated_args.first() {
                                 match first {
@@ -392,6 +406,7 @@ impl Interpreter {
                                 })
                             }
                         }
+                        
                         "dagdagan" | "ᜇᜄ᜔ᜇᜄᜈ᜔" | "idagdag" | "ᜁᜇᜄ᜔ᜇᜄ᜔" | "isuksok"
                         | "ᜁᜐᜓᜃ᜔ᜐᜓᜃ᜔" | "push" | "append" | "add" => {
                             if evaluated_args.len() < 2 {
@@ -404,6 +419,7 @@ impl Interpreter {
                                     column: 0,
                                 });
                             }
+                            
                             let item = evaluated_args[1].clone();
                             if let Some(Expr::Variable(var_name)) = arguments.first() {
                                 if let Some(val) = self.env.get_mut(var_name) {
@@ -414,12 +430,14 @@ impl Interpreter {
                                     }
                                 }
                             }
+                            
                             match &evaluated_args[0] {
                                 Value::Array(arr) => {
                                     let mut new_arr = arr.clone();
                                     new_arr.push(item);
                                     Ok(Value::Array(new_arr))
                                 }
+                                
                                 _ => Err(KalawangError::RuntimeError {
                                     message: format!(
                                         "First argument of '{}' must be an array",
@@ -430,6 +448,7 @@ impl Interpreter {
                                 }),
                             }
                         }
+                        
                         "alisin" | "ᜀᜎᜒᜐᜒᜈ᜔" | "tanggalin" | "ᜆᜅ᜔ᜄᜎᜒᜈ᜔" | "pop" | "remove" | "delete" => {
                             if evaluated_args.is_empty() {
                                 return Err(KalawangError::RuntimeError {
@@ -441,6 +460,7 @@ impl Interpreter {
                                     column: 0,
                                 });
                             }
+                            
                             if let Some(Expr::Variable(var_name)) = arguments.first() {
                                 if let Some(val) = self.env.get_mut(var_name) {
                                     if let Value::Array(arr) = val {
@@ -470,6 +490,7 @@ impl Interpreter {
                                     }
                                 }
                             }
+                            
                             match &evaluated_args[0] {
                                 Value::Array(arr) => {
                                     let mut new_arr = arr.clone();
@@ -494,6 +515,7 @@ impl Interpreter {
                                     }
                                     Ok(new_arr.pop().unwrap_or(Value::Nil))
                                 }
+                                
                                 _ => Err(KalawangError::RuntimeError {
                                     message: format!(
                                         "First argument of '{}' must be an array",
@@ -504,6 +526,7 @@ impl Interpreter {
                                 }),
                             }
                         }
+                        
                         "nandyan" | "ᜈᜈ᜔ᜇ᜔ᜌᜈ᜔" | "mayroon" | "ᜋᜌ᜔ᜇᜓᜂᜈ᜔" | "meron"
                         | "contains" | "includes" => {
                             if evaluated_args.len() < 2 {
@@ -516,14 +539,17 @@ impl Interpreter {
                                     column: 0,
                                 });
                             }
+                            
                             match &evaluated_args[0] {
                                 Value::Array(arr) => {
                                     Ok(Value::Boolean(arr.contains(&evaluated_args[1])))
                                 }
+                                
                                 Value::String(s) => {
                                     let search = evaluated_args[1].to_string();
                                     Ok(Value::Boolean(s.contains(&search)))
                                 }
+                                
                                 _ => Err(KalawangError::RuntimeError {
                                     message: format!(
                                         "First argument of '{}' must be an array or string",
@@ -534,6 +560,7 @@ impl Interpreter {
                                 }),
                             }
                         }
+                        
                         "pagsamahin" | "ᜉᜄ᜔ᜐᜋᜑᜒᜈ᜔" | "join" => {
                             if evaluated_args.is_empty() {
                                 return Err(KalawangError::RuntimeError {
@@ -545,17 +572,20 @@ impl Interpreter {
                                     column: 0,
                                 });
                             }
+                            
                             let delim = if evaluated_args.len() >= 2 {
                                 evaluated_args[1].to_string()
                             } else {
                                 ", ".to_string()
                             };
+                            
                             match &evaluated_args[0] {
                                 Value::Array(arr) => {
                                     let str_items: Vec<String> =
                                         arr.iter().map(|item| item.to_string()).collect();
                                     Ok(Value::String(str_items.join(&delim)))
                                 }
+                                
                                 _ => Err(KalawangError::RuntimeError {
                                     message: format!(
                                         "First argument of '{}' must be an array",
@@ -566,6 +596,7 @@ impl Interpreter {
                                 }),
                             }
                         }
+                        
                         "baligtad" | "ᜊᜎᜒᜄ᜔ᜆᜇ᜔" | "reverse" => {
                             if evaluated_args.is_empty() {
                                 return Err(KalawangError::RuntimeError {
@@ -574,6 +605,7 @@ impl Interpreter {
                                     column: 0,
                                 });
                             }
+                            
                             if let Some(Expr::Variable(var_name)) = arguments.first() {
                                 if let Some(val) = self.env.get_mut(var_name) {
                                     if let Value::Array(arr) = val {
@@ -582,16 +614,19 @@ impl Interpreter {
                                     }
                                 }
                             }
+                            
                             match &evaluated_args[0] {
                                 Value::Array(arr) => {
                                     let mut rev = arr.clone();
                                     rev.reverse();
                                     Ok(Value::Array(rev))
                                 }
+                                
                                 Value::String(s) => {
                                     let rev: String = s.chars().rev().collect();
                                     Ok(Value::String(rev))
                                 }
+                                
                                 _ => Err(KalawangError::RuntimeError {
                                     message: format!(
                                         "Argument of '{}' must be an array or string",
@@ -602,6 +637,7 @@ impl Interpreter {
                                 }),
                             }
                         }
+                        
                         _ => Err(KalawangError::RuntimeError {
                             message: format!("Undefined function or array constructor '{}'", name),
                             line: 0,
@@ -616,6 +652,7 @@ impl Interpreter {
                     })
                 }
             }
+            
             Expr::Input(prompt_expr) => {
                 let prompt_val = self.evaluate(prompt_expr)?;
                 print!("{}", prompt_val);
@@ -634,6 +671,7 @@ impl Interpreter {
                 let trimmed = input.trim_end_matches(['\r', '\n']).to_string();
                 Ok(Value::String(trimmed))
             }
+            
             Expr::Convert { value, target_type } => {
                 let val_res = self.evaluate(value)?;
                 let target_str = match target_type.as_ref() {
@@ -644,6 +682,7 @@ impl Interpreter {
                             name.clone()
                         }
                     }
+                    
                     _ => {
                         let type_val = self.evaluate(target_type)?;
                         type_val.to_string()
@@ -652,8 +691,7 @@ impl Interpreter {
 
                 let target_lower = target_str.trim().to_lowercase();
                 match target_lower.as_str() {
-                    "int" | "numero" | "integer" | "bilang" | "ᜊᜒᜎᜅ᜔" | "ᜈᜓᜋᜒᜇᜓ"
-                    | "ᜈᜓᜋ᜔ᜁᜇᜓ" => match val_res {
+                    "int" | "numero" | "integer" | "bilang" | "ᜊᜒᜎᜅ᜔" | "ᜈᜓᜋᜒᜇᜓ" => match val_res {
                         Value::String(s) => {
                             let trimmed = s.trim();
                             if let Ok(i) = trimmed.parse::<i64>() {
@@ -668,11 +706,13 @@ impl Interpreter {
                                 })
                             }
                         }
+                        
                         Value::Number(n) => Ok(Value::Number(n.trunc())),
                         Value::Boolean(b) => Ok(Value::Number(if b { 1.0 } else { 0.0 })),
                         Value::Array(arr) => Ok(Value::Number(arr.len() as f64)),
                         Value::Nil => Ok(Value::Number(0.0)),
                     },
+                    
                     "float" | "decimal" | "hatian" | "ᜑᜆᜒᜀᜈ᜔" => match val_res {
                         Value::String(s) => {
                             let trimmed = s.trim();
@@ -689,12 +729,13 @@ impl Interpreter {
                                 })
                             }
                         }
+                        
                         Value::Number(n) => Ok(Value::Number(n)),
                         Value::Boolean(b) => Ok(Value::Number(if b { 1.0 } else { 0.0 })),
                         Value::Array(arr) => Ok(Value::Number(arr.len() as f64)),
                         Value::Nil => Ok(Value::Number(0.0)),
                     },
-                    "boolean" | "bool" | "booleano" | "tamao-mali" | "tamaomali" => match val_res {
+                    "boolean" | "bool" | "booleano" | "tamaomali" | "ᜆᜋᜂᜋᜎᜒ" => match val_res {
                         Value::String(s) => {
                             let s_lower = s.trim().to_lowercase();
                             match s_lower.as_str() {
@@ -704,6 +745,7 @@ impl Interpreter {
                                 "false" | "mali" | "0" | "f" | "no" | "hindi" | "ᜋᜎᜒ" => {
                                     Ok(Value::Boolean(false))
                                 }
+                                
                                 _ => {
                                     if let Ok(b) = s_lower.parse::<bool>() {
                                         Ok(Value::Boolean(b))
@@ -715,14 +757,18 @@ impl Interpreter {
                                 }
                             }
                         }
+
                         Value::Number(n) => Ok(Value::Boolean(n != 0.0)),
                         Value::Boolean(b) => Ok(Value::Boolean(b)),
                         Value::Array(arr) => Ok(Value::Boolean(!arr.is_empty())),
                         Value::Nil => Ok(Value::Boolean(false)),
                     },
+                    
                     "string" | "str" | "salita" | "ᜐᜎᜒᜆ" => Ok(Value::String(val_res.to_string())),
-                    "array" | "list" | "mga" | "ᜋ᜔ᜄ" | "ᜋᜄ" | "ᜋᜅ" => match val_res {
+                    
+                    "array" | "list" | "mga" | "ᜋᜅ" => match val_res {
                         Value::Array(arr) => Ok(Value::Array(arr)),
+                        
                         Value::String(s) => {
                             let trimmed = s.trim();
                             let inner = if (trimmed.starts_with('[') && trimmed.ends_with(']'))
@@ -732,6 +778,7 @@ impl Interpreter {
                             } else {
                                 trimmed
                             };
+                            
                             if inner.trim().is_empty() {
                                 Ok(Value::Array(Vec::new()))
                             } else {
@@ -766,10 +813,12 @@ impl Interpreter {
                                 Ok(Value::Array(items))
                             }
                         }
+
                         Value::Number(n) => Ok(Value::Array(vec![Value::Number(n)])),
                         Value::Boolean(b) => Ok(Value::Array(vec![Value::Boolean(b)])),
                         Value::Nil => Ok(Value::Array(Vec::new())),
                     },
+                    
                     _ => Err(KalawangError::RuntimeError {
                         message: format!("Unknown target datatype '{}' for conversion", target_str),
                         line: 0,

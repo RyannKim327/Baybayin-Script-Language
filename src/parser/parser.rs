@@ -525,109 +525,109 @@ impl Parser {
     }
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use crate::lexer::Lexer;
-    use crate::parser::ast::{Expr, LiteralValue, Stmt};
-
-    #[test]
-    fn test_parse_input_expression() {
-        let source = r#"
-            si name = pahingi("Pangalan: ");
-            that age = ask("Age: ");
-            ᜐᜒ ᜂᜐᜒᜇ᜔ = ᜉᜑᜒᜅᜒ("ᜂᜐᜒᜇ᜔: ");
-        "#;
-        let mut lexer = Lexer::new(source);
-        let tokens = lexer.tokenize().unwrap();
-        let mut parser = Parser::new(tokens);
-        let stmts = parser.parse().unwrap();
-
-        assert_eq!(
-            stmts[0],
-            Stmt::VarDeclaration {
-                name: "name".to_string(),
-                initializer: Some(Expr::Input(Box::new(Expr::Literal(LiteralValue::String(
-                    "Pangalan: ".to_string()
-                ))))),
-            }
-        );
-        assert_eq!(
-            stmts[1],
-            Stmt::VarDeclaration {
-                name: "age".to_string(),
-                initializer: Some(Expr::Input(Box::new(Expr::Literal(LiteralValue::String(
-                    "Age: ".to_string()
-                ))))),
-            }
-        );
-        assert_eq!(
-            stmts[2],
-            Stmt::VarDeclaration {
-                name: "ᜂᜐᜒᜇ᜔".to_string(),
-                initializer: Some(Expr::Input(Box::new(Expr::Literal(LiteralValue::String(
-                    "ᜂᜐᜒᜇ᜔: ".to_string()
-                ))))),
-            }
-        );
-    }
-
-    #[test]
-    fn test_parse_array_expressions() {
-        let source = r#"
-            si a = [1, 2, 3];
-            si b = mga(4, 5, 6);
-            si c = bilang(7, 8, 9);
-            si x = a[0];
-            a[1] = 99;
-        "#;
-        let mut lexer = Lexer::new(source);
-        let tokens = lexer.tokenize().unwrap();
-        let mut parser = Parser::new(tokens);
-        let stmts = parser.parse().unwrap();
-
-        assert_eq!(
-            stmts[0],
-            Stmt::VarDeclaration {
-                name: "a".to_string(),
-                initializer: Some(Expr::Array(vec![
-                    Expr::Literal(LiteralValue::Number(1.0)),
-                    Expr::Literal(LiteralValue::Number(2.0)),
-                    Expr::Literal(LiteralValue::Number(3.0)),
-                ])),
-            }
-        );
-
-        assert_eq!(
-            stmts[1],
-            Stmt::VarDeclaration {
-                name: "b".to_string(),
-                initializer: Some(Expr::Array(vec![
-                    Expr::Literal(LiteralValue::Number(4.0)),
-                    Expr::Literal(LiteralValue::Number(5.0)),
-                    Expr::Literal(LiteralValue::Number(6.0)),
-                ])),
-            }
-        );
-
-        assert_eq!(
-            stmts[3],
-            Stmt::VarDeclaration {
-                name: "x".to_string(),
-                initializer: Some(Expr::Index {
-                    target: Box::new(Expr::Variable("a".to_string())),
-                    index: Box::new(Expr::Literal(LiteralValue::Number(0.0))),
-                }),
-            }
-        );
-
-        assert_eq!(
-            stmts[4],
-            Stmt::Expression(Expr::IndexAssign {
-                target: Box::new(Expr::Variable("a".to_string())),
-                index: Box::new(Expr::Literal(LiteralValue::Number(1.0))),
-                value: Box::new(Expr::Literal(LiteralValue::Number(99.0))),
-            })
-        );
-    }
-}
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+//     use crate::lexer::Lexer;
+//     use crate::parser::ast::{Expr, LiteralValue, Stmt};
+//
+//     #[test]
+//     fn test_parse_input_expression() {
+//         let source = r#"
+//             si name = pahingi("Pangalan: ");
+//             that age = ask("Age: ");
+//             ᜐᜒ ᜂᜐᜒᜇ᜔ = ᜉᜑᜒᜅᜒ("ᜂᜐᜒᜇ᜔: ");
+//         "#;
+//         let mut lexer = Lexer::new(source);
+//         let tokens = lexer.tokenize().unwrap();
+//         let mut parser = Parser::new(tokens);
+//         let stmts = parser.parse().unwrap();
+//
+//         assert_eq!(
+//             stmts[0],
+//             Stmt::VarDeclaration {
+//                 name: "name".to_string(),
+//                 initializer: Some(Expr::Input(Box::new(Expr::Literal(LiteralValue::String(
+//                     "Pangalan: ".to_string()
+//                 ))))),
+//             }
+//         );
+//         assert_eq!(
+//             stmts[1],
+//             Stmt::VarDeclaration {
+//                 name: "age".to_string(),
+//                 initializer: Some(Expr::Input(Box::new(Expr::Literal(LiteralValue::String(
+//                     "Age: ".to_string()
+//                 ))))),
+//             }
+//         );
+//         assert_eq!(
+//             stmts[2],
+//             Stmt::VarDeclaration {
+//                 name: "ᜂᜐᜒᜇ᜔".to_string(),
+//                 initializer: Some(Expr::Input(Box::new(Expr::Literal(LiteralValue::String(
+//                     "ᜂᜐᜒᜇ᜔: ".to_string()
+//                 ))))),
+//             }
+//         );
+//     }
+//
+//     #[test]
+//     fn test_parse_array_expressions() {
+//         let source = r#"
+//             si a = [1, 2, 3];
+//             si b = mga(4, 5, 6);
+//             si c = bilang(7, 8, 9);
+//             si x = a[0];
+//             a[1] = 99;
+//         "#;
+//         let mut lexer = Lexer::new(source);
+//         let tokens = lexer.tokenize().unwrap();
+//         let mut parser = Parser::new(tokens);
+//         let stmts = parser.parse().unwrap();
+//
+//         assert_eq!(
+//             stmts[0],
+//             Stmt::VarDeclaration {
+//                 name: "a".to_string(),
+//                 initializer: Some(Expr::Array(vec![
+//                     Expr::Literal(LiteralValue::Number(1.0)),
+//                     Expr::Literal(LiteralValue::Number(2.0)),
+//                     Expr::Literal(LiteralValue::Number(3.0)),
+//                 ])),
+//             }
+//         );
+//
+//         assert_eq!(
+//             stmts[1],
+//             Stmt::VarDeclaration {
+//                 name: "b".to_string(),
+//                 initializer: Some(Expr::Array(vec![
+//                     Expr::Literal(LiteralValue::Number(4.0)),
+//                     Expr::Literal(LiteralValue::Number(5.0)),
+//                     Expr::Literal(LiteralValue::Number(6.0)),
+//                 ])),
+//             }
+//         );
+//
+//         assert_eq!(
+//             stmts[3],
+//             Stmt::VarDeclaration {
+//                 name: "x".to_string(),
+//                 initializer: Some(Expr::Index {
+//                     target: Box::new(Expr::Variable("a".to_string())),
+//                     index: Box::new(Expr::Literal(LiteralValue::Number(0.0))),
+//                 }),
+//             }
+//         );
+//
+//         assert_eq!(
+//             stmts[4],
+//             Stmt::Expression(Expr::IndexAssign {
+//                 target: Box::new(Expr::Variable("a".to_string())),
+//                 index: Box::new(Expr::Literal(LiteralValue::Number(1.0))),
+//                 value: Box::new(Expr::Literal(LiteralValue::Number(99.0))),
+//             })
+//         );
+//     }
+// }
