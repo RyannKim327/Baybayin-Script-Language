@@ -123,7 +123,7 @@ Kalawang allows you to write code seamlessly using **Latin Tagalog**, **Baybayin
 | **Integer / Bilang** | `numero`, `bilang` | `int`, `integer` | `ᜊᜒᜎᜅ᜔` | Whole integer numbers / Buong bilang |
 | **Float / Desimal** | `hatian` | `float`, `decimal` | `ᜑᜆᜒᜀᜈ᜔` | Floating point numbers / Bilang na may hating decimal |
 | **String / Salita** | `salita` | `string`, `str` | `ᜐᜎᜒᜆ` | Textual string / Salita o teksto |
-| **Boolean / Tama o Mali** | `booleano`, `tamaomali` | `bool`, `boolean` | `ᜆᜋᜂᜋᜎᜒ` | Boolean values (`tama` / `true` o `mali` / `false`) |
+| **Boolean / Tama o Mali** | `baligtaran`, `kabilaan` | `bool`, `boolean` | `ᜊᜎᜒᜄ᜔ᜆᜇᜈ᜔`, `ᜃᜊᜒᜎᜀᜈ᜔` | Boolean values (`tama` / `true` o `mali` / `false`) |
 | **Array / Listahan** | `mga` | `array`, `list` | `ᜋᜅ` | Array or list collection / Listahan o koleksyon |
 
 ---
@@ -219,8 +219,8 @@ print ("Hello, " + name + "!");
 ---
 
 #### 5. Type Conversion / Pagpapalit ng Uri ng Datos
-> **Tagalog**: Ang `isalin` ay ginagamit upang baguhin ang uri ng datos (data type) ng isang halaga, tulad ng pagsasalin mula teksto patungong bilang (`numero`), desimal (`hatian`), salita (`salita`), boolean (`booleano`), o listahan (`mga`/`array`).
-> **ᜊᜌ᜔ᜊᜌᜒᜈ᜔**: ᜀᜅ᜔ `ᜁᜐᜎᜒᜈ᜔` ᜀᜌ᜔ ᜄᜒᜈᜄᜋᜒᜆ᜔ ᜂᜉᜅ᜔ ᜊᜄᜓᜑᜒᜈ᜔ ᜀᜅ᜔ ᜂᜇᜒ ᜈᜅ᜔ ᜇᜆᜓᜐ᜔ (datatype) ᜈᜅ᜔ ᜁᜐᜅ᜔ ᜑᜎᜄ᜵ ᜆᜓᜎᜇ᜔ ᜈᜅ᜔ ᜉᜄ᜔ᜐᜐᜎᜒᜈ᜔ ᜋᜓᜎ ᜆᜒᜃ᜔ᜐ᜔ᜆᜓ ᜉᜆᜓᜅᜓᜅ᜔ ᜊᜒᜎᜅ᜔᜵ ᜇᜒᜐᜒᜋᜎ᜔᜵ ᜐᜎᜒᜆ᜵ ᜊᜓᜂᜎᜒᜀᜈ᜔᜵ ᜂ ᜎᜒᜐ᜔ᜆᜑᜈ᜔᜶
+> **Tagalog**: Ang `isalin` ay ginagamit upang baguhin ang uri ng datos (data type) ng isang halaga, tulad ng pagsasalin mula teksto patungong bilang (`numero`), desimal (`hatian`), salita (`salita`), boolean (`kabilaan` / `baligtaran`), o listahan (`mga`/`array`).
+> **ᜊᜌ᜔ᜊᜌᜒᜈ᜔**: ᜀᜅ᜔ `ᜁᜐᜎᜒᜈ᜔` ᜀᜌ᜔ ᜄᜒᜈᜄᜋᜒᜆ᜔ ᜂᜉᜅ᜔ ᜊᜄᜓᜑᜒᜈ᜔ ᜀᜅ᜔ ᜂᜇᜒ ᜈᜅ᜔ ᜇᜆᜓᜐ᜔ (datatype) ᜈᜅ᜔ ᜁᜐᜅ᜔ ᜑᜎᜄ᜵ ᜆᜓᜎᜇ᜔ ᜈᜅ᜔ ᜉᜄ᜔ᜐᜐᜎᜒᜈ᜔ ᜋᜓᜎ ᜆᜒᜃ᜔ᜐ᜔ᜆᜓ ᜉᜆᜓᜅᜓᜅ᜔ ᜊᜒᜎᜅ᜔᜵ ᜇᜒᜐᜒᜋᜎ᜔᜵ ᜐᜎᜒᜆ᜵ ᜊᜎᜒᜄ᜔ᜆᜇᜈ᜔᜵ ᜃᜊᜒᜎᜀᜈ᜔᜵ ᜂ ᜎᜒᜐ᜔ᜆᜑᜈ᜔᜶
 > **English**: The `convert` built-in function is used to cast or convert a value into a specified target datatype (`int`, `float`/`decimal`, `string`, `bool`/`boolean`, `array`/`list`).
 
 **Halimbawa / Example**
@@ -232,7 +232,7 @@ si kabuuan = bilang_na_numero + 50;
 sabihin ("Kabuuan: " + kabuuan);
 
 si desimal = isalin("3.14", hatian);
-si totoo = isalin("tama", bool);
+si totoo = isalin("tama", kabilaan);
 
 // English
 that text = "100";
@@ -241,7 +241,7 @@ that total = parsed_number + 50;
 print ("Total: " + total);
 
 that decimal_val = convert("3.14", float);
-that is_valid = convert("true", bool);
+that is_valid = convert("true", kabilaan);
 ```
 
 ---
@@ -434,9 +434,9 @@ print ("Logical: " + logical_check);
 
 Check out the included examples in the [`examples/`](examples/) directory, separated into Tagalog, English, and Baybayin script folders:
 
-- **Tagalog (Latin)**: [`examples/tagalog/`](examples/tagalog/) (`hello.bay`, `array.bay`, `conditional.bay`, `input.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
-- **English**: [`examples/english/`](examples/english/) (`hello.bay`, `array.bay`, `conditional.bay`, `input.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
-- **Baybayin Script**: [`examples/baybayin/`](examples/baybayin/) (`hello.bay`, `array.bay`, `conditional.bay`, `input.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
+- **Tagalog (Latin)**: [`examples/tagalog/`](examples/tagalog/) (`hello.bay`, `array.bay`, `boolean.bay`, `conditional.bay`, `input.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
+- **English**: [`examples/english/`](examples/english/) (`hello.bay`, `array.bay`, `boolean.bay`, `conditional.bay`, `input.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
+- **Baybayin Script**: [`examples/baybayin/`](examples/baybayin/) (`hello.bay`, `array.bay`, `boolean.bay`, `conditional.bay`, `input.bay`, `math.bay`, `onesentence.bay`, `pattern.bay`, `test.bay`, `variables.bay`)
 
 Run them directly:
 ```bash

@@ -5,6 +5,21 @@ All notable changes to the Kalawang programming language project will be documen
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.1] - 2026-08-10
+
+### Added
+- **`ang` Keyword for Variable Declarations**: Added `ang` (and Baybayin `ᜀᜅ᜔`) as a supported variable declaration keyword alongside `si`, `that`, and `ipangalan`.
+- **Boolean Type Conversion Datatypes**: Added `baligtaran` and `kabilaan` (and Baybayin `ᜊᜎᜒᜄ᜔ᜆᜇᜈ᜔`, `ᜃᜊᜒᜎᜀᜈ᜔`) as supported target datatype keywords for `isalin` / `convert`.
+- **Boolean Example Scripts**: Added `examples/tagalog/boolean.bay`, `examples/english/boolean.bay`, and `examples/baybayin/boolean.bay` demonstrating boolean literals, comparisons, logical operations, and casting.
+
+### Changed
+- **Boolean Data Type Terminology**: Updated boolean data type references in documentation and type conversion from `booleano` / `tamaomali` to `baligtaran` and `kabilaan`.
+- **Documentation & Tutorials**: Substantially updated `README.md` with enhanced tutorials, restructured usage guides, updated code examples, and refined keyword reference tables.
+- **Conditional Keyword Handling**: Refined keyword recognition for `malibankung` ("unless").
+
+### Fixed
+- **Lexer & Interpreter Typo Fixes**: Corrected typos and Baybayin mappings in lexer token recognition and pattern matching in type conversion.
+
 ## [0.3.0] - 2026-08-08
 
 ### Added
